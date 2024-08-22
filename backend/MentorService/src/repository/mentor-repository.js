@@ -1,11 +1,11 @@
-const {  Mentors }=require('../models/index');
+const {  Mentor }=require('../models/index');
 const {Op} = require('sequelize');
 
 class MentorRepository{
     
     async createMentor(data){
         try {
-            const mentor=await Mentors.create(data);
+            const mentor=await Mentor.create(data);
             return mentor;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
@@ -15,7 +15,7 @@ class MentorRepository{
 
     async getMentor(mentorId){
         try {
-            const mentor = await Mentors.findByPk(mentorId);
+            const mentor = await Mentor.findByPk(mentorId);
             return mentor;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
@@ -26,7 +26,7 @@ class MentorRepository{
     async getAllMentors(filter){
         try {
         if(filter.name){
-            const mentors = await Mentors.findAll({
+            const mentors = await Mentor.findAll({
                 where:{
                     name: {
                         [Op.startsWith]:filter.name
@@ -35,7 +35,7 @@ class MentorRepository{
         });
         return mentors;
         }
-            const mentors = await Mentors.findAll();
+            const mentors = await Mentor.findAll();
             return mentors;
         } catch (error) {
             console.log("something went wrong in repository layer");
