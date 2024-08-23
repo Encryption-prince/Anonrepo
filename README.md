@@ -4,5 +4,5 @@ clone github repo<br>
 cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
-npm i
+npm i <br>
 npm start<br>
