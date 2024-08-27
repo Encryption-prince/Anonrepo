@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Otp Request</title>
-    <link rel="stylesheet" href="./css_files/otp_verification.css" />
+    <link rel="stylesheet" href="./css_files/otpverified.css" />
   </head>
   <body>
     <section>
-      <div class="title">OTP</div>
-      <svg
+      <div class="success-message">
+        <svg viewBox="0 0 76 76" class="success-message__icon icon-checkmark">
+          <circle cx="38" cy="38" r="36" />
+          <path
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            d="M17.7,40.9l10.9,10.9l28.7-28.7"
+          />
+        </svg>
+        <h1 class="success-message__title">OTP Succesfully Verified</h1>
+        <!-- <div class="success-message__content">
+          <p>We will respond in approximately 34 minutes</p>
+        </div> -->
+      </div>
+      <!-- <div class="title">OTP</div> -->
+      <!-- <svg
         width="250"
         height="200"
         viewBox="0 0 292 208"
@@ -107,8 +125,8 @@
             />
           </clipPath>
         </defs>
-      </svg>
-      <div class="title">Verification Code</div>
+      </svg> -->
+      <!-- <div class="title">Verification Code</div>
       <p>We have sent a verification code to your email</p>
       <div id="inputs">
         <input id="input1" type="text" maxlength="1" />
@@ -119,14 +137,13 @@
       <p id="resendtext">
         Resend OTP in <span id="countdowntimer">30 </span> Seconds
       </p>
-      <p id="resendLink" style="display: none; cursor: pointer; color: blue;">Resend OTP</p>
       <button
         onclick="redirect()"
-        formaction="{{ url_for('static', forname='') }}"
+        formaction="{{ url_for('static', filename='') }}"
       >
         Submit
-      </button>
+      </button> -->
     </section>
-    <script src="./js_files/otpverification.js"></script>
+    <script src="./js_files/otpverified.js"></script>
   </body>
 </html>
