@@ -95,9 +95,8 @@ a.active {
 
 a:hover {
   color: #4f46e5; /* Change text color on hover */
-  background-color: #f3f4f6; /* Light gray background on hover */
+  /* background-color: #f3f4f6; Light gray background on hover */
   border-radius: 0.375rem; /* Rounded corners on hover */
-  padding: 0.5rem; /* Padding to ensure space around the icon and text */
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 /* Light Theme */
@@ -138,7 +137,7 @@ input.search {
   border: 1px solid #555;
   display: block;
   padding: 4px 4px 9px 42px;
-  background: transparent url("/search-regular-24.png") no-repeat 9px;
+  background: transparent url("../assets/search.png") no-repeat 9px;
   background-size: 16px;
   transition: ease-in-out 0.3s;
   border-radius: 5px;

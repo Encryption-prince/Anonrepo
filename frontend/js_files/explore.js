@@ -263,7 +263,7 @@ function removeIcon(inputElement) {
 
 function restoreIcon(inputElement) {
   inputElement.style.background =
-    'transparent url("/search-regular-24.png") no-repeat 9px';
+    'transparent url("../assets/search.png") no-repeat 9px';
   inputElement.style.backgroundSize = "16px";
   inputElement.style.paddingLeft = "40px";
 }

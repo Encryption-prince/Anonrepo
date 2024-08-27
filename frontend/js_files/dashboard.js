@@ -228,11 +228,12 @@
     }
     
     function restoreIcon(inputElement) {
-        inputElement.style.background = 'transparent url("../frontend/assets/search-regular-24.png") no-repeat 9px';
+        inputElement.style.background = 'transparent url("../assets/search.png") no-repeat 9px';
         inputElement.style.backgroundSize = '16px';
         inputElement.style.paddingLeft = '40px';
     }
     }
+    searchInput();
 
     function profileDiv(){
     document.getElementById('toggleImage').addEventListener('click', function() {
