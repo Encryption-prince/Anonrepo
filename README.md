@@ -19,5 +19,6 @@ clone github repo<br>
 cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
+"create a .env folder in this directory, inside write PORT=3000"
 npm i <br>
 npm start<br>
