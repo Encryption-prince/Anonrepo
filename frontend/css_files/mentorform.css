@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 2000px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: royalblue;
+}
+
+.signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+/* Target only the textarea input within the form */
+.form label textarea.input {
+    padding: 10px 10px 30px 10px;
+    /* Increased bottom padding */
+    min-height: 100px;
+    /* Ensure textarea has a minimum height */
+    resize: none;
+    /* Prevent resizing */
+}
+
+.form label textarea.input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label textarea.input:focus+span,
+.form label textarea.input:valid+span {
+    top: 70px;
+    /* Adjust to match bottom of textarea */
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label textarea.input:valid+span {
+    color: green;
+}
+
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+
+/* From Uiverse.io by Yaya12085 */
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked+.name {
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.time-slots-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time-slot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+}
+
+.remove-slot {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-slot {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #229799;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lbl {
+    display: inline-flex;
+    /* Changed from inline-block to inline-flex */
+    align-items: center;
+    /* Vertically center the checkbox and text */
+    border: 1px solid currentcolor;
+    color: #0d6efd;
+    margin-right: 1rem;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.lbl:has(input[type=checkbox]:not(:checked)):hover {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:focus-visible) {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:checked) {
+    background: #0d6efd;
+    color: #fff;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lbl {
+    display: inline-block;
+    /* Keep inline-block to maintain inline behavior */
+    border: 1px solid currentcolor;
+    color: #0d6efd;
+    margin-right: 1rem;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Prevent label from wrapping */
+}
+
+.lbl input[type=checkbox] {
+    margin-right: 0.5em;
+    /* Space between checkbox and text */
+}
+
+.lbl:has(input[type=checkbox]:not(:checked)):hover {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:focus-visible) {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:checked) {
+    background: #0d6efd;
+    color: #fff;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lbl {
+    display: inline-flex;
+    /* Use inline-flex for flexibility */
+    align-items: center;
+    /* Vertically center checkbox and text */
+    border: 1px solid currentcolor;
+    color: #0d6efd;
+    margin-right: 1rem;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+.lbl input[type=checkbox] {
+    margin-right: 0.5em;
+    /* Space between checkbox and text */
+}
+
+.lbl:hover {
+    opacity: 0.7;
+    /* Hover effect */
+}
+
+.lbl input[type=checkbox]:checked+span {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+
+input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lbl {
+    display: inline-block;
+    border: 1px solid currentcolor;
+    color: #0d6efd;
+    margin-right: 1rem;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.lbl:has(input[type=checkbox]:not(:checked)):hover {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:focus-visible) {
+    opacity: 0.5;
+}
+
+.lbl:has(input[type=checkbox]:checked) {
+    background: #0d6efd;
+    color: #fff;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
