@@ -20,240 +20,48 @@ function toggleTab(tabName) {
 
 document.getElementById("mentors").style.display = "block";
 
-function mentorwaLogg(){
-    const mentors = [
-        {
-          name: "Shruthi Venkatesh",
-          title: "Senior Visual Designer at Postman Inc",
-          sessions: "49 sessions (4 reviews)",
-          img: "../frontend/assets/img1.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Jz Jennyzhang",
-          title: "Founder at callmejz.ai,China University",
-          sessions: "12 sessions (7 reviews)",
-          img: "../frontend/assets/img2.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Vibha Finaviya",
-          title: "Senior Application Developer at Cognizant Technology",
-          sessions: "New mentor",
-          img: "../frontend/assets/img3.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Akanksha Gupta",
-          title: "Engineering Manager at Amazon",
-          sessions: "New mentor",
-          img: "../frontend/assets/img4.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Sheetal Bellare",
-          title: "AVP (UX Strategist) at Angel One Finance",
-          sessions: "63 sessions (40 reviews)",
-          img: "../frontend/assets/img5.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-      
-        {
-          name: "Shruthi Venkatesh",
-          title: "Senior Visual Designer at Postman Inc",
-          sessions: "49 sessions (4 reviews)",
-          img: "../frontend/assets/img1.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Jz Jennyzhang",
-          title: "Founder at callmejz.ai,China University",
-          sessions: "12 sessions (7 reviews)",
-          img: "../frontend/assets/img2.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Vibha Finaviya",
-          title: "Senior Application Developer at Cognizant Technology",
-          sessions: "New mentor",
-          img: "../frontend/assets/img3.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Akanksha Gupta",
-          title: "Engineering Manager at Amazon",
-          sessions: "New mentor",
-          img: "../frontend/assets/img4.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Sheetal Bellare",
-          title: "AVP (UX Strategist) at Angel One Finance",
-          sessions: "63 sessions (40 reviews)",
-          img: "../frontend/assets/img5.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-      
-        {
-          name: "Shruthi Venkatesh",
-          title: "Senior Visual Designer at Postman Inc",
-          sessions: "49 sessions (4 reviews)",
-          img: "../frontend/assets/img1.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Jz Jennyzhang",
-          title: "Founder at callmejz.ai,China University",
-          sessions: "12 sessions (7 reviews)",
-          img: "../frontend/assets/img2.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Vibha Finaviya",
-          title: "Senior Application Developer at Cognizant Technology",
-          sessions: "New mentor",
-          img: "../frontend/assets/img3.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Akanksha Gupta",
-          title: "Engineering Manager at Amazon",
-          sessions: "New mentor",
-          img: "../frontend/assets/img4.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Sheetal Bellare",
-          title: "AVP (UX Strategist) at Angel One Finance",
-          sessions: "63 sessions (40 reviews)",
-          img: "../frontend/assets/img5.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-      
-        {
-          name: "Shruthi Venkatesh",
-          title: "Senior Visual Designer at Postman Inc",
-          sessions: "49 sessions (4 reviews)",
-          img: "../frontend/assets/img1.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Jz Jennyzhang",
-          title: "Founder at callmejz.ai,China University",
-          sessions: "12 sessions (7 reviews)",
-          img: "../frontend/assets/img2.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Vibha Finaviya",
-          title: "Senior Application Developer at Cognizant Technology",
-          sessions: "New mentor",
-          img: "../frontend/assets/img3.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Akanksha Gupta",
-          title: "Engineering Manager at Amazon",
-          sessions: "New mentor",
-          img: "../frontend/assets/img4.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Sheetal Bellare",
-          title: "AVP (UX Strategist) at Angel One Finance",
-          sessions: "63 sessions (40 reviews)",
-          img: "../frontend/assets/img5.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-      
-        {
-          name: "Shruthi Venkatesh",
-          title: "Senior Visual Designer at Postman Inc",
-          sessions: "49 sessions (4 reviews)",
-          img: "../frontend/assets/img1.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Jz Jennyzhang",
-          title: "Founder at callmejz.ai,China University",
-          sessions: "12 sessions (7 reviews)",
-          img: "../frontend/assets/img2.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Vibha Finaviya",
-          title: "Senior Application Developer at Cognizant Technology",
-          sessions: "New mentor",
-          img: "../frontend/assets/img3.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Akanksha Gupta",
-          title: "Engineering Manager at Amazon",
-          sessions: "New mentor",
-          img: "../frontend/assets/img4.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-        {
-          name: "Sheetal Bellare",
-          title: "AVP (UX Strategist) at Angel One Finance",
-          sessions: "63 sessions (40 reviews)",
-          img: "../frontend/assets/img5.avif",
-          experience: "5 years",
-          attendance: "90%",
-        },
-      ];
-      
+async function mentorwaLogg() {
+  try {
+    const response = await fetch('http://localhost:3000/api/v1/mentor');
+    const data = await response.json();
+    
+    if (data.success) {
+      const mentors = data.data;
+
       const mentorContainer = document.getElementById("mentor-container");
+      mentorContainer.innerHTML = "";
       
       mentors.forEach((mentor) => {
         const mentorCard = document.createElement("div");
         mentorCard.className = "mentor-card";
       
         mentorCard.innerHTML = `
-          <img src="${mentor.img}" alt="${mentor.name}">
+          <img src="${mentor.img || '../frontend/assets/default-avatar.png'}" alt="${mentor.name}">
           <div class="mentor-name">${mentor.name}</div>
-          <div class="mentor-title">${mentor.title}</div>
-          <div class="mentor-sessions">${mentor.sessions}</div>
+          <div class="mentor-title">${mentor.Specialization || "No Title Available"}</div>
+          <div class="mentor-sessions">Experience: ${mentor.experience} years</div>
           <div class="mentor-info flex flex-row bg-zinc-100 rounded mt-2">
               <div class="reach exp">
                   <div class="label">Experience</div>
                   <div class="value">${mentor.experience || ""}</div>
               </div>
               <div class="reach attendance">
-                  <div class="label">Attendance</div>
-                  <div class="value">${mentor.attendance || ""}</div>
+                  <div class="label">Timeslot</div>
+                  <div class="value">${mentor.timeslot || "N/A"}</div>
               </div>
           </div>
-      `;
+        `;
       
         mentorContainer.appendChild(mentorCard);
       });
+    } else {
+      console.error("Failed to fetch mentors:", data.message);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
+
 mentorwaLogg();
 
 function removeIcon(inputElement) {
