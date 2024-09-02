@@ -14,10 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Mentee.init({
-    name: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
-    college: DataTypes.STRING,
-    interest: DataTypes.TEXT
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull:false
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    college: {
+      type:DataTypes.STRING,
+      allowNull:false
+    },
+    interest: {
+      type:DataTypes.TEXT,
+      allowNull:false
+    }
   }, {
     sequelize,
     modelName: 'Mentee',

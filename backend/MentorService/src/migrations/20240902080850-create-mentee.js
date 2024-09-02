@@ -10,16 +10,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:false
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull:false
       },
       college: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:false
       },
       interest: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull:false
       },
       createdAt: {
         allowNull: false,
