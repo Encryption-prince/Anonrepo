@@ -7,7 +7,7 @@ const MenteeController = require('../../controllers/mentee-controller');
 const router = express.Router();
 
 router.post('/mentor',MentorController.create);
-//router.delete('/city/:id',CityController.destroy);
+router.delete('/mentor/:id',MentorController.destroy);
 router.get('/mentor/:id',MentorController.get);
 router.get('/mentor', MentorController.getAll);
 

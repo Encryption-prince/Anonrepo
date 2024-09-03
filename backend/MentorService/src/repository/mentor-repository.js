@@ -57,6 +57,19 @@ class MentorRepository{
 //        }
 //    }
 
+async deleteMentor(mentorId){
+    try{
+        await Mentor.destroy({
+            where:{
+                id: mentorId
+            }
+        });
+        return true;
+    }catch(error){
+        console.log("something went wrong in repository layer");
+        throw {error};
+    }
+}
 }
 
 module.exports =MentorRepository;
