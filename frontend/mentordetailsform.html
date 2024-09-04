@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css_files/mentorform.css">
 </head>
 <body>
-<form class="form">
+<form class="form" style="height: fit-content; margin-top: 17vh;">
     <p class="title">Mentor Details </p>
     <p class="message">Fill in your Details here</p>
         <div class="flex">
@@ -43,18 +43,37 @@
     </label>
 
     <p class="message" style="font-weight: 600; text-align: center;">Specialization</p>
-    <label class="lbl">
-        <input type="checkbox">
-        AI/ML Eng
+    <div class="label-container">
+      <label>
+          <input type="checkbox" id="checkbox1">
+          <span class="lbl" for="checkbox1">AI-ML</span>
       </label>
-      <label class="lbl">
-        <input type="checkbox">
-        Design
+  
+      <label>
+          <input type="checkbox" id="checkbox2">
+          <span class="lbl" for="checkbox2">IOT</span>
       </label>
-      <label class="lbl">
-        <input type="checkbox">
-        Market analyst
+  
+      <label>
+          <input type="checkbox" id="checkbox3">
+          <span class="lbl" for="checkbox3">Data Science</span>
       </label>
+      <label>
+          <input type="checkbox" id="checkbox3">
+          <span class="lbl" for="checkbox3">INFLUENCER</span>
+      </label>
+      <label>
+          <input type="checkbox" id="checkbox3">
+          <span class="lbl" for="checkbox3">VIDEO EDITING</span>
+      </label>
+  
+      <label>
+          <input type="checkbox" id="checkbox4">
+          <span class="lbl" for="checkbox4">DEVELOPER</span>
+      </label>
+  
+      <!-- Add as many checkboxes as needed -->
+  </div>
     <!-- <div class="radio-inputs">
         <label class="radio">
           <input type="radio" name="radio" checked="">
