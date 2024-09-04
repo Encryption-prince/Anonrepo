@@ -59,6 +59,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     rating: {
       type: DataTypes.FLOAT
+    },
+    bio:{
+      type:DataTypes.TEXT,
+      allowNull:false
+    },
+    language:{
+      type:DataTypes.STRING,
+      allowNull:false
+    },
+    courses:{
+      type:DataTypes.JSON
     }
   }, {
     sequelize,

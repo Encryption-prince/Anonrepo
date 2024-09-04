@@ -55,6 +55,17 @@ module.exports = {
       rating: {
         type: Sequelize.FLOAT
       },
+      bio:{
+        type: Sequelize.TEXT,
+        allowNull:false
+      },
+      language:{
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      courses:{
+        type: Sequelize.JSON
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
