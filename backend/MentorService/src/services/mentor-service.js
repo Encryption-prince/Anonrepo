@@ -34,6 +34,15 @@ class MentorService{
             throw {error};
         }
     }
+    async deleteMentor(mentorId){
+        try{
+            const response = this.mentorRepository.deleteMentor(mentorId);
+            return response;
+        }catch(error){
+            console.log("something went wrong in service layer");
+            throw {error};
+        }
+    }
     
 }
 module.exports = MentorService;

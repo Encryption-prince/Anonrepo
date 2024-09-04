@@ -16,47 +16,61 @@ module.exports = (sequelize, DataTypes) => {
   Mentor.init({
     name: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    userid:{
-      type: DataTypes.INTEGER,
-      allowNull:false
-    } ,
-    bio: {
-      type: DataTypes.TEXT,
       allowNull:false
     },
-    experience: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull:false
     },
-    IsAlumni: {
-      type: DataTypes.BOOLEAN,
-      allowNull:false
+    college: {
+      type: DataTypes.STRING,
     },
-    College: {
+    office: {
       type: DataTypes.STRING
     },
-    Specialization: {
+    experience_years: {
+      type: DataTypes.INTEGER,
+      allowNull:false
+    },
+    experience_work: {
+      type: DataTypes.JSON,
+    },
+    minutes: {
+      type: DataTypes.INTEGER
+    },
+    sessions: {
+      type: DataTypes.INTEGER
+    },
+    timeslots: {
       type: DataTypes.JSON,
       allowNull:false
     },
-    Social: {
-      type: DataTypes.JSON
-    },
-    IsAvailable: {
+    isAvailable: {
       type: DataTypes.BOOLEAN,
       allowNull:false
     },
-    email: {
+    isVerified: {
+      type: DataTypes.BOOLEAN,
+      allowNull:false
+    },
+    expertise: {
       type: DataTypes.STRING,
       allowNull:false
     },
-    timeslot: {
-      type : DataTypes.JSON,
+    rating: {
+      type: DataTypes.FLOAT
+    },
+    bio:{
+      type:DataTypes.TEXT,
       allowNull:false
+    },
+    language:{
+      type:DataTypes.STRING,
+      allowNull:false
+    },
+    courses:{
+      type:DataTypes.JSON
     }
-
   }, {
     sequelize,
     modelName: 'Mentor',
