@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADPList Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../frontend/css_files/dashboard.css">
+</head>
+<body class="bg-gray-50 font-sans no-scrollbar">
+    <header class="sticky top-0 bg-white py-4 z-10 w-full flex justify-between items-center px-6 border-b border-gray-200">
+        <!-- Left-side content  -->
+        <div></div>
+    
+        <!-- Center content: Browse and Search -->
+        
+        <!-- Right-side content -->
+        <div class="flex items-center space-x-4">
+            <!-- Theme Toggle Icon -->
+            <button id="themeToggle" class="text-gray-600 hover:text-gray-800">
+                <i class="bx bx-sun text-xl"></i>
+            </button>
+    
+            <!-- Notification Icon -->
+            <div class="relative">
+                <button class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
+            </div>
+    
+            <!-- Book Session Button -->
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Book Session
+            </button>
+        </div>
+    </header>
+    
+    
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-24 bg-white shadow-md p-4 fixed h-full flex flex-col justify-between">
+            <nav>
+              <ul>
+                <li class="mb-4">
+                  <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-home" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Home</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-compass" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Explore</span>
+                  </a>
+                </li>
+                
+                <li class="mb-4">
+                  <a href="./chat.html" class="flex flex-col items-center active">
+                    <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Messages</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Bookings</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                      <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
+                      <span class="font-size-10">More</span>
+                    </a>
+                </li>
+                  
+                  <div id="more-options" class="hidden absolute left-24 bottom-64 mt-2 w-48 bg-white rounded-lg shadow-lg">
+                    <ul class="py-2">
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Achievement</a></li>
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Connection</a></li>
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Group Session</a></li>
+                    </ul>
+                  </div>
+              </ul>
+            </nav>
+          
+            <!-- Image and hidden div -->
+            <div class="flex flex-col items-center absolute bottom-32">
+                <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                
+                <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute bottom-4 left-20 w-80 h-[500px]">
+                  <a href="#" class="py-2 px-4">Connect Calendar</a>
+                  <a href="#" class="py-2 px-4">Become Mentor</a>
+                  <a href="#" class="py-2 px-4">Wishlist</a>
+                  <a href="#" class="py-2 px-4">Setting</a>
+                  <a href="#" class="py-2 px-4">Support</a>
+                  <a href="#" class="py-2 px-4">Logout</a>
+                </div>
+              </div>
+              
+          
+          
+            
+          </aside>
+        
+    
+        <!-- Main Content -->
+        <main class="ml-24 flex-1 p-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">Calendar</h1>
+            <div>
+                <p class="text-black text-lg">Today is: <span id="current-date"></span></p>
+            </div>
+        </div>
+
+        <!-- Calendar Interface or other content goes here -->
+        <div class="mt-8 bg-white p-4 rounded-lg">
+            <!-- Calendar Header -->
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h2 class="text-xl font-semibold text-black w-72 bg-gray-200 pl-4 rounded" id="date-range">Sep 3 - 9, 2024</h2>
+                    <div class="ml-4 flex items-center">
+                        <button id="prev-week" class="text-gray-400 hover:text-gray-600 mx-2">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="next-week" class="text-gray-400 hover:text-gray-600 mx-2">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="inline-flex justify-center bg-gray-300 p-[4px] rounded-md">
+                        <a href="../frontend/dashboard_home.html" class="toggle-btn text-white inline-flex p-2 rounded-md">
+                            <i class="fas fa-calendar-day"></i>
+                        </a>
+                        <a href="#" class="toggle-btn active text-white inline-flex p-2 rounded-md">
+                            <i class="fas fa-th"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        
+            <!-- Calendar Grid -->
+            <div id="calendar-grid" class="grid grid-cols-[1fr,2fr,2fr,2fr,2fr,2fr,2fr,2fr] auto-rows-min text-gray-400">
+                <!-- Time Column -->
+                <div class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700">12:00am</div>
+                    <div class="h-16 border-b border-gray-700">1:00am</div>
+                    <div class="h-16 border-b border-gray-700">2:00am</div>
+                    <div class="h-16 border-b border-gray-700">3:00am</div>
+                    <div class="h-16 border-b border-gray-700">4:00am</div>
+                    <div class="h-16 border-b border-gray-700">5:00am</div>
+                    <div class="h-16 border-b border-gray-700">6:00am</div>
+                    <div class="h-16 border-b border-gray-700">7:00am</div>
+                    <div class="h-16 border-b border-gray-700">8:00am</div>
+                    <div class="h-16 border-b border-gray-700">9:00am</div>
+                    <div class="h-16 border-b border-gray-700">10:00am</div>
+                    <div class="h-16 border-b border-gray-700">11:00am</div>
+                    <div class="h-16 border-b border-gray-700">12:00pm</div>
+                    <div class="h-16 border-b border-gray-700">1:00pm</div>
+                    <div class="h-16 border-b border-gray-700">2:00pm</div>
+                    <div class="h-16 border-b border-gray-700">3:00pm</div>
+                    <div class="h-16 border-b border-gray-700">4:00pm</div>
+                    <div class="h-16 border-b border-gray-700">5:00pm</div>
+                    <div class="h-16 border-b border-gray-700">6:00pm</div>
+                    <div class="h-16 border-b border-gray-700">7:00pm</div>
+                    <div class="h-16 border-b border-gray-700">8:00pm</div>
+                    <div class="h-16 border-b border-gray-700">9:00pm</div>
+                    <div class="h-16 border-b border-gray-700">10:00pm</div>
+                    <div class="h-16 border-b border-gray-700">11:00pm</div>
+                    <div class="h-16 border-b border-gray-700">12:00am</div>
+                    <!-- Continue this for all time slots -->
+                </div>
+            
+                <!-- Day Columns -->
+                <div id="monday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Mon <br> Sep 3</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="tuesday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Tue <br> Sep 4</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="wednesday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Wed <br> Sep 5</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="thursday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Thu <br> Sep 6</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="friday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Fri <br> Sep 7</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="saturday" class="col-span-1 border-r border-gray-700">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Sat <br> Sep 8</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+                <div id="sunday" class="col-span-1">
+                    <div class="h-16 border-b border-gray-700 flex justify-center items-center">
+                        <p>Sun <br> Sep 9</p>
+                    </div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <div class="h-16 border-b border-gray-700"></div>
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- <div class="h-16 border-b border-gray-700"></div> -->
+                    <!-- Continue this for all time slots -->
+                </div>
+            </div>
+            
+            
+        </div>
+
+        </main>
+    </div>
+
+    <!-- Toggle Menu Script -->
+    
+
+    <script src="../frontend/js_files/dashboard.js"></script>
+    <script src="../frontend/js_files/vastCalender.js"></script>
+</body>
+</html>
