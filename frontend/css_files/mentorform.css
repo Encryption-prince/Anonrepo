@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 2000px;
+    max-width: 500px;
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
@@ -252,135 +252,39 @@ body {
     cursor: pointer;
 }
 
-input[type=checkbox] {
-    appearance: none;
-    -webkit-appearance: none;
+input[type="checkbox"] {
+    display: none;
 }
-
 .lbl {
     display: inline-flex;
-    /* Changed from inline-block to inline-flex */
     align-items: center;
-    /* Vertically center the checkbox and text */
-    border: 1px solid currentcolor;
-    color: #0d6efd;
-    margin-right: 1rem;
-    padding: 0.5em;
-    border-radius: 0.25rem;
+    justify-content: center;
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
-}
-
-.lbl:has(input[type=checkbox]:not(:checked)):hover {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:focus-visible) {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:checked) {
-    background: #0d6efd;
-    color: #fff;
-}
-
-input[type=checkbox] {
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.lbl {
-    display: inline-block;
-    /* Keep inline-block to maintain inline behavior */
-    border: 1px solid currentcolor;
-    color: #0d6efd;
-    margin-right: 1rem;
-    padding: 0.5em;
-    border-radius: 0.25rem;
-    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 5px;
     white-space: nowrap;
-    /* Prevent label from wrapping */
 }
 
-.lbl input[type=checkbox] {
-    margin-right: 0.5em;
-    /* Space between checkbox and text */
+
+input[type="checkbox"]:checked + .lbl {
+    background-color: #007bff;
+    color: white;
 }
 
-.lbl:has(input[type=checkbox]:not(:checked)):hover {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:focus-visible) {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:checked) {
-    background: #0d6efd;
-    color: #fff;
-}
-
-input[type=checkbox] {
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.lbl {
-    display: inline-flex;
-    /* Use inline-flex for flexibility */
-    align-items: center;
-    /* Vertically center checkbox and text */
-    border: 1px solid currentcolor;
-    color: #0d6efd;
-    margin-right: 1rem;
-    padding: 0.5em;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    white-space: nowrap;
-    /* Prevent text from wrapping */
-}
-
-.lbl input[type=checkbox] {
-    margin-right: 0.5em;
-    /* Space between checkbox and text */
-}
-
-.lbl:hover {
+input[type="checkbox"] + .lbl:hover {
     opacity: 0.7;
-    /* Hover effect */
 }
-
-.lbl input[type=checkbox]:checked+span {
-    background-color: #0d6efd;
-    color: #fff;
-}
-
-
-input[type=checkbox] {
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.lbl {
-    display: inline-block;
-    border: 1px solid currentcolor;
-    color: #0d6efd;
-    margin-right: 1rem;
-    padding: 0.5em;
-    border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-.lbl:has(input[type=checkbox]:not(:checked)):hover {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:focus-visible) {
-    opacity: 0.5;
-}
-
-.lbl:has(input[type=checkbox]:checked) {
-    background: #0d6efd;
-    color: #fff;
+.label-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: flex-start; 
 }
 
 @keyframes pulse {
