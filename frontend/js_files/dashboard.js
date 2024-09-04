@@ -1,58 +1,5 @@
 
-    const playbooks = [
-        {
-            title: "What do recruiters/hiring managers look for in a design portfolio?",
-            description: "Recruiters and hiring managers look for several key elements...",
-            upvotes: 23,
-            answers: 15,
-            monthsAgo: 2,
-            authorImage: "https://via.placeholder.com/40", 
-            authorName: "John Doe"
-        },
-        {
-            title: "How to decide if I want to be an IC or a manager?",
-            description: "Choosing between being an individual contributor (IC)...",
-            upvotes: 30,
-            answers: 20,
-            monthsAgo: 4,
-            authorImage: "https://via.placeholder.com/40", 
-            authorName: "Jane Smith"
-        },
-       
-    ];
 
-    function renderPlaybooks() {
-        const container = document.getElementById('playbookContainer');
-        container.innerHTML = '';
-
-        playbooks.forEach(playbook => {
-            const playbookElement = document.createElement('div');
-            playbookElement.className = 'bg-gray-50 p-4 rounded-lg hover:shadow transition-shadow duration-200';
-            playbookElement.innerHTML = `
-                <h4 class="text-lg font-semibold mb-2">${playbook.title}</h4>
-                <p class="text-gray-600 text-sm mb-4">${playbook.description}</p>
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
-                        <img src="${playbook.authorImage}" alt="Author" class="w-10 h-10 rounded-full mr-2">
-                        <div>
-                            <p class="text-gray-800 font-semibold">${playbook.authorName}</p>
-                            <p class="text-gray-500 text-xs">${playbook.monthsAgo} months ago</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <button class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm hover:bg-blue-600 transition-colors">
-                            Upvote (${playbook.upvotes})
-                        </button>
-                        <p class="text-gray-600 text-xs">${playbook.answers} answers</p>
-                    </div>
-                </div>
-            `;
-            container.appendChild(playbookElement);
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', renderPlaybooks);
-    
 
     // Calender
     document.addEventListener('DOMContentLoaded', function () {
@@ -264,3 +211,18 @@
         
     }
     moreTog();
+    function CalToggle(){
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+    
+    // Add click event listener to each button
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove the active class from all buttons
+            toggleButtons.forEach(btn => btn.classList.remove('bg-gray-700'));
+            // Add the active class to the clicked button
+            button.classList.add('bg-gray-300');
+        });
+    });
+    
+    }
+    CalToggle();
