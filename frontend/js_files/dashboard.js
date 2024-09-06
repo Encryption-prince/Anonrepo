@@ -34,7 +34,7 @@
                 date.setDate(currentWeekStart.getDate() + i);
                 const dayElement = document.createElement('div');
                 dayElement.textContent = date.getDate();
-                dayElement.classList.add('cursor-pointer', 'p-2', 'hover:bg-indigo-100', 'rounded-lg');
+                dayElement.classList.add('cursor-pointer', 'p-1', 'hover:bg-indigo-100', 'rounded-lg');
                 dayElement.onclick = () => showSessions(date);
                 calendarDatesElement.appendChild(dayElement);
             }
@@ -418,7 +418,7 @@
                 const date = new Date(currentMonthStart.getFullYear(), currentMonthStart.getMonth(), day);
                 const dayElement = document.createElement('div');
                 dayElement.textContent = day;
-                dayElement.classList.add('cursor-pointer', 'p-2', 'hover:bg-indigo-100', 'rounded-lg');
+                dayElement.classList.add('cursor-pointer', 'p-1', 'hover:bg-indigo-100', 'rounded-lg');
                 dayElement.onclick = () => showSessions(date);
                 calendarDatesElement.appendChild(dayElement);
             }
