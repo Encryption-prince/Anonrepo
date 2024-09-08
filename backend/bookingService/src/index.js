@@ -20,6 +20,3 @@ const setupAndStartServer = async()=>{
 }
 
 setupAndStartServer();
-//SSE1RHrE-KgsLlpfjMh4GM5gWc5Zzib7Hc1xodeqGHQ
-//VkHsjUn2_6kFDBYGqTTmvcN6LLPPL7WAPoXn21oCtYU
-//Z4e6gqzXwjlPx-pLIYa6TJqUDRhBBhBMtGgJTvElUME

@@ -1,121 +1,78 @@
-// Dummy booking data
-const bookings = [
-  {
-    date: "Wed 28",
-    time: "09:00 - 09:30",
-    location: "Online",
-    title: "30min call meeting Peer <> Leslie",
-    participants: ["Peer", "Leslie"],
-    status: "upcoming",
-  },
-  {
-    date: "Wed 28",
-    time: "09:00 - 09:30",
-    location: "Online",
-    title: "30min call meeting Peer <> Leslie",
-    participants: ["Peer", "Leslie"],
-    status: "upcoming",
-  },
-  {
-    date: "Wed 28",
-    time: "09:00 - 09:30",
-    location: "Online",
-    title: "30min call meeting Peer <> Leslie",
-    participants: ["Peer", "Leslie"],
-    status: "upcoming",
-  },
-  {
-    date: "Wed 28",
-    time: "09:00 - 09:30",
-    location: "Online",
-    title: "30min call meeting Peer <> Leslie",
-    participants: ["Peer", "Leslie"],
-    status: "upcoming",
-  },
-  {
-    date: "Wed 28",
-    time: "09:00 - 09:30",
-    location: "Online",
-    title: "30min call meeting Peer <> Leslie",
-    participants: ["Peer", "Leslie"],
-    status: "upcoming",
-  },
-  {
-    date: "Fri 30",
-    time: "15:20 - 16:20",
-    location: "WeWork Paris",
-    title: "Livn Product Demo",
-    participants: ["John", "Jane", "Doe"],
-    status: "pending",
-  },
-  {
-    date: "Thu 29",
-    time: "11:15 - 11:45",
-    location: "Online",
-    title: "30min call meeting Olivia, Liam <> Alban",
-    participants: ["Olivia", "Liam", "Alban"],
-    status: "recurring",
-  },
-  {
-    date: "Mon 02",
-    time: "11:15 - 11:45",
-    location: "Online",
-    title: "30min call meeting Yulia, Alvin <> Irina, Mae",
-    participants: ["Yulia", "Alvin", "Irina", "Mae"],
-    status: "past",
-  },
-  {
-    date: "Tue 03",
-    time: "10:45 - 11:45",
-    location: "Online",
-    title: "Livn Product Demo",
-    participants: ["Alice", "Bob", "Charlie"],
-    status: "cancelled",
-  },
-];
+// Function to get menteeId from URL query parameters
+function getMenteeId() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('id');
+}
+const menteeId = getMenteeId();
+// Function to fetch bookings from the API
+async function fetchBookings() {
+  try {
+    //const menteeId = getMenteeId();
+    const response = await fetch(`http://localhost:4000/api/v1/booking?menteeId=${menteeId}`); // Notice the use of backticks here // Replace with your actual API endpoint
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    if (data.success) {
+      return data.data;
+    } else {
+      console.error("Error fetching bookings:", data.err);
+      return [];
+    }
+  } catch (error) {
+    console.error("Failed to fetch data from the API:", error);
+    return [];
+  }
+}
 
-// Function to generate booking item HTML
+// Function to filter bookings based on menteeId
+function filterBookingsByMentee(bookings, menteeId) {
+  return bookings.filter(booking => booking.menteeId == menteeId);
+}
+
 // Function to generate booking item HTML
 function generateBookingItem(booking) {
   let bgColorClass = ""; // Variable to store the background color class
 
   // Assign background color class based on booking status
-  if (booking.status === "upcoming") {
-    bgColorClass = "bg-green-500 text-black";
-  } else if (booking.status === "pending") {
+  if (booking.status === "InProcess") {
+    bgColorClass = "bg-green-500 text-black"; // Customize the color for your status types
+  } else if (booking.status === "Pending") {
     bgColorClass = "bg-yellow-300 text-black";
-  } else if (booking.status === "cancelled") {
+  } else if (booking.status === "Cancelled") {
     bgColorClass = "bg-red-500 text-black";
-  } else if (booking.status === "recurring") {
-    bgColorClass = "bg-blue-200 text-black"; // Optional for recurring
-  } else if (booking.status === "past") {
-    bgColorClass = "bg-gray-300 text-black"; // Optional for past
   }
 
+  const startDateTime = new Date(booking.start).toLocaleString();
+
   return `
-        <div class="booking-item p-4 flex justify-between items-center rounded-lg shadow-sm relative border border-slate-700 ${bgColorClass}">
-            <div>
-                <p class="text-sm font-semibold">${booking.date}</p>
-                <p class="text-sm">${booking.time} | ${booking.location}</p>
-                <p class="text-sm">${booking.title}</p>
-            </div>
-            <div class="dropdown relative">
-                <button class="py-2 px-4 bg-gray-200 rounded-lg edit-button">Edit</button>
-                <div class="dropdown-content right-0 mt-2 rounded-lg shadow-lg">
-                    <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Reschedule booking</a>
-                    <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Request reschedule</a>
-                    <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Edit location</a>
-                    <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Invite people</a>
-                    <a href="#" class="block px-4 py-1 text-sm text-red-500 hover:bg-gray-100">Cancel event</a>
-                </div>
-            </div>
+    <div class="booking-item p-4 flex justify-between items-center rounded-lg shadow-sm relative border border-slate-700 ${bgColorClass}">
+      <div>
+        <p class="text-sm font-semibold">Booking ID: ${booking.id}</p>
+        <p class="text-sm">Start: ${startDateTime}</p>
+        <p class="text-sm">Status: ${booking.status}</p>
+      </div>
+      <div class="dropdown relative">
+      <a href="http://127.0.0.1:5500/AnonRepo/frontend/room.html?room=${booking.id}&name=${menteeId}"
+        <button  id="enterMeetingButton-${booking.id}" class="py-2 px-4 bg-gray-200 rounded-lg edit-button" href="abc.com" >Enter meeting</button>
+        </a>
+        <div class="dropdown-content right-0 mt-2 rounded-lg shadow-lg">
+          <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Reschedule booking</a>
+          <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Request reschedule</a>
+          <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Edit location</a>
+          <a href="#" class="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100">Invite people</a>
+          <a href="#" class="block px-4 py-1 text-sm text-red-500 hover:bg-gray-100">Cancel event</a>
         </div>
-    `;
+      </div>
+    </div>
+  `;
 }
 
-// Function to display bookings based on the selected tab
-function displayBookings(tab) {
-  const filteredBookings = bookings.filter((booking) => booking.status === tab);
+// Function to display bookings based on the menteeId
+async function displayBookings() {
+  const menteeId = getMenteeId(); // Get menteeId from query params
+  const bookings = await fetchBookings(); // Fetch the bookings from the API
+  const filteredBookings = filterBookingsByMentee(bookings, menteeId);
+  
   const bookingsList = document.getElementById("bookings-list");
   bookingsList.innerHTML = ""; // Clear the list before appending new items
 
@@ -124,86 +81,24 @@ function displayBookings(tab) {
       bookingsList.innerHTML += generateBookingItem(booking);
     });
   } else {
-    bookingsList.innerHTML =
-      '<p class="text-gray-600">No bookings available for this category.</p>';
+    bookingsList.innerHTML = '<p class="text-gray-600">No bookings available for this category.</p>';
   }
 }
 
-// Initial display of upcoming bookings
-displayBookings("upcoming");
+// Initial display of bookings
+displayBookings();
+// function constructMeetingRoom(bookingId) {
+//   const baseURL = "http://127.0.0.1:5500/AnonRepo/frontend/room.html";
+//   return `${baseURL}?room=${encodeURIComponent(bookingId)}&name=${menteeId}`;
+// }
 
-// Function to handle tab switching
-function switchTab(event) {
-  // Remove active styles from all buttons
-  tabButtons.forEach((button) => {
-    button.classList.remove("bg-white", "text-black");
-    button.classList.add("text-gray-700");
-  });
+// // Add event listener for the "Enter meeting" button
+// document.querySelectorAll('.edit-button').forEach(button => {
+//   button.addEventListener('click', function () {
+//     const bookingId = this.id.split('-').pop(); // Extract booking ID from button ID
+//     const meetingURL = constructMeetingRoom(bookingId); // Construct meeting URL
+//     window.location.href = meetingURL; // Redirect to the meeting URL
+//   });
+// });
 
-  // Add active styles to the clicked button
-  event.target.classList.remove("text-gray-700");
-  event.target.classList.add("bg-white", "text-black");
-
-  // Display bookings corresponding to the selected tab
-  const selectedTab = event.target.getAttribute("data-tab");
-  displayBookings(selectedTab);
-}
-
-// Add click event listener to each tab button
-const tabButtons = document.querySelectorAll(".tab-button");
-tabButtons.forEach((button) => {
-  button.addEventListener("click", switchTab);
-});
-
-document.addEventListener("click", function (event) {
-  // Close all dropdowns if clicked outside
-  if (!event.target.closest(".dropdown")) {
-    document.querySelectorAll(".dropdown").forEach((dropdown) => {
-      dropdown.classList.remove("active");
-    });
-  }
-
-  // Toggle the clicked dropdown
-  if (event.target.matches(".edit-button")) {
-    const allDropdowns = document.querySelectorAll(".dropdown");
-    allDropdowns.forEach((dropdown) => {
-      if (dropdown !== event.target.closest(".dropdown")) {
-        dropdown.classList.remove("active");
-      }
-    });
-
-    const dropdown = event.target.closest(".dropdown");
-    dropdown.classList.toggle("active");
-  }
-});
-
-
-function profileDiv(){
-    document.getElementById('toggleImage').addEventListener('click', function() {
-        var menu = document.getElementById('menu');
-        if (menu.classList.contains('hidden')) {
-          menu.classList.remove('hidden');
-        } else {
-          menu.classList.add('hidden');
-        }
-      });
-    }
-    profileDiv();
-    function moreTog(){
-        document.getElementById('more-button').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-        
-            var optionsDiv = document.getElementById('more-options');
-            optionsDiv.classList.toggle('hidden'); // Toggle the visibility
-        
-            // Close the div if clicked outside
-            document.addEventListener('click', function(event) {
-                if (!optionsDiv.contains(event.target) && !document.getElementById('more-button').contains(event.target)) {
-                    optionsDiv.classList.add('hidden');
-                }
-            });
-        });
-        
-        
-    }
-    moreTog();
+// Event listeners for other UI components as needed...

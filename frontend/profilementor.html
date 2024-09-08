@@ -39,10 +39,10 @@
       <li><span>4.2</span>Rating</li>
       <li><span>21</span>Communities</li>
     </ul>
-    <div class="content__button"><a class="button" href="./dashboard_home.html">
+    <div class="content__button"><a class="button" href="#">
         <div class="button__border"></div>
         <div class="button__bg"></div>
-        <p class="button__text">Dashboard</p></a></div>
+        <p class="button__text">Book</p></a></div>
   </div>
   <div class="bg">
     <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -66,6 +66,50 @@
       
       <!-- Script JS -->
       <script src="./js_files/profilementor.js"></script>
-     
+     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  // Get userId from query params
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('id'); // Assuming the query param is 'id'
+
+  if (userId) {
+    // Fetch mentor data using userId from the API
+    fetch(`http://localhost:3000/api/v1/mentor/${userId}`) // Use userId to get mentor data
+      .then(response => response.json())
+      .then(apiResponse => {
+        if (apiResponse.success) {
+          const mentorData = apiResponse.data;
+
+          // Update name and bio
+          document.querySelector('.content__title h1').innerText = mentorData.name || 'Name Not Available';
+          document.querySelector('.content__title span').innerText = mentorData.bio || 'Bio Not Available';
+
+          // Update expertise
+          document.querySelector('.content__description p:nth-of-type(1)').innerText = `Expertise: ${mentorData.expertise || 'No Expertise Listed'}`;
+          
+          // Update years of experience
+          document.querySelector('.content__description p:nth-of-type(2)').innerText = `Years of Expertise: ${mentorData.experience_years || 'n'} yr`;
+
+          // Update sessions, rating, and communities (you can set community data if available in the API)
+          document.querySelector('.content__list li:nth-of-type(1) span').innerText = mentorData.sessions || 0;
+          document.querySelector('.content__list li:nth-of-type(2) span').innerText = mentorData.rating || 'N/A';
+          document.querySelector('.content__list li:nth-of-type(3) span').innerText = '21'; // Assuming static value for communities
+
+          // Set user avatar based on userId
+          document.querySelector('.content__avatar').style.backgroundImage = `url('../../assets/${mentorData.userId}.jpg')`;
+
+        } else {
+          console.error('Error fetching mentor data:', apiResponse.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  } else {
+    console.error('No userId found in URL');
+  }
+});
+
+     </script>
    </body>
 </html>
