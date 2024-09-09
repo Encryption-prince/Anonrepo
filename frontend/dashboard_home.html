@@ -99,7 +99,7 @@
                   <div id="more-options" class="hidden absolute left-24 bottom-64 mt-2 w-48 bg-white rounded-lg shadow-lg">
                     <ul class="py-2">
                       <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Achievement</a></li>
-                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Connection</a></li>
+                      
                       <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Group Session</a></li>
                     </ul>
                   </div>
@@ -115,7 +115,7 @@
                         <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
                         <div class="mt-4">
                             <h3 class="font-bold text-[20px]">Sahil Shaw</h3>
-                            <a href="../frontend/sih -1/html/index.html" class="text-sm">view profile</a>
+                            <a href="../frontend/profilementor.html" class="text-sm">view profile</a>
                         </div>
                     </div>
                   <a href="#" class="py-2 px-4">Connect Calendar</a>
@@ -169,9 +169,147 @@
                    
     
                     <!-- Community Meetups -->
-                    <h3 class="text-xl font-semibold mb-4">Community Meetups</h3>
+                    <h3 class="text-2xl font-bold mb-4">Communities I'm in</h3>
                     <div id="event-list" class="bg-white p-6 rounded-lg shadow-md mb-8 hide-scrollbar" style="min-height: 300px; max-height: 400px; overflow-y: auto;">
                         <!-- Event Items will be populated here by JS -->
+                    </div>
+                    <h1 class="text-2xl font-bold mb-4">My Connections</h1>
+                    <div class="w-[1000px] mx-auto mt-6 mb-6 p-6 bg-white shadow-lg rounded-lg mb-3">
+                        <p class="text-gray-600 mt-2">Community members you've met and connected with will appear here. Click the profile to view your journey with a member.</p>
+                    
+                        <div class="mt-6 flex justify-between items-center">
+                            <input type="text" placeholder="Search for mentors" class="w-2/3 p-2 border border-gray-300 rounded-md">
+                            <div class="flex space-x-2">
+                                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Sort by</button>
+                                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Filter</button>
+                            </div>
+                        </div>
+                        <!-- Commenting this will be used when there is no mentor added ig it will be done in the backend -->
+                        <!-- <div class="mt-8 p-8 border border-gray-300 rounded-lg text-center w-48">
+                            <h2 class="text-xl font-semibold">Add mentors</h2>
+                            <p class="text-gray-600 mt-2">Learn and grow with over <strong class="text-sm">29,073+ mentors today.</strong></p>
+                            <a href="../frontend/explore.html" class="mt-4 inline-block">
+                                <button class="px-4 py-1 bg-black text-white rounded-md text-xs">
+                                    Discover Mentors
+                                </button>
+                            </a>
+                            
+                        </div> -->
+                        <div class="wrapper">
+                            <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                            <ul class="carousel">
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                <li class="card">
+                                    <!-- <div class="img"><img src=
+                    "../frontend/assets/myimg.jpg" 
+                                                          alt="" draggable="false"> </div>
+                                    <h2 style="color: green; font-weight:bold;">
+                                          GeeksforGeeks
+                                      </h2>
+                                    <span>Coding Platform</span> -->
+                                    <div class="h-64 w-[208px]">
+                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                            <i id="right" class="fa-solid fas fa-angle-right"></i>
+                        </div>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md mb-8 relative">
                         <h3 class="text-xl font-semibold mb-4">Tips for Success</h3>
