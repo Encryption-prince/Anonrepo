@@ -25,12 +25,11 @@ class MentorRepository{
 
     async getAllMentors(filter){
         try {
-        if(filter.name){
+            console.log(filter);
+        if(filter.userId){
             const mentors = await Mentor.findAll({
                 where:{
-                    name: {
-                        [Op.startsWith]:filter.name
-                    }
+                    userId:filter.userId
                 }
         });
         return mentors;

@@ -58,12 +58,10 @@ class MenteeRepository{
     }
     async getAllMentees(filter){
         try {
-        if(filter.name){
+        if(filter.userId){
             const mentees = await Mentee.findAll({
                 where:{
-                    name: {
-                        [Op.startsWith]:filter.name
-                    }
+                    userId:filter.userId
                 }
         });
         return mentees;
