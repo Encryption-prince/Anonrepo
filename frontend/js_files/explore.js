@@ -17,7 +17,8 @@ function toggleTab(tabName) {
     .querySelector(`.tab-button[onclick="toggleTab('${tabName}')"]`)
     .classList.add("active");
 }
-
+const token = localStorage.getItem('authToken');
+console.log(token);
 document.getElementById("mentors").style.display = "block";
 
 async function mentorwaLogg() {
@@ -36,7 +37,8 @@ async function mentorwaLogg() {
         mentorCard.className = "mentor-card";
       
         mentorCard.innerHTML = `
-          <img src="${mentor.img || '../frontend/assets/default-avatar.png'}" alt="${mentor.name}">
+         <a href="http://127.0.0.1:5500/AnonRepo/frontend/profilementor.html?id=${mentor.id}" class="mentor-link">
+          <img src="images/1.png">
           <div class="mentor-name">${mentor.name}</div>
           <div class="mentor-title">${mentor.Specialization || "No Title Available"}</div>
           <div class="mentor-sessions">Experience: ${mentor.experience} years</div>
@@ -50,6 +52,7 @@ async function mentorwaLogg() {
                   <div class="value">${mentor.timeslot || "N/A"}</div>
               </div>
           </div>
+           </a>
         `;
       
         mentorContainer.appendChild(mentorCard);
@@ -229,3 +232,36 @@ function moreTog(){
     
 }
 moreTog();
+function checkAuthentication() {
+  // Send a GET request to the isAuthenticated API
+  fetch('http://localhost:5000/api/v1/isAuthenticated', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': token
+      }
+  })
+  .then(response => response.json())
+  .then(data => {
+      // Check if the response indicates success and user is authenticated
+      if (data.success ) {
+          console.log('User is authenticated and token is valid');
+          //console.log(data);
+          localStorage.setItem('userId',data.data);
+          
+          //document.getElementById('logout-btn').style.display = 'inline-block';
+          //checkIfUserIsTeacher();
+          //checkIfUserIsConvenor();
+          // Handle authenticated user logic here
+      } else {
+          console.log('User is not authenticated');
+          //document.getElementById('login-btn').style.display = 'inline-block';
+          // Handle unauthenticated user logic here
+      }
+  })
+  .catch(error => {
+      console.error('Error while checking authentication:', error);
+      // Handle error scenario here
+  });
+}
+checkAuthentication();

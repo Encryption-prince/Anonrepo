@@ -63,7 +63,7 @@ async deleteBooking(bookingId){
     try{
         await Booking.destroy({
             where:{
-                id: BookingId
+                id: bookingId
             }
         });
         return true;
