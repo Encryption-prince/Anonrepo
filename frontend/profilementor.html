@@ -110,6 +110,63 @@
   }
 });
 
+
+//lines for booking
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Extract mentorId from the query params
+  const mentorId = getQueryParam('id');
+
+  // Retrieve menteeId (userId) from localStorage
+  const menteeId = localStorage.getItem('userId');
+
+  // Function to send POST request to the booking API
+  async function bookMentor() {
+    if (!mentorId || !menteeId) {
+      alert('Unable to book. Mentor or Mentee ID missing.');
+      return;
+    }
+
+    // Create the booking data object
+    const bookingData = {
+      menteeId: parseInt(menteeId),
+      mentorId: parseInt(mentorId),
+      start: new Date().toISOString(), // Example start time (you can adjust it as needed)
+      status: "InProcess"
+    };
+
+    // Send POST request to the API
+    try {
+      const response = await fetch('http://localhost:4000/api/v1/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Booking successful!');
+        window.location.href = `http://127.0.0.1:5500/AnonRepo/frontend/bookings.html?id=${menteeId}`;
+      } else {
+        alert('Failed to book: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Error booking mentor:', error);
+      alert('An error occurred while booking the mentor.');
+    }
+  }
+
+  // Attach event listener to the "Book" button
+  document.querySelector('.content__button a').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default action of the anchor tag
+    bookMentor();
+  });
      </script>
    </body>
 </html>

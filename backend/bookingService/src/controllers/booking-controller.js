@@ -65,7 +65,7 @@ const getAll =async (req,res)=>{
 
 const destroy = async (req,res)=>{
     try {
-        const response = await mentorService.deleteBookings(req.params.id);
+        const response = await bookingService.deleteBooking(req.params.id);
         return res.status(200).json({
             data: response,
             success:true,
