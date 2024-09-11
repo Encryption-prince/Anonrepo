@@ -42,8 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     timeslots: {
-      type: DataTypes.JSON,
-      allowNull:false
+      type: DataTypes.JSON
     },
     isAvailable: {
       type: DataTypes.BOOLEAN,
@@ -70,6 +69,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     courses:{
       type:DataTypes.JSON
+    },
+    calendly:{
+      type:DataTypes.STRING
     }
   }, {
     sequelize,

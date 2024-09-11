@@ -39,3 +39,62 @@ document.addEventListener('DOMContentLoaded', function () {
     addSlotButton.addEventListener('click', addTimeSlot);
     timeSlotsContainer.addEventListener('click', removeTimeSlot);
 });
+document.querySelector('.form').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevent the form from submitting the traditional way
+    
+    // Collect form data
+    const firstName = document.getElementById('firstname').value;
+    const lastName = document.getElementById('Lastname').value;
+    const bio = document.getElementById('Bio').value;
+    const college = document.querySelector('input[placeholder="College"]').value;
+    const office = document.querySelector('input[placeholder="Office"]').value;
+    const experience = document.getElementById('Experience').value;
+    const calendly = document.getElementById('calendly').value;
+    //const Id = localStorage.getItem('userId');
+    const Id=5;
+    // Get specialization checkboxes
+    const specialization = Array.from(document.querySelectorAll('.label-container input:checked'))
+        .map(checkbox => checkbox.nextElementSibling.textContent).join(',');
+
+    // Get language checkboxes
+    const language = Array.from(document.querySelectorAll('.label-container2 input:checked'))
+        .map(checkbox => checkbox.nextElementSibling.textContent).join(',');
+
+    // Prepare the data object to be sent to the API
+    const data = {
+        name: `${firstName} ${lastName}`,
+        bio: bio,
+        college: college,
+        expertise: specialization, // from checkboxes
+        experience_years: experience,
+        isAvailable: "1", // Set as default available
+        userId: Id, // assuming userId is static for now
+        isVerified: "1", // Set as default verified
+        calendly: calendly,
+        language: language // from checkboxes
+    };
+    //console.log(data);
+    if (!data.name || !data.bio || !data.experience_years || !data.expertise || !data.language) {
+        alert("Please fill out all required fields.");
+        return;
+    }
+    try {
+        const response = await fetch('http://localhost:3000/api/v1/mentor', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( data )
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert('Mentor created successfully!');
+        } else {
+            alert('Error creating mentor: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting the form');
+    }
+});

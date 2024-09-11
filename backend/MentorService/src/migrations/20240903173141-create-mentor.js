@@ -37,8 +37,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       timeslots: {
-        type: Sequelize.JSON,
-        allowNull: false
+        type: Sequelize.JSON
       },
       isAvailable: {
         type: Sequelize.BOOLEAN,
@@ -65,6 +64,9 @@ module.exports = {
       },
       courses:{
         type: Sequelize.JSON
+      },
+      calendly:{
+        type:Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

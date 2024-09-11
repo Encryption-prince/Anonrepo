@@ -8,6 +8,8 @@
       <!-- Style CSS -->
       <link rel="stylesheet" href="./css_files/profilementor.css">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
    </head>
    <body>
        <main class="cd__main">
@@ -42,7 +44,7 @@
     <div class="content__button"><a class="button" href="#">
         <div class="button__border"></div>
         <div class="button__bg"></div>
-        <p class="button__text">Book</p></a></div>
+        <p class="button__text" id="scheduleButton">Book</p></a></div>
   </div>
   <div class="bg">
     <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -67,19 +69,21 @@
       <!-- Script JS -->
       <script src="./js_files/profilementor.js"></script>
      <script>
+      //let mentorData2;
       document.addEventListener('DOMContentLoaded', function () {
   // Get userId from query params
   const urlParams = new URLSearchParams(window.location.search);
   const userId = urlParams.get('id'); // Assuming the query param is 'id'
-
   if (userId) {
     // Fetch mentor data using userId from the API
     fetch(`http://localhost:3000/api/v1/mentor/${userId}`) // Use userId to get mentor data
       .then(response => response.json())
       .then(apiResponse => {
         if (apiResponse.success) {
-          const mentorData = apiResponse.data;
-
+           const mentorData = apiResponse.data;
+            const calendly=mentorData.calendly;
+            console.log(calendly);
+            localStorage.setItem('calendly',calendly);
           // Update name and bio
           document.querySelector('.content__title h1').innerText = mentorData.name || 'Name Not Available';
           document.querySelector('.content__title span').innerText = mentorData.bio || 'Bio Not Available';
@@ -124,49 +128,55 @@ function getQueryParam(param) {
   const menteeId = localStorage.getItem('userId');
 
   // Function to send POST request to the booking API
-  async function bookMentor() {
-    if (!mentorId || !menteeId) {
-      alert('Unable to book. Mentor or Mentee ID missing.');
-      return;
-    }
+  // async function bookMentor() {
+  //   if (!mentorId || !menteeId) {
+  //     alert('Unable to book. Mentor or Mentee ID missing.');
+  //     return;
+  //   }
 
-    // Create the booking data object
-    const bookingData = {
-      menteeId: parseInt(menteeId),
-      mentorId: parseInt(mentorId),
-      start: new Date().toISOString(), // Example start time (you can adjust it as needed)
-      status: "InProcess"
-    };
+  //   // Create the booking data object
+  //   const bookingData = {
+  //     menteeId: parseInt(menteeId),
+  //     mentorId: parseInt(mentorId),
+  //     start: new Date().toISOString(), // Example start time (you can adjust it as needed)
+  //     status: "InProcess"
+  //   };
 
-    // Send POST request to the API
-    try {
-      const response = await fetch('http://localhost:4000/api/v1/booking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(bookingData),
-      });
+  //   // Send POST request to the API
+  //   try {
+  //     const response = await fetch('http://localhost:4000/api/v1/booking', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(bookingData),
+  //     });
 
-      const result = await response.json();
+  //     const result = await response.json();
 
-      if (response.ok) {
-        alert('Booking successful!');
-        window.location.href = `http://127.0.0.1:5500/AnonRepo/frontend/bookings.html?id=${menteeId}`;
-      } else {
-        alert('Failed to book: ' + result.message);
-      }
-    } catch (error) {
-      console.error('Error booking mentor:', error);
-      alert('An error occurred while booking the mentor.');
-    }
-  }
+  //     if (response.ok) {
+  //       alert('Booking successful!');
+  //       window.location.href = `http://127.0.0.1:5500/AnonRepo/frontend/bookings.html?id=${menteeId}`;
+  //     } else {
+  //       alert('Failed to book: ' + result.message);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error booking mentor:', error);
+  //     alert('An error occurred while booking the mentor.');
+  //   }
+  // }
 
   // Attach event listener to the "Book" button
-  document.querySelector('.content__button a').addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default action of the anchor tag
-    bookMentor();
-  });
+  // document.querySelector('.content__button a').addEventListener('click', (event) => {
+  //   event.preventDefault(); // Prevent default action of the anchor tag
+  //   bookMentor();
+  // });
+  //console.log(mentorData2);
+  document.getElementById('scheduleButton').addEventListener('click', function() {
+            let calendly_link=localStorage.getItem('calendly');
+            Calendly.initPopupWidget({ url: `${calendly_link}` });
+            return false;
+        });
      </script>
    </body>
 </html>

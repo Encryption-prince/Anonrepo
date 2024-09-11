@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendly Button</title>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+
+    <button id="scheduleButton">Schedule time with me</button>
+
+    <script type="text/javascript">
+        document.getElementById('scheduleButton').addEventListener('click', function() {
+            Calendly.initPopupWidget({ url: 'https://calendly.com/saikat98kar/abc' });
+            return false;
+        });
+    </script>
+
+</body>
+</html>
