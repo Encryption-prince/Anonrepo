@@ -12,33 +12,33 @@
     <p class="message">Fill in your Details here</p>
         <div class="flex">
         <label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" id="firstname" class="input">
             <span>Firstname</span>
         </label>
 
         <label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" id="Lastname" class="input">
             <span>Lastname</span>
         </label>
     </div>  
 
     <label>
-        <textarea required="" placeholder="" class="input"></textarea>
+        <textarea required="" placeholder="" id="Bio" class="input"></textarea>
         <span>Bio</span>
     </label>
 
     <label>
-        <input required="" placeholder="" type="text" class="input">
-        <span>College</span>
+        <input placeholder="College" type="text" class="input">
+        <!-- <span>College</span> -->
     </label>
 
     <label>
-        <input required="" placeholder="" type="text" class="input">
-        <span>Office/Work</span>
+        <input  placeholder="Office" type="text" class="input">
+        <!-- <span>Office/Work</span> -->
     </label>
 
     <label>
-        <input required="" placeholder="" type="number" class="input">
+        <input required="" placeholder="" type="number"  id="Experience" class="input">
         <span>Experience</span>
     </label>
 
@@ -97,16 +97,46 @@
           <span class="name">Design</span>
         </label>
       </div> -->
-
-      <div class="time-slots-container">
-        <p>Select Available Time Slots:</p>
-        </div>
+      <p class="message" style="font-weight: 600; text-align: center;">Language</p>
+      <div class="label-container2">
+        <label>
+            <input type="checkbox" id="checkbox1">
+            <span class="lbl" for="checkbox1">Hindi</span>
+        </label>
+    
+        <label>
+            <input type="checkbox" id="checkbox2">
+            <span class="lbl" for="checkbox2">English</span>
+        </label>
+    
+        <label>
+            <input type="checkbox" id="checkbox3">
+            <span class="lbl" for="checkbox3">Bengali</span>
+        </label>
+        <label>
+            <input type="checkbox" id="checkbox3">
+            <span class="lbl" for="checkbox3">Tamil</span>
+        </label>
+        <label>
+            <input type="checkbox" id="checkbox3">
+            <span class="lbl" for="checkbox3">Telegu</span>
+        </label>
+    
+    
+        <!-- Add as many checkboxes as needed -->
     </div>
-    <button type="button" id="add-slot">Add Another Slot</button>
+    <span>If you don't have calendly create a account <a href="https://calendly.com/">here</a></span>
+    
+    <span>Calendly Link</span>
+    <label>
+        <input required="" placeholder="https://calendly.com/your-link" type="url" id="calendly" class="input">
+        
+    </label>
 
     <button class="submit">Submit</button>
 </form>
 
 <script src="./js_files/mentorform.js"></script>
+
 </body>
 </html>

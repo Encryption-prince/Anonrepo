@@ -5,6 +5,7 @@ class MentorRepository{
     
     async createMentor(data){
         try {
+            //console.log(data);
             const mentor=await Mentor.create(data);
             return mentor;
         } catch (error) {
