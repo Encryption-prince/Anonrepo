@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Calendar Embed</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        iframe {
-            border: 0;
-        }
-    </style>
+    <title>Calendly Button</title>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
-    <iframe src="https://calendar.google.com/calendar/embed?src=subhammaity6827%40gmail.com&ctz=Asia%2FKolkata" 
-            width="800" 
-            height="600" 
-            frameborder="0" 
-            scrolling="no">
-    </iframe>
+
+    <button id="scheduleButton">Schedule time with me</button>
+
+    <script type="text/javascript">
+        document.getElementById('scheduleButton').addEventListener('click', function() {
+            Calendly.initPopupWidget({ url: 'https://calendly.com/saikat98kar/abc' });
+            return false;
+        });
+    </script>
+
 </body>
 </html>
