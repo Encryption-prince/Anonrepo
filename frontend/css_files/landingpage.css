@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
 }
 
 article,
@@ -3434,22 +3434,20 @@ figcaption {
     height: 100%;
     transition: transform .4s cubic-bezier(.215, .61, .355, 1);
     position: absolute;
-    inset: 0% 0% 0% auto
+    inset: 0% 0% 0% auto;
 }
-
-
 
 .about-section-1-wrapper {
     grid-column-gap: 5%;
     grid-row-gap: 5%;
     justify-content: flex-start;
     align-items: center;
-    display: flex
+    display: flex;
 }
 
 .about-section-1-col-1 {
     flex: 1;
-    position: relative
+    position: relative;
 }
 
 .about-section-1-col-2 {
@@ -3462,7 +3460,7 @@ figcaption {
     flex-flow: column;
     margin-top: 3.75rem;
     display: flex;
-    position: relative
+    position: relative;
 }
 
 .about-us-card {
@@ -3474,11 +3472,11 @@ figcaption {
     max-width: 16rem;
     height: 22rem;
     padding: 1.5rem;
-    display: flex
+    display: flex;
 }
 
 .about-us-card.lime {
-    background-color: var(--lime-primary)
+    background-color: var(--lime-primary);
 }
 
 .about-us-card.earth {
@@ -3520,6 +3518,29 @@ figcaption {
     justify-content: center;
     align-items: center;
     display: flex
+}
+
+.about-us-cards-row .profile-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-container img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border: 3px solid white;
+}
+
+.profile-container h3 {
+    font-size: 30px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .cards-swiper-component {
@@ -5616,6 +5637,7 @@ nav li:first-child {
         margin-left: 20px;
     }
 }
+
 footer {
     background-color: rgb(23, 22, 22);
 }
@@ -5639,7 +5661,7 @@ footer {
 }
 
 .socialIcons a i {
-    font-size: 1.4em;
+    font-size: 1.7rem;
     color: black;
     opacity: 0.9;
 }
@@ -6050,7 +6072,7 @@ footer {
     .content {
         padding-block: 5rem;
         text-align: left;
-        max-width: 400px;
+        max-width: 500px;
         margin-inline-start: unset;
     }
 }
@@ -6109,7 +6131,7 @@ footer {
 .title .stroke {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--color-section-3);
+    -webkit-text-stroke: 1px var(--color-section-4);
 }
 
 .work_link {
