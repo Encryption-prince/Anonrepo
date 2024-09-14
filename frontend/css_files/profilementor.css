@@ -14,11 +14,13 @@ body {
   font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: rgba(0, 0, 0, 0.6);
 }
-
+.no-scrollbar-y{
+  overflow-y: hidden;
+}
 .profile-page {
   display: flex;
-  min-height: 100vh;
-  padding-top: 5rem;
+  min-height: 80vh;
+  padding-top: 2.5rem;
 }
 
 @media (max-width: 990px) {
@@ -31,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 800px;
+  height: 480px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -423,7 +426,7 @@ body {
 }
 
 .profile-page .content__button {
-  margin: 3rem 0 2rem;
+  margin: .8rem 0 1.7rem;
   text-align: center;
   order: 4;
 }
@@ -475,11 +478,11 @@ body {
 }
 
 .profile-page .bg {
-  width: 100%;
+  width: 95%;
   height: 50%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 6.3%;
   z-index: 1;
 }
 

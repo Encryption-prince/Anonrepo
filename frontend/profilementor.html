@@ -1,73 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="author" content="CodeHim">
-      <title>Profile</title>
-      <!-- Style CSS -->
-      <link rel="stylesheet" href="./css_files/profilementor.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADPList Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../frontend/css_files/dashboard.css">
+    <link rel="stylesheet" href="./css_files/profilementor.css">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
       <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-   </head>
-   <body>
-       <main class="cd__main">
-         <div class="profile-page">
-  <div class="content">
-    <div class="content__cover">
-      <div class="content__avatar"></div>
-      <div class="content__bull"><span></span><span></span><span></span><span></span><span></span>
-      </div>
+</head>
+<body class="bg-gray-50 font-sans no-scrollbar no-scrollbar-y">
+    <header class="sticky top-0 bg-white py-4 z-10 w-full flex justify-between items-center px-6 border-b border-gray-200">
+        <!-- Left-side content  -->
+        <div></div>
+    
+        <!-- Center content: Browse and Search -->
+        <div class="flex items-center space-x-4">
+            <button id="browseButton" class="text-gray-600 hover:text-gray-800 relative">
+                <span class="bg-gray-100 p-2 rounded">Browse <i class='bx bxs-chevron-down'></i></span>
+                <!-- Dropdown menu -->
+                <div id="browseDropdown" class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden">
+                    <ul class="space-y-2 p-2 text-gray-600">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Design</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Product</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Engineering</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">UI/UX</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Full Stack</a></li>
+                    </ul>
+                </div>
+            </button>
+            
+            <!-- <input type="text"  placeholder="Search mentors..." class="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"> -->
+            <input class="search" type="search" placeholder="Search..." onclick="removeIcon(this)" onblur="restoreIcon(this)">
+        </div>
+    
+        <!-- Right-side content -->
+        <div class="flex items-center space-x-4">
+            <!-- Theme Toggle Icon -->
+            <button id="themeToggle" class="text-gray-600 hover:text-gray-800">
+                <i class="bx bx-sun text-xl"></i>
+            </button>
+    
+            <!-- Notification Icon -->
+            <div class="relative">
+                <button class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
+            </div>
+    
+            <!-- Book Session Button -->
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Book Session
+            </button>
+        </div>
+    </header>
+    
+    
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-24 bg-white shadow-md p-4 fixed h-full flex flex-col justify-between">
+            <nav>
+              <ul>
+                <li class="mb-4">
+                  <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-home" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Home</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-compass" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Explore</span>
+                  </a>
+                </li>
+                
+                <li class="mb-4">
+                  <a href="./chat.html" class="flex flex-col items-center active">
+                    <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Messages</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Bookings</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                      <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
+                      <span class="font-size-10">More</span>
+                    </a>
+                </li>
+                  
+                  <div id="more-options" class="hidden absolute left-24 bottom-64 mt-2 w-48 bg-white rounded-lg shadow-lg">
+                    <ul class="py-2">
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Achievement</a></li>
+                      
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Group Session</a></li>
+                    </ul>
+                  </div>
+              </ul>
+            </nav>
+          
+            <!-- Image and hidden div -->
+            <div class="flex flex-col items-center absolute bottom-32">
+                <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                
+                <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute bottom-4 left-20 w-80 h-[500px]">
+                    <div class="flex gap-3 mb-2">
+                        <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                        <div class="mt-4">
+                            <h3 class="font-bold text-[20px]">Sahil Shaw</h3>
+                            <a href="../frontend/profilementor.html" class="text-sm">view profile</a>
+                        </div>
+                    </div>
+                  <a href="#" class="py-2 px-4">Connect Calendar</a>
+                  <a href="#" class="py-2 px-4">Become Mentor</a>
+                  <a href="#" class="py-2 px-4">Wishlist</a>
+                  <a href="#" class="py-2 px-4">Setting</a>
+                  <a href="#" class="py-2 px-4">Support</a>
+                  <a href="#" class="py-2 px-4">Logout</a>
+                </div>
+            </div>
+              
+          
+          
+            
+          </aside>
+        
+    
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+    
+            <!-- Profile Setup -->
+            <main class="cd__main">
+              <div class="profile-page">
+       <div class="content">
+         <div class="content__cover">
+           <div class="content__avatar"></div>
+           <div class="content__bull"><span></span><span></span><span></span><span></span><span></span>
+           </div>
+         </div>
+         <div class="content__actions"><a href="#">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+               <path fill="currentColor" d="M192 256A112 112 0 1 0 80 144a111.94 111.94 0 0 0 112 112zm76.8 32h-8.3a157.53 157.53 0 0 1-68.5 16c-24.6 0-47.6-6-68.5-16h-8.3A115.23 115.23 0 0 0 0 403.2V432a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48v-28.8A115.23 115.23 0 0 0 268.8 288z"></path>
+               <path fill="currentColor" d="M480 256a96 96 0 1 0-96-96 96 96 0 0 0 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592a48 48 0 0 0 48-48 111.94 111.94 0 0 0-112-112z"></path>
+             </svg><span>Connect</span></a><a href="#">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+               <path fill="currentColor" d="M208 352c-41 0-79.1-9.3-111.3-25-21.8 12.7-52.1 25-88.7 25a7.83 7.83 0 0 1-7.3-4.8 8 8 0 0 1 1.5-8.7c.3-.3 22.4-24.3 35.8-54.5-23.9-26.1-38-57.7-38-92C0 103.6 93.1 32 208 32s208 71.6 208 160-93.1 160-208 160z"></path>
+               <path fill="currentColor" d="M576 320c0 34.3-14.1 66-38 92 13.4 30.3 35.5 54.2 35.8 54.5a8 8 0 0 1 1.5 8.7 7.88 7.88 0 0 1-7.3 4.8c-36.6 0-66.9-12.3-88.7-25-32.2 15.8-70.3 25-111.3 25-86.2 0-160.2-40.4-191.7-97.9A299.82 299.82 0 0 0 208 384c132.3 0 240-86.1 240-192a148.61 148.61 0 0 0-1.3-20.1C522.5 195.8 576 253.1 576 320z"></path>
+             </svg><span>Message</span></a></div>
+         <div class="content__title">
+           <h1>Sample Name</h1><span>Bio</span>
+         </div>
+         <div class="content__description">
+           <p>Expertise field</p>
+           <p>Years of Expertise : n yr</p>
+         </div>
+         <ul class="content__list">
+           <li><span>65</span>Sessions</li>
+           <li><span>4.2</span>Rating</li>
+           <li><span>21</span>Communities</li>
+         </ul>
+         <div class="content__button"><a class="button" href="#">
+             <div class="button__border"></div>
+             <div class="button__bg"></div>
+             <p class="button__text" id="scheduleButton">Book</p></a></div>
+       </div>
+       <div class="bg">
+         <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+         </div>
+       </div>
+       <div class="theme-switcher-wrapper" id="theme-switcher-wrapper"><span>Themes color</span>
+         <ul>
+           <li><em class="is-active" data-theme="orange"></em></li>
+           <li><em data-theme="green"></em></li>
+           <li><em data-theme="purple"></em></li>
+           <li><em data-theme="blue"></em></li>
+         </ul>
+       </div>
+       <div class="theme-switcher-button" id="theme-switcher-button">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+           <path fill="currentColor" d="M352 0H32C14.33 0 0 14.33 0 32v224h384V32c0-17.67-14.33-32-32-32zM0 320c0 35.35 28.66 64 64 64h64v64c0 35.35 28.66 64 64 64s64-28.65 64-64v-64h64c35.34 0 64-28.65 64-64v-32H0v32zm192 104c13.25 0 24 10.74 24 24 0 13.25-10.75 24-24 24s-24-10.75-24-24c0-13.26 10.75-24 24-24z"></path>
+         </svg>
+       </div>
+     </div>
+           </main>
+            
+        </div>
     </div>
-    <div class="content__actions"><a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-          <path fill="currentColor" d="M192 256A112 112 0 1 0 80 144a111.94 111.94 0 0 0 112 112zm76.8 32h-8.3a157.53 157.53 0 0 1-68.5 16c-24.6 0-47.6-6-68.5-16h-8.3A115.23 115.23 0 0 0 0 403.2V432a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48v-28.8A115.23 115.23 0 0 0 268.8 288z"></path>
-          <path fill="currentColor" d="M480 256a96 96 0 1 0-96-96 96 96 0 0 0 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592a48 48 0 0 0 48-48 111.94 111.94 0 0 0-112-112z"></path>
-        </svg><span>Connect</span></a><a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-          <path fill="currentColor" d="M208 352c-41 0-79.1-9.3-111.3-25-21.8 12.7-52.1 25-88.7 25a7.83 7.83 0 0 1-7.3-4.8 8 8 0 0 1 1.5-8.7c.3-.3 22.4-24.3 35.8-54.5-23.9-26.1-38-57.7-38-92C0 103.6 93.1 32 208 32s208 71.6 208 160-93.1 160-208 160z"></path>
-          <path fill="currentColor" d="M576 320c0 34.3-14.1 66-38 92 13.4 30.3 35.5 54.2 35.8 54.5a8 8 0 0 1 1.5 8.7 7.88 7.88 0 0 1-7.3 4.8c-36.6 0-66.9-12.3-88.7-25-32.2 15.8-70.3 25-111.3 25-86.2 0-160.2-40.4-191.7-97.9A299.82 299.82 0 0 0 208 384c132.3 0 240-86.1 240-192a148.61 148.61 0 0 0-1.3-20.1C522.5 195.8 576 253.1 576 320z"></path>
-        </svg><span>Message</span></a></div>
-    <div class="content__title">
-      <h1>Sample Name</h1><span>Bio</span>
-    </div>
-    <div class="content__description">
-      <p>Expertise field</p>
-      <p>Years of Expertise : n yr</p>
-    </div>
-    <ul class="content__list">
-      <li><span>65</span>Sessions</li>
-      <li><span>4.2</span>Rating</li>
-      <li><span>21</span>Communities</li>
-    </ul>
-    <div class="content__button"><a class="button" href="#">
-        <div class="button__border"></div>
-        <div class="button__bg"></div>
-        <p class="button__text" id="scheduleButton">Book</p></a></div>
-  </div>
-  <div class="bg">
-    <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-  </div>
-  <div class="theme-switcher-wrapper" id="theme-switcher-wrapper"><span>Themes color</span>
-    <ul>
-      <li><em class="is-active" data-theme="orange"></em></li>
-      <li><em data-theme="green"></em></li>
-      <li><em data-theme="purple"></em></li>
-      <li><em data-theme="blue"></em></li>
-    </ul>
-  </div>
-  <div class="theme-switcher-button" id="theme-switcher-button">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-      <path fill="currentColor" d="M352 0H32C14.33 0 0 14.33 0 32v224h384V32c0-17.67-14.33-32-32-32zM0 320c0 35.35 28.66 64 64 64h64v64c0 35.35 28.66 64 64 64s64-28.65 64-64v-64h64c35.34 0 64-28.65 64-64v-32H0v32zm192 104c13.25 0 24 10.74 24 24 0 13.25-10.75 24-24 24s-24-10.75-24-24c0-13.26 10.75-24 24-24z"></path>
-    </svg>
-  </div>
-</div>
-      </main>
-      
-      <!-- Script JS -->
-      <script src="./js_files/profilementor.js"></script>
+
+    <script src="../frontend/js_files/dashboard.js"></script>
+    <script src="./js_files/profilementor.js"></script>
      <script>
       //let mentorData2;
       document.addEventListener('DOMContentLoaded', function () {
@@ -178,5 +310,5 @@ function getQueryParam(param) {
             return false;
         });
      </script>
-   </body>
+</body>
 </html>
