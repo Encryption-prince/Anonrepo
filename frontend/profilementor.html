@@ -232,7 +232,7 @@
           document.querySelector('.content__list li:nth-of-type(3) span').innerText = '21'; // Assuming static value for communities
 
           // Set user avatar based on userId
-          document.querySelector('.content__avatar').style.backgroundImage = `url('../../assets/${mentorData.userId}.jpg')`;
+          document.querySelector('.content__avatar').style.backgroundImage = `url('images/${mentorData.name}.jpg')`;
 
         } else {
           console.error('Error fetching mentor data:', apiResponse.message);

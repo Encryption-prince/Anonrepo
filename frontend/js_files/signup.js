@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 //alert("Login successful! Welcome.");
                 localStorage.setItem("authToken", result.data);
-                window.location.href = "http://127.0.0.1:5500/AnonRepo/frontend/explore.html";
+                window.location.href = "http://127.0.0.1:5500/AnonRepo/frontend/index.html";
                 // Handle successful login, e.g., redirect to dashboard
             } else {
                 alert("Login failed: " + result.message);

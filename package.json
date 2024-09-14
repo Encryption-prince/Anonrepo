@@ -1,0 +1,16 @@
+{
+  "name": "anonrepo",
+  "version": "1.0.0",
+  "description": "- Fork the repo\r - Create a folder in your local machine\r - git init\r - git clone ur repolink\r - check if u are within AnonRepo directory\r - make changes\r - git add .\r - git commit - m \"your mssg\"\r - git push origin main",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
