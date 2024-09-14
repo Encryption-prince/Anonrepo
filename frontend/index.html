@@ -98,12 +98,14 @@
             <ul>
                 <li class="logo">MentorConnect</li>
                 <li class="hideOnMobile"><a href="#">About</a></li>
-                <li class="hideOnMobile"><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
+                <li class="hideOnMobile"><a href="explore.html">Explore</a></li>
                 <li class="hideOnMobile"><a href="#">Community</a></li>
                 <li class="hideOnMobile"><a href="https://calendar.google.com/">Calender</a></li>
-                <a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">
-                <button type="button" class="get-started-btn">Register as Mentor</button>
+                <a href="mentordetailsform.html">
+                <button type="button" class="get-started-btn" id="registerMentorBtn" style="display: none;">Register as Mentor</button>
                 </a>
+                <button id="login-btn" style="display: none;" class="get-started-btn">Login</button>
+                <button id="logout-btn" style="display: none;" class="get-started-btn">Logout</button>
                 <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav>
@@ -865,6 +867,7 @@
 <script>
     const token = localStorage.getItem('authToken');
     console.log(token);
+    //let userid;
     function checkAuthentication() {
   // Send a GET request to the isAuthenticated API
   fetch('http://localhost:5000/api/v1/isAuthenticated', {
@@ -881,14 +884,16 @@
           console.log('User is authenticated and token is valid');
           //console.log(data);
           localStorage.setItem('userId',data.data);
-          
-          //document.getElementById('logout-btn').style.display = 'inline-block';
+          const userid=localStorage.getItem('userId');
+          console.log(userid);
+          checkMentorStatus(userid);
+          document.getElementById('logout-btn').style.display = 'inline-block';
           //checkIfUserIsTeacher();
           //checkIfUserIsConvenor();
           // Handle authenticated user logic here
       } else {
           console.log('User is not authenticated');
-          //document.getElementById('login-btn').style.display = 'inline-block';
+          document.getElementById('login-btn').style.display = 'inline-block';
           // Handle unauthenticated user logic here
       }
   })
@@ -898,7 +903,38 @@
   });
 }
 checkAuthentication();
+document.getElementById('login-btn').addEventListener('click', function() {
+            // Redirect to the login page or show login form
+            window.location.href = 'signup.html'; // Change this to your login page URL
+        });
 
+        // Function to handle logout button click
+document.getElementById('logout-btn').addEventListener('click', function() {
+            // Clear the token from local storage
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('userId');
+            //localStorage.removeItem('isTeacher');
+            //localStorage.removeItem('isConvenor');
+            // Redirect to the home page or perform any other action
+            //document.getElementById('chatLink').style.display = 'none';
+            window.location.href = 'index.html'; // Change this to your home page URL
+        });
+        // Function to check if user is already a mentor
+        function checkMentorStatus(userId) {
+            const url = `http://localhost:3000/api/v1/mentor?userId=${userId}`;
+            console.log("hello");
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.data.length ===0) {
+                        // If user is not a mentor, show the button
+                        document.getElementById('registerMentorBtn').style.display = 'inline-block';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        //console.log(userid);
+        //checkMentorStatus(userid); 
 </script>
 </body>
 </html>
