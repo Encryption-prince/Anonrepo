@@ -232,36 +232,3 @@ function moreTog(){
     
 }
 moreTog();
-function checkAuthentication() {
-  // Send a GET request to the isAuthenticated API
-  fetch('http://localhost:5000/api/v1/isAuthenticated', {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-          'x-access-token': token
-      }
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Check if the response indicates success and user is authenticated
-      if (data.success ) {
-          console.log('User is authenticated and token is valid');
-          //console.log(data);
-          localStorage.setItem('userId',data.data);
-          
-          //document.getElementById('logout-btn').style.display = 'inline-block';
-          //checkIfUserIsTeacher();
-          //checkIfUserIsConvenor();
-          // Handle authenticated user logic here
-      } else {
-          console.log('User is not authenticated');
-          //document.getElementById('login-btn').style.display = 'inline-block';
-          // Handle unauthenticated user logic here
-      }
-  })
-  .catch(error => {
-      console.error('Error while checking authentication:', error);
-      // Handle error scenario here
-  });
-}
-checkAuthentication();
