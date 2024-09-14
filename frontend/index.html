@@ -84,17 +84,21 @@
                 <li class="logo" onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Domain</a></li>
-                <li><a href="#">Community</a></li>
+                <li><a href="#">Comm</a></li>
                 <li><a href="#">Resources</a></li>
-                <button type="button" class="get-started-btn">Get Started</button>
+                
+                <button type="button" class="get-started-btn"> <a href="http://http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Register as Mentor</a></button>
+                
             </ul>
             <ul>
                 <li class="logo">Saarthi</li>
                 <li class="hideOnMobile"><a href="#">About</a></li>
-                <li class="hideOnMobile"><a href="#">Domain</a></li>
+                <li class="hideOnMobile"><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
                 <li class="hideOnMobile"><a href="#">Community</a></li>
-                <li class="hideOnMobile"><a href="#">Resources</a></li>
-                <button type="button" class="get-started-btn">Get Started</button>
+                <li class="hideOnMobile"><a href="https://calendar.google.com/">Calender</a></li>
+                <a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">
+                <button type="button" class="get-started-btn">Register as Mentor</button>
+                </a>
                 <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav>
@@ -105,7 +109,7 @@
 
         <div class="container-site">
             <div class="container-left">
-                <h1>Who are We</h1>
+                <h1>Who are We?</h1>
                 <div class="container-btn">
                     <button class="site-btn">Visit</button>
                 </div>
@@ -389,7 +393,7 @@
                                     <div class="text-style-overline team-name">Subham Maity</div>
                                 </div>
                                 <div class="team-col-2">
-                                    <div class="text-style-overline-small opacity-60 team-position">Frontend Dev</div>
+                                    <div class="text-style-overline-small opacity-60 team-position">Team Lead (FullStack Dev)</div>
                                 </div>
                                 <div class="team-img-preview-wrapper">
                                     <div class="team-img-wrapper">
@@ -437,7 +441,7 @@
                                     <div class="text-style-overline team-name">Sahil Shaw</div>
                                 </div>
                                 <div class="team-col-2">
-                                    <div class="text-style-overline-small opacity-60 team-position">Frontend Dev</div>
+                                    <div class="text-style-overline-small opacity-60 team-position">Frontend Dev & Ui/Ux Designer</div>
                                 </div>
                                 <div class="team-img-preview-wrapper">
                                     <div class="team-img-wrapper">
@@ -581,7 +585,7 @@
                                     <div class="text-style-overline team-name">Subho Sarkar</div>
                                 </div>
                                 <div class="team-col-2">
-                                    <div class="text-style-overline-small opacity-60 team-position">API & Frontend</div>
+                                    <div class="text-style-overline-small opacity-60 team-position">AI & Frontend</div>
                                 </div>
                                 <div class="team-img-preview-wrapper">
                                     <div class="team-img-wrapper">
@@ -868,6 +872,7 @@
     </script>
 
     <script>
+
         document.addEventListener("DOMContentLoaded", function() {
         'use strict';
 
@@ -900,6 +905,43 @@
         });
     });
     </script>
+<script>
+    const token = localStorage.getItem('authToken');
+    console.log(token);
+    function checkAuthentication() {
+  // Send a GET request to the isAuthenticated API
+  fetch('http://localhost:5000/api/v1/isAuthenticated', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': token
+      }
+  })
+  .then(response => response.json())
+  .then(data => {
+      // Check if the response indicates success and user is authenticated
+      if (data.success ) {
+          console.log('User is authenticated and token is valid');
+          //console.log(data);
+          localStorage.setItem('userId',data.data);
+          
+          //document.getElementById('logout-btn').style.display = 'inline-block';
+          //checkIfUserIsTeacher();
+          //checkIfUserIsConvenor();
+          // Handle authenticated user logic here
+      } else {
+          console.log('User is not authenticated');
+          //document.getElementById('login-btn').style.display = 'inline-block';
+          // Handle unauthenticated user logic here
+      }
+  })
+  .catch(error => {
+      console.error('Error while checking authentication:', error);
+      // Handle error scenario here
+  });
+}
+checkAuthentication();
 
+</script>
 </body>
 </html>
