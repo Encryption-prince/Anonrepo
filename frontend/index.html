@@ -98,9 +98,9 @@
             <ul>
                 <li class="logo">MentorConnect</li>
                 <li class="hideOnMobile"><a href="#">About</a></li>
-                <li class="hideOnMobile"><a href="#">Domain</a></li>
+                <li class="hideOnMobile"><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
                 <li class="hideOnMobile"><a href="#">Community</a></li>
-                <li class="hideOnMobile"><a href="#">Resources</a></li>
+                <li class="hideOnMobile"><a href="https://calendar.google.com/">Calender</a></li>
                 <a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">
                 <button type="button" class="get-started-btn">Register as Mentor</button>
                 </a>
@@ -829,6 +829,7 @@
     </script>
 
     <script>
+
         document.addEventListener("DOMContentLoaded", function() {
         'use strict';
 
@@ -862,6 +863,8 @@
     });
     </script>
 <script>
+    const token = localStorage.getItem('authToken');
+    console.log(token);
     function checkAuthentication() {
   // Send a GET request to the isAuthenticated API
   fetch('http://localhost:5000/api/v1/isAuthenticated', {
