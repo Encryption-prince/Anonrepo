@@ -5825,13 +5825,13 @@ figcaption {
 
     .resources-filter-button,
     .resource-filter-wrapper {
-        width: 100%
+        width: 100%;
     }
 
     .resource-filter-list {
         flex-flow: column;
         justify-content: center;
-        align-items: stretch
+        align-items: stretch;
     }
 
     .resource-hero-metadata {
@@ -5839,53 +5839,21 @@ figcaption {
         grid-row-gap: .5rem;
         flex-flow: column;
         justify-content: space-between;
-        align-items: flex-start
+        align-items: flex-start;
     }
 
     .careers-atf-image {
-        height: 10rem
+        height: 10rem;
     }
 
     .employee-testimonial {
-        padding: 1rem
+        padding: 1rem;
     }
 
     .skills-sect-7-grid {
         grid-column-gap: 1rem;
-        grid-row-gap: 3rem
+        grid-row-gap: 3rem;
     }
-}
-
-
-.hidden {
-    display: none;
-}
-
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 400px;
-    width: 20%;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.popup .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.popup-content {
-    margin-top: 30px;
-    /* Additional styling as needed */
 }
 
 #blur-background {
@@ -6200,6 +6168,8 @@ footer {
 
 .popup-content {
     margin-top: 30px;
+    overflow: hidden;
+    position: relative;
     /* Additional styling as needed */
 }
 
@@ -6208,8 +6178,8 @@ footer {
     font-size: 25px;
     padding-left: 10px;
     position: absolute;
-    top: 50px;
-    left: 240px;
+    top: 20px;
+    left: 230px;
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -6227,7 +6197,8 @@ footer {
     width: 100%;
     height: 100%;
     top: 0;
-    right: 0;
+    right: -100%;
+
     position: absolute;
     background: #1f3d4738;
     backdrop-filter: blur(5px);
@@ -6237,6 +6208,11 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: 1s;
+}
+
+.popup-content:hover .card-body {
+    right: 0;
 }
 
 .card-left:hover .card-body {
