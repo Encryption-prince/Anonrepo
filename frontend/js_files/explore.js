@@ -38,14 +38,14 @@ async function mentorwaLogg() {
       
         mentorCard.innerHTML = `
          <a href="http://127.0.0.1:5500/AnonRepo/frontend/profilementor.html?id=${mentor.id}" class="mentor-link">
-          <img src="images/1.png">
+          <img src="images/${mentor.name}.jpg">
           <div class="mentor-name">${mentor.name}</div>
-          <div class="mentor-title">${mentor.Specialization || "No Title Available"}</div>
-          <div class="mentor-sessions">Experience: ${mentor.experience} years</div>
+          <div class="mentor-title">${mentor.bio || "No Title Available"}</div>
+          <div class="mentor-sessions">Experience: ${mentor.experience_years} years</div>
           <div class="mentor-info flex flex-row bg-zinc-100 rounded mt-2">
               <div class="reach exp">
                   <div class="label">Experience</div>
-                  <div class="value">${mentor.experience || ""}</div>
+                  <div class="value">${mentor.experience_years || ""}</div>
               </div>
               <div class="reach attendance">
                   <div class="label">Timeslot</div>
@@ -232,6 +232,7 @@ function moreTog(){
     
 }
 moreTog();
+
 function checkAuthentication() {
   // Send a GET request to the isAuthenticated API
   fetch('http://localhost:5000/api/v1/isAuthenticated', {
@@ -283,3 +284,4 @@ function setActiveTab() {
 
 // Run the function when the page loads
 window.onload = setActiveTab;
+

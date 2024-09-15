@@ -39,9 +39,39 @@ document.addEventListener('DOMContentLoaded', function () {
     addSlotButton.addEventListener('click', addTimeSlot);
     timeSlotsContainer.addEventListener('click', removeTimeSlot);
 });
+const Id = localStorage.getItem('userId');
+console.log(Id);
 document.querySelector('.form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Prevent the form from submitting the traditional way
+    const formData = new FormData();
+    const fileInput = document.getElementById('profileImage');
     
+    if (fileInput.files.length === 0) {
+        alert("Please choose an image to upload.");
+        return;
+    }
+
+    const imageFile = fileInput.files[0];
+    formData.append('image', imageFile); // Append image to the form data
+
+    try {
+        const response = await fetch('http://localhost:7000/upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert('Image uploaded successfully!');
+            console.log(result); // Handle success response here
+        } else {
+            alert('Error uploading image.');
+            console.error('Error:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Network Error:', error);
+        alert('An error occurred while uploading the image.');
+    }
     // Collect form data
     const firstName = document.getElementById('firstname').value;
     const lastName = document.getElementById('Lastname').value;
@@ -50,8 +80,10 @@ document.querySelector('.form').addEventListener('submit', async function(e) {
     const office = document.querySelector('input[placeholder="Office"]').value;
     const experience = document.getElementById('Experience').value;
     const calendly = document.getElementById('calendly').value;
-    //const Id = localStorage.getItem('userId');
-    const Id=5;
+    
+    //const token = localStorage.getItem('authToken');
+    //const Id=7;
+    
     // Get specialization checkboxes
     const specialization = Array.from(document.querySelectorAll('.label-container input:checked'))
         .map(checkbox => checkbox.nextElementSibling.textContent).join(',');
@@ -90,11 +122,12 @@ document.querySelector('.form').addEventListener('submit', async function(e) {
         const result = await response.json();
         if (result.success) {
             alert('Mentor created successfully!');
+
         } else {
             alert('Error creating mentor: ' + result.message);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('There was an error submitting the form');
+       // alert('There was an error submitting the form: ' + error.message);
     }
 });
