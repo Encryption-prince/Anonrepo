@@ -11,11 +11,11 @@
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-family: sans-serif
+    font-family: sans-serif;
 }
 
 body {
-    margin: 0
+    margin: 0;
 }
 
 article,
@@ -121,7 +121,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace;
+    font-family: sans-serif;
     font-size: 1em
 }
 
@@ -246,7 +246,7 @@ body {
     background-color: #fff;
     min-height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
     line-height: 20px
 }
@@ -1050,7 +1050,7 @@ textarea.w-select {
 .w-widget-twitter-count-shim .w-widget-twitter-count-inner {
     text-align: center;
     color: #999;
-    font-family: serif;
+    font-family: sans-serif;
     font-size: 15px;
     line-height: 12px;
     position: relative
@@ -1445,7 +1445,7 @@ textarea.w-select {
     -webkit-tap-highlight-color: transparent;
     background: #000000e6;
     outline: 0;
-    font-family: Helvetica Neue, Helvetica, Ubuntu, Segoe UI, Verdana, sans-serif;
+    font-family: sans-serif;
     font-size: 17px;
     font-style: normal;
     font-weight: 300;
@@ -2190,7 +2190,7 @@ textarea.w-select {
 body {
     background-color: var(--pure-white);
     color: var(--dark-green);
-    font-family: Schibsted Grotesk, sans-serif;
+    font-family: sans-serif;
     font-size: 1rem;
     line-height: 140%
 }
@@ -2509,7 +2509,7 @@ figcaption {
 
 .heading-style-h2 {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 3rem;
     font-weight: 400;
     line-height: 120%
@@ -2545,7 +2545,7 @@ figcaption {
 
 .heading-style-h1 {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 3.5rem;
     font-weight: 400;
     line-height: 130%
@@ -2577,7 +2577,7 @@ figcaption {
 
 .heading-style-h4 {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 2rem;
     font-weight: 400;
     line-height: 150%
@@ -2626,7 +2626,7 @@ figcaption {
 
 .heading-style-h3 {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 1.2
@@ -2737,7 +2737,7 @@ figcaption {
     text-transform: uppercase;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-weight: 400
 }
 
@@ -2754,7 +2754,7 @@ figcaption {
     text-transform: uppercase;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-weight: 400
 }
 
@@ -2763,7 +2763,7 @@ figcaption {
     text-transform: uppercase;
     margin-top: 1.25rem;
     margin-bottom: 1rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-weight: 400
 }
 
@@ -2861,7 +2861,7 @@ figcaption {
 .text-style-overline {
     color: var(--forest-green);
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 150%
@@ -2883,7 +2883,7 @@ figcaption {
 .text-style-overline-small {
     color: var(--forest-green);
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 150%
@@ -3238,7 +3238,7 @@ figcaption {
 }
 
 .stat-title {
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 3rem;
     line-height: 120%
 }
@@ -3363,7 +3363,7 @@ figcaption {
 
 .all-caps-link {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif
+    font-family: sans-serif
 }
 
 .all-caps-link.in-solution-card {
@@ -3492,22 +3492,20 @@ figcaption {
     height: 100%;
     transition: transform .4s cubic-bezier(.215, .61, .355, 1);
     position: absolute;
-    inset: 0% 0% 0% auto
+    inset: 0% 0% 0% auto;
 }
-
-
 
 .about-section-1-wrapper {
     grid-column-gap: 5%;
     grid-row-gap: 5%;
     justify-content: flex-start;
     align-items: center;
-    display: flex
+    display: flex;
 }
 
 .about-section-1-col-1 {
     flex: 1;
-    position: relative
+    position: relative;
 }
 
 .about-section-1-col-2 {
@@ -3520,7 +3518,7 @@ figcaption {
     flex-flow: column;
     margin-top: 3.75rem;
     display: flex;
-    position: relative
+    position: relative;
 }
 
 .about-us-card {
@@ -3532,11 +3530,11 @@ figcaption {
     max-width: 16rem;
     height: 22rem;
     padding: 1.5rem;
-    display: flex
+    display: flex;
 }
 
 .about-us-card.lime {
-    background-color: var(--lime-primary)
+    background-color: var(--lime-primary);
 }
 
 .about-us-card.earth {
@@ -3578,6 +3576,29 @@ figcaption {
     justify-content: center;
     align-items: center;
     display: flex
+}
+
+.about-us-cards-row .profile-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-container img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border: 3px solid white;
+}
+
+.profile-container h3 {
+    font-size: 30px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .cards-swiper-component {
@@ -3791,7 +3812,7 @@ figcaption {
 }
 
 .highlight-paragraph {
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.5rem;
     line-height: 150%
 }
@@ -3859,7 +3880,7 @@ figcaption {
     align-items: center;
     width: 7.625rem;
     height: 7.625rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.8rem;
     transition: opacity .2s;
     display: flex
@@ -3885,7 +3906,7 @@ figcaption {
 }
 
 .sol-kpi-title {
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 3rem;
     line-height: 150%
 }
@@ -3909,7 +3930,7 @@ figcaption {
     white-space: nowrap;
     border-radius: .3rem;
     padding: .25rem .5rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.125rem;
     position: relative
 }
@@ -4011,7 +4032,7 @@ figcaption {
 
 .testimonial-name {
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: 1.5rem;
     line-height: 150%
 }
@@ -4169,7 +4190,7 @@ figcaption {
 .text-style-overline-xsmall {
     color: var(--forest-green);
     text-transform: uppercase;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: .875rem;
     font-weight: 400;
     line-height: 150%
@@ -4182,7 +4203,7 @@ figcaption {
     text-transform: uppercase;
     border-radius: .3rem;
     padding: .12rem;
-    font-family: Reddit Mono, sans-serif;
+    font-family: sans-serif;
     font-size: .875rem;
     line-height: 130%;
     position: relative
@@ -4582,7 +4603,7 @@ figcaption {
     .responsive-dropdown-text {
         color: var(--pure-white);
         text-transform: uppercase;
-        font-family: Reddit Mono, sans-serif;
+        font-family: sans-serif;
         font-size: 2rem;
         line-height: 120%;
         text-decoration: none
@@ -4608,7 +4629,7 @@ figcaption {
     .responsive-dropdown-item-link {
         color: #fff9;
         text-transform: uppercase;
-        font-family: Reddit Mono, sans-serif;
+        font-family: sans-serif;
         font-size: 1.3rem;
         text-decoration: none;
         transition: color .2s
@@ -6013,7 +6034,7 @@ footer {
 }
 
 .socialIcons a i {
-    font-size: 1.4em;
+    font-size: 1.7rem;
     color: black;
     opacity: 0.9;
 }
@@ -6429,7 +6450,7 @@ footer {
     .content {
         padding-block: 5rem;
         text-align: left;
-        max-width: 400px;
+        max-width: 500px;
         margin-inline-start: unset;
     }
 }
@@ -6488,7 +6509,7 @@ footer {
 .title .stroke {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--color-section-3);
+    -webkit-text-stroke: 1px var(--color-section-4);
 }
 
 .work_link {
