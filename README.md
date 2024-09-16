@@ -19,7 +19,8 @@ open new terminal <br>
 cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
-create a .env file in this directory, inside write "PORT=3000" <br>
+create a .env file in this directory, inside write <br>
+`PORT=3000` <br>
 npm i <br>
 npm start<br>
 # how to start AuthService?
@@ -28,7 +29,7 @@ cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
 create a .env file in this directory, inside write <br>
- `PORT=5000
+ `PORT=5000 <br>
 JWT_KEY = auth`<br>
 npm i <br>
 npm start<br>
