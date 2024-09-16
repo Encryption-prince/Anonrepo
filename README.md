@@ -15,10 +15,20 @@
  
 
 # how to start mentorService?
-clone github repo<br>
+open new terminal <br>
 cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
-"create a .env folder in this directory, inside write PORT=3000"
+create a .env file in this directory, inside write "PORT=3000" <br>
+npm i <br>
+npm start<br>
+# how to start AuthService?
+open new terminal <br>
+cd AnonRepo<br>
+cd backend<br>
+cd MentorService<br>
+create a .env file in this directory, inside write <br>
+ `PORT=5000
+JWT_KEY = auth`<br>
 npm i <br>
 npm start<br>

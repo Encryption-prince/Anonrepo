@@ -69,7 +69,7 @@
             <nav>
               <ul>
                 <li class="mb-4">
-                  <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                  <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
                     <i class="fas fa-home" style="font-size: 1.5rem"></i>
                     <span class="font-size-10">Home</span>
                   </a>
@@ -232,7 +232,7 @@
           document.querySelector('.content__list li:nth-of-type(3) span').innerText = '21'; // Assuming static value for communities
 
           // Set user avatar based on userId
-          document.querySelector('.content__avatar').style.backgroundImage = `url('images/${mentorData.name}.jpeg')`;
+          document.querySelector('.content__avatar').style.backgroundImage = `url('images/${mentorData.name}.jpg')`;
 
         } else {
           console.error('Error fetching mentor data:', apiResponse.message);
