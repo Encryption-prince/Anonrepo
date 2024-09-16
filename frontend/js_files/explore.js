@@ -37,8 +37,8 @@ async function mentorwaLogg() {
         mentorCard.className = "mentor-card";
       
         mentorCard.innerHTML = `
-         <a href="http://127.0.0.1:5500/AnonRepo/frontend/profilementor.html?id=${mentor.id}" class="mentor-link">
-          <img src="images/${mentor.name}.jpg">
+         <a href="profilementor.html?id=${mentor.id}" class="mentor-link">
+          <img src="images/${mentor.name}.jpg" style="object-fit: cover; width: 100%; height: 100%;">
           <div class="mentor-name">${mentor.name}</div>
           <div class="mentor-title">${mentor.bio || "No Title Available"}</div>
           <div class="mentor-sessions">Experience: ${mentor.experience_years} years</div>
