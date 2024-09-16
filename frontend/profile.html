@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADPList Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../frontend/css_files/dashboard.css">
+</head>
+<style>
+    
+    .star-mentor {
+      background-color: #ffeb3b;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    .mentor-photo {
+      /* border-radius: 1rem; */
+      overflow: hidden;
+      margin-top: -6rem; 
+      z-index: 10;
+    }
+    .avatar {
+      background-color: #f87171;
+      color: white;
+      font-weight: 500;
+    }
+  </style>
+<body class="bg-gray-50 font-sans no-scrollbar">
+    <header class="sticky top-0 bg-white py-4 z-50 w-full flex justify-between items-center px-6 border-b border-gray-200">
+        <!-- Left-side content  -->
+        <div></div>
+    
+        <!-- Center content: Browse and Search -->
+        <div class="flex items-center space-x-4">
+            <button id="browseButton" class="text-gray-600 hover:text-gray-800 relative">
+                <span class="bg-gray-100 p-2 rounded">Browse <i class='bx bxs-chevron-down'></i></span>
+                <!-- Dropdown menu -->
+                <div id="browseDropdown" class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden">
+                    <ul class="space-y-2 p-2 text-gray-600">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Design</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Product</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Engineering</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">UI/UX</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Full Stack</a></li>
+                    </ul>
+                </div>
+            </button>
+            
+            <!-- <input type="text"  placeholder="Search mentors..." class="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"> -->
+            <input class="search" type="search" placeholder="Search..." onclick="removeIcon(this)" onblur="restoreIcon(this)">
+        </div>
+    
+        <!-- Right-side content -->
+        <div class="flex items-center space-x-4">
+            <!-- Theme Toggle Icon -->
+            <button id="themeToggle" class="text-gray-600 hover:text-gray-800">
+                <i class="bx bx-sun text-xl"></i>
+            </button>
+    
+            <!-- Notification Icon -->
+            <div class="relative">
+                <button class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
+            </div>
+    
+            <!-- Book Session Button -->
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Book Session
+            </button>
+        </div>
+    </header>
+    
+    
+    <div class="h-full">
+        <!-- Sidebar -->
+        <aside class="w-24 bg-white shadow-md p-4 fixed h-full flex flex-col justify-between">
+            <nav>
+              <ul>
+                <li class="mb-4">
+                  <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-home" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Home</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-compass" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Explore</span>
+                  </a>
+                </li>
+                
+                <li class="mb-4">
+                  <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Messages</span>
+                  </a>
+                </li>
+                <li class="mb-4">
+                  <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                    <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+                    <span class="font-size-10">Bookings</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                      <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
+                      <span class="font-size-10">More</span>
+                    </a>
+                </li>
+                  
+                  <div id="more-options" class="hidden absolute left-24 bottom-64 mt-2 w-48 bg-white rounded-lg shadow-lg">
+                    <ul class="py-2">
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Achievement</a></li>
+                      
+                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Group Session</a></li>
+                    </ul>
+                  </div>
+              </ul>
+            </nav>
+          
+            <!-- Image and hidden div -->
+            <div class="flex flex-col items-center absolute bottom-32">
+                <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                
+                <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute bottom-4 left-20 w-80 h-[500px]">
+                    <div class="flex gap-3 mb-2">
+                        <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                        <div class="mt-4">
+                            <h3 class="font-bold text-[20px]">Sahil Shaw</h3>
+                            <a href="../frontend/profilementor.html" class="text-sm">view profile</a>
+                        </div>
+                    </div>
+                  <a href="#" class="py-2 px-4">Connect Calendar</a>
+                  <a href="#" class="py-2 px-4">Become Mentor</a>
+                  <a href="#" class="py-2 px-4">Wishlist</a>
+                  <a href="#" class="py-2 px-4">Setting</a>
+                  <a href="#" class="py-2 px-4">Support</a>
+                  <a href="#" class="py-2 px-4">Logout</a>
+                </div>
+            </div>
+              
+          
+          
+            
+        </aside>
+        
+    
+        <!-- Main Content -->
+        
+        <div class="flex flex-col">
+            <div class="flex-1 flex flex-row p-6 ml-24 gap-3">
+                <!-- Profile Setup -->
+                    <div class="bg-white shadow-lg rounded-xl max-w-8xl w-full ">
+                    <!-- Header Section -->
+                    <div class="bg-blue-700 w-full h-[12rem] rounded-lg"></div>
+                    <div class="flex justify-between items-start mb-6 p-8 pb-1">
+                      <div class="flex items-start">
+                        <div class="mentor-photo mr-4 border-4 border-white rounded-xl">
+                          <img src="../frontend/assets/img3.avif" alt="Mentor Image" class="w-36 h-36 object-cover">
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="px-3 w-36 py-2 bg-gray-100 border rounded-lg text-xs text-gray-700 ">Ask a Question</button>
+                        <button class="px-3 w-36 py-2 bg-gray-100 text-xs text-gray-700 rounded-lg ">View Pricing</button>
+                    </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-6 pt-0 pb-4 border-b-2 border-gray-300 ml-6 mr-6">
+                    <!-- Left Side (Mentor Information) -->
+                    <div class="w-1/2">
+                      <h1 class="text-2xl font-semibold text-gray-800">Anarghya Kini</h1>
+                      <p class="text-gray-600">Quality Assurance Engineer II at Amazon</p>
+                      <span class="star-mentor mt-2 inline-block">⭐ Star Mentor</span>
+                      <p class="mt-2 text-sm text-gray-500">
+                        I want to be a guide to my mentees. Mentors are always required at every stage of life. Some people get mentors at the right time. I want to be available for such mentees.
+                      </p>
+                      <div class="flex flex-row items-start space-x-3 mt-2">
+                        <div class="text-gray-600">
+                          <span class="text-yellow-500">⭐ 5.0</span> (142 Reviews)
+                        </div>
+                        <div class="text-gray-600">
+                          <span>🕑 38993+ Mentoring Mins</span>
+                        </div>
+                        <div class="text-gray-600">
+                          <span>👥 320+ Mentees</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Right Side (Experience and Rating Section) -->
+                    <div class="w-1/2">
+                        <div class="flex flex-col space-y-4 mb-8">
+                            <div class="flex items-center space-x-2 text-gray-600">
+                                <span class="text-2xl">📦</span>
+                                <span>7+ years of experience</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-600">
+                                <span class="text-2xl">🏢</span>
+                                <span>Amazon</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-600">
+                                <span class="text-2xl">💳</span>
+                                <span>Visa Inc.</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-600">
+                                <span class="text-2xl">🎓</span>
+                                <span>Manipal Academy of Higher Education</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="max-w-8xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex justify-between items-center mb-4">
+                          <h2 class="text-xl font-semibold">Recent Review</h2>
+                          <a href="#" class="text-blue-600 hover:underline">View All Reviews(142)</a>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                          I hope this message finds you well. I wanted to take a moment to express my heartfelt gratitude for the guidance and support you've provided me during our time together. Your mentorship has been invaluable to me, and I truly appreciate the time and effort you've invested in helping me grow both personally and professionally. Your insights, advice, and encouragement have made a significant difference in my journey, and I am incredibly grateful for your wisdom and expertise. I am ready to take up this mentorship.
+                        </p>
+                        <div class="flex items-center mt-6">
+                          <div class="avatar w-10 h-10 rounded-full flex items-center justify-center text-lg">S</div>
+                          <div class="ml-3">
+                            <p class="text-gray-800 font-medium">Saranya R</p>
+                            <p class="text-gray-500 text-sm">6 months ago</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                    <!-- Recent Review Section -->
+                    
+                </div>
+            
+                <!-- Booking Slots -->
+                
+            </div>
+            <div class="p-6 ml-24 bg-white shadow rounded-lg flex flex-1 flex-col">
+                <h2 class="text-xl font-semibold mb-6">Technical Skills</h2>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        API Testing with Postman
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Software Testing
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Out of box thinking in designing Testcases
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Agile
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Quality Assurance
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Defect Life cycle
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Test Driven and Behavioral Driven development
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Agile Scrum
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        JDBC
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Test Plan Design
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        SQL
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Testing types and their usage
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        JAVA
+                    </div>
+                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
+                        Waterfall model
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Technical skill-->
+        
+    </div>
+
+    <script src="../frontend/js_files/dashboard.js"></script>
+</body>
+</html>

@@ -6469,15 +6469,15 @@ footer {
 .work_num {
     display: block;
     line-height: .9;
-    text-align: right;
+    text-align: left;
     font-size: 18px;
     transform: skewX(-20def);
     color: var(--color-section-2);
 }
 
 .title {
-    text-align: right;
-    font-size: 60px;
+    text-align: left;
+    font-size: 40px;
     text-transform: uppercase;
     color: var(--color-section-3);
 }
@@ -6487,14 +6487,23 @@ footer {
     color: transparent;
     -webkit-text-stroke: 1px var(--color-section-4);
 }
+.work_left-bl p {
+    max-height: 130px; /* Adjust this value as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* Number of lines before ellipsis */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
 
 .work_link {
     display: block;
-    width: 365px;
+    width: 200px;
     margin-top: 50px;
-    margin-left: auto;
-    padding: 18px 0;
-    font-size: 20px;
+    /* margin-left: auto; */
+    padding: 8px 0;
+    font-size: 15px;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
