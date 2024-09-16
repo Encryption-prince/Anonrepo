@@ -29,7 +29,7 @@ cd AnonRepo<br>
 cd backend<br>
 cd MentorService<br>
 create a .env file in this directory, inside write <br>
- `PORT=5000 <br>
+ `PORT=5000 
 JWT_KEY = auth`<br>
 npm i <br>
 npm start<br>
