@@ -20,7 +20,7 @@ if(!roomId){
     roomId = 'main'
 }
 
-let displayName = urlParams.get('name')
+let displayName = sessionStorage.getItem('display_name')
 if(!displayName){
     window.location = 'lobby.html'
 }
