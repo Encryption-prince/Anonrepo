@@ -34,7 +34,9 @@
 <body class="bg-gray-50 font-sans no-scrollbar">
     <header class="sticky top-0 bg-white py-4 z-50 w-full flex justify-between items-center px-6 border-b border-gray-200">
         <!-- Left-side content  -->
-        <div></div>
+        <div class="ml-4">
+          <img src="../frontend/images/finalimg.svg" alt="Saarthi Image" width="100" height="70">
+      </div>
     
         <!-- Center content: Browse and Search -->
         <div class="flex items-center space-x-4">
@@ -157,11 +159,14 @@
         <!-- Main Content -->
         
         <div class="flex flex-col">
-            <div class="flex-1 flex flex-row p-6 ml-24 gap-3">
+            <div class="flex-1 flex flex-row p-6 ml-24">
                 <!-- Profile Setup -->
                     <div class="bg-white shadow-lg rounded-xl max-w-8xl w-full ">
                     <!-- Header Section -->
-                    <div class="bg-blue-700 w-full h-[12rem] rounded-lg"></div>
+                    <div class="w-full h-[12rem] rounded-t-lg overflow-hidden bg-blue-700 relative">
+                        <!-- Image inside the banner -->
+                        <img src="./assets/winning.jpg" alt="Banner Image" class="w-full h-full object-cover">
+                      </div>
                     <div class="flex justify-between items-start mb-6 p-8 pb-1">
                       <div class="flex items-start">
                         <div class="mentor-photo mr-4 border-4 border-white rounded-xl">
@@ -237,55 +242,54 @@
                     <!-- Recent Review Section -->
                     
                 </div>
-            
-                <!-- Booking Slots -->
-                
             </div>
-            <div class="p-6 ml-24 bg-white shadow rounded-lg flex flex-1 flex-col">
-                <h2 class="text-xl font-semibold mb-6">Technical Skills</h2>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        API Testing with Postman
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Software Testing
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Out of box thinking in designing Testcases
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Agile
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Quality Assurance
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Defect Life cycle
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Test Driven and Behavioral Driven development
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Agile Scrum
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        JDBC
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Test Plan Design
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        SQL
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Testing types and their usage
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        JAVA
-                    </div>
-                    <div class="flex items-center justify-center p-4 bg-blue-100 rounded shadow">
-                        Waterfall model
-                    </div>
+            <div class="p-6 ml-24 flex flex-1 flex-col">
+                <div class="bg-white shadow-lg rounded-xl max-w-8xl w-full p-8">
+                    <h2 class="text-xl font-semibold mb-6">Technical Skills</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          API Testing with Postman
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Software Testing
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Out of box thinking in designing Testcases
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Agile
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Quality Assurance
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Defect Life cycle
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Test Driven and Behavioral Driven development
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Agile Scrum
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          JDBC
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Test Plan Design
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          SQL
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Testing types and their usage
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          JAVA
+                        </div>
+                        <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-100 rounded-full shadow w-auto text-sm">
+                          Waterfall model
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
