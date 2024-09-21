@@ -3700,10 +3700,8 @@ figcaption {
     justify-content: flex-end;
     align-items: center;
     display: flex;
-    position: relative
+    position: relative;
 }
-
-
 
 .team-img-preview-wrapper {
     z-index: 50;
@@ -3717,7 +3715,7 @@ figcaption {
     transition: opacity .2s;
     display: flex;
     position: fixed;
-    inset: 0%
+    inset: 0%;
 }
 
 .team-img {
@@ -3727,7 +3725,7 @@ figcaption {
     width: 18.75rem;
     height: 18.75rem;
     position: relative;
-    box-shadow: 0 0 17px -1px #0003
+    box-shadow: 0 0 17px -1px #0003;
 }
 
 .team-img-wrapper {
@@ -4859,9 +4857,9 @@ figcaption {
         flex-flow: column
     }
 
-    .about-us-cards-wrapper {
+    /* .about-us-cards-wrapper {
         display: none
-    }
+    } */
 
     .cards-swiper-component {
         display: block
@@ -5931,11 +5929,12 @@ nav li:first-child {
     margin-right: auto;
 }
 
-.logo {
-    font-size: 25px;
-    color: rgb(0, 107, 255);
-    font-weight: 600;
-    margin-left: 25px;
+.logo-navbar {
+    position: absolute;
+    left: 40px;
+    top: 8px;
+    height: 10px;
+    width: 120px;
 }
 
 .sidebar {
@@ -6134,6 +6133,39 @@ footer {
     margin: 0 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .outer-logos {
+        padding: 0 20px;
+    }
+
+    .logos h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .logos-slide img {
+        height: 40px;
+        margin: 8px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logos {
+        padding: 40px 0;
+    }
+
+    .logos h1 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .logos-slide img {
+        height: 30px;
+        margin: 0 5px;
+    }
+}
+
+
 #page-1 {
     height: 100vh;
     background-color: violet;
@@ -6198,7 +6230,6 @@ footer {
     height: 100%;
     top: 0;
     right: -100%;
-
     position: absolute;
     background: #1f3d4738;
     backdrop-filter: blur(5px);
@@ -6268,8 +6299,18 @@ footer {
         display: none;
     }
 
-    .card-title {
-        font-size: 20px;
+    .card-info {
+        line-height: 25px;
+    }
+
+    .popup {
+        height: 400px;
+        width: 36%;
+    }
+
+    .social-icons, 
+    .card-btn {
+        display: none;
     }
 }
 
@@ -6330,8 +6371,13 @@ footer {
     background-color: var(--primary-color);
     border-radius: 1rem;
     z-index: -1;
-
     animation: show 0.75s 1.25s ease-in-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .container-site {
+        padding-bottom: 0;
+    }
 }
 
 @keyframes show {
@@ -6477,7 +6523,7 @@ footer {
 
 .title {
     text-align: left;
-    font-size: 40px;
+    font-size: 50px;
     text-transform: uppercase;
     color: var(--color-section-3);
 }
@@ -6487,6 +6533,11 @@ footer {
     color: transparent;
     -webkit-text-stroke: 1px var(--color-section-4);
 }
+
+.work_left-bl p {
+    margin-top: 30px;
+}
+
 .work_left-bl p {
     max-height: 130px; /* Adjust this value as needed */
     overflow: hidden;
@@ -6555,4 +6606,10 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
 }
