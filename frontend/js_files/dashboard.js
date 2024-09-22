@@ -182,17 +182,18 @@
     }
     searchInput();
 
-    function profileDiv(){
-    document.getElementById('toggleImage').addEventListener('click', function() {
-        var menu = document.getElementById('menu');
-        if (menu.classList.contains('hidden')) {
-          menu.classList.remove('hidden');
-        } else {
-          menu.classList.add('hidden');
+    function profileDiv() {
+            document.getElementById('toggleImage').addEventListener('click', function() {
+                var menu = document.getElementById('menu');
+                menu.classList.toggle('hidden'); // This line toggles the 'hidden' class
+            });
         }
-      });
-    }
-    profileDiv();
+        
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            profileDiv();
+        });
+        
     function moreTog(){
         document.getElementById('more-button').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent default anchor behavior

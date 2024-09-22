@@ -38,7 +38,10 @@ async function mentorwaLogg() {
       
         mentorCard.innerHTML = `
          <a href="profilementor.html?id=${mentor.id}" class="mentor-link">
-          <img src="images/${mentor.name}.jpg" style="object-fit: cover; width: 100%; height: 100%;">
+          <img
+    src="images/${mentor.name}.jpg"
+    class="object-cover w-full h-full sm:w-[300px] sm:h-[300px] object-top md:w-[100%] md:h-[100%]"
+/>
           <div class="mentor-name">${mentor.name}</div>
           <div class="mentor-title">${mentor.bio || "No Title Available"}</div>
           <div class="mentor-sessions">Experience: ${mentor.experience_years} years</div>

@@ -82,12 +82,17 @@
             </li>
             
             <li class="mb-4">
+              <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+                <span class="font-size-10">Bookings</span>
+              </a>
+            </li>
+            <li class="mb-4">
               <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
                 <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
                 <span class="font-size-10">Messages</span>
               </a>
             </li>
-            
             <li>
                 <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
                   <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
@@ -107,23 +112,23 @@
         </nav>
       
         <!-- Image and hidden div -->
-        <div class="flex flex-col items-center absolute bottom-32">
-            <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
-            
-            <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute bottom-4 left-20 w-80 h-[500px]">
-                <div class="flex gap-3 mb-2">
-                    <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
-                    <div class="mt-4">
-                        <h3 class="font-bold text-[20px]">Sahil Shaw</h3>
-                        <a href="../frontend/profilementor.html" class="text-sm">view profile</a>
+        <div class="hidden md:flex flex-col items-center mb-20">
+            <img src="https://via.placeholder.com/100" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+            <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute inset-x-0 top-20 left-[250%] transform -translate-x-1/2 w-80 h-[500px]">
+        
+                <div class="flex gap-3 mb-4 items-center">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full h-16 w-16">
+                    <div>
+                        <h3 class="font-bold text-lg">Sahil Shaw</h3>
+                        <a href="../frontend/profilementor.html" class="text-sm text-indigo-600 hover:underline">view profile</a>
                     </div>
                 </div>
-              <a href="#" class="py-2 px-4">Connect Calendar</a>
-              <a href="#" class="py-2 px-4">Become Mentor</a>
-              <a href="#" class="py-2 px-4">Wishlist</a>
-              <a href="#" class="py-2 px-4">Setting</a>
-              <a href="#" class="py-2 px-4">Support</a>
-              <a href="#" class="py-2 px-4">Logout</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Connect Calendar</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Become Mentor</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Wishlist</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Setting</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Support</a>
+                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Logout</a>
             </div>
         </div>
           
