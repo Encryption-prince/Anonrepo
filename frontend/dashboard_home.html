@@ -16,10 +16,9 @@
         <div class="ml-4">
             <img src="../frontend/images/finalimg.svg" alt="Saarthi Image" width="100" height="70">
         </div>
-        
     
         <!-- Center content: Browse and Search -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 hidden md:flex">
             <button id="browseButton" class="text-gray-600 hover:text-gray-800 relative">
                 <span class="bg-gray-100 p-2 rounded">Browse <i class='bx bxs-chevron-down'></i></span>
                 <!-- Dropdown menu -->
@@ -34,18 +33,15 @@
                 </div>
             </button>
             
-            <!-- <input type="text"  placeholder="Search mentors..." class="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"> -->
-            <input class="search" type="search" placeholder="Search..." onclick="removeIcon(this)" onblur="restoreIcon(this)">
+            <input class="search" id="header_search" type="search" placeholder="Search..." onclick="removeIcon(this)" onblur="restoreIcon(this)">
         </div>
     
         <!-- Right-side content -->
         <div class="flex items-center space-x-4">
-            <!-- Theme Toggle Icon -->
             <button id="themeToggle" class="text-gray-600 hover:text-gray-800">
                 <i class="bx bx-sun text-xl"></i>
             </button>
     
-            <!-- Notification Icon -->
             <div class="relative">
                 <button class="text-gray-600 hover:text-gray-800">
                     <i class="fas fa-bell text-xl"></i>
@@ -53,7 +49,6 @@
                 <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
             </div>
     
-            <!-- Book Session Button -->
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
                 <i class="fas fa-calendar-alt mr-2"></i>
                 Book Session
@@ -61,87 +56,92 @@
         </div>
     </header>
     
-    
-    <div class="flex h-[150vh]">
+    <div class="flex flex-col md:flex-row">
         <!-- Sidebar -->
-        <aside class="w-24 bg-white shadow-md p-4 fixed h-full flex flex-col justify-between">
-            <nav>
-              <ul>
-                <li class="mb-4">
-                  <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                    <i class="fas fa-home" style="font-size: 1.5rem"></i>
-                    <span class="font-size-10">Home</span>
-                  </a>
-                </li>
-                <li class="mb-4">
-                  <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                    <i class="fas fa-compass" style="font-size: 1.5rem"></i>
-                    <span class="font-size-10">Explore</span>
-                  </a>
-                </li>
-                
-                <li class="mb-4">
-                  <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                    <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
-                    <span class="font-size-10">Messages</span>
-                  </a>
-                </li>
-                <li class="mb-4">
-                  <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                    <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
-                    <span class="font-size-10">Bookings</span>
-                  </a>
-                </li>
-                <li>
-                    <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                      <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
-                      <span class="font-size-10">More</span>
-                    </a>
-                </li>
-                  
-                  <div id="more-options" class="hidden absolute left-24 bottom-64 mt-2 w-48 bg-white rounded-lg shadow-lg">
-                    <ul class="py-2">
-                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Achievement</a></li>
-                      
-                      <li class="px-4 py-2 hover:bg-gray-100"><a href="#">Group Session</a></li>
-                    </ul>
-                  </div>
-              </ul>
+        <aside class="bg-white shadow-md p-4 fixed w-full mt-[73px] z-50 md:w-24 h-auto bottom-0 md:top-0 md:flex flex-col justify-between md:border-t-0 border-t-2 pt-2 pb-2">
+            <!-- bg-white shadow-md p-4 fixed w-full md:w-24 h-auto bottom-0 md:top-0 md:h-screen flex flex-row md:flex-col justify-between border-t md:border-t-0 z-50 -->
+            <nav class="flex md:flex-col flex-row justify-around md:justify-start md:flex-1">
+                <ul class="flex md:block flex-row justify-evenly w-full">
+                    <li class="text-center md:mb-4">
+                        <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                          <i class="fas fa-home" style="font-size: 1.5rem"></i>
+                          <span class="font-size-10">Home</span>
+                        </a>
+                    </li>
+                    <li class="text-center md:mb-4">
+                        <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                          <i class="fas fa-compass" style="font-size: 1.5rem"></i>
+                          <span class="font-size-10">Explore</span>
+                        </a>
+                    </li>
+                    <li class="text-center md:mb-4">
+                        <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                          <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+                          <span class="font-size-10">Bookings</span>
+                        </a>
+                    </li>
+                    <li class="text-center md:mb-4">
+                        <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                          <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
+                          <span class="font-size-10">Messages</span>
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+                          <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
+                          <span class="font-size-10">More</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
-          
-            <!-- Image and hidden div -->
-            <div class="flex flex-col items-center absolute bottom-32">
-                <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
-                
-                <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute bottom-4 left-20 w-80 h-[500px]">
-                    <div class="flex gap-3 mb-2">
-                        <img src="../frontend/assets/myimg.jpg" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
-                        <div class="mt-4">
-                            <h3 class="font-bold text-[20px]">Sahil Shaw</h3>
-                            <a href="../frontend/profilementor.html" class="text-sm">view profile</a>
+        
+            <!-- Image and hidden div only for desktop -->
+            <div class="hidden md:flex flex-col items-center mb-20">
+                <img src="https://via.placeholder.com/100" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+                <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute inset-x-0 top-20 left-[250%] transform -translate-x-1/2 w-80 h-[500px]">
+            
+                    <div class="flex gap-3 mb-4 items-center">
+                        <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full h-16 w-16">
+                        <div>
+                            <h3 class="font-bold text-lg">Sahil Shaw</h3>
+                            <a href="../frontend/profilementor.html" class="text-sm text-indigo-600 hover:underline">view profile</a>
                         </div>
                     </div>
-                  <a href="#" class="py-2 px-4">Connect Calendar</a>
-                  <a href="#" class="py-2 px-4">Become Mentor</a>
-                  <a href="#" class="py-2 px-4">Wishlist</a>
-                  <a href="#" class="py-2 px-4">Setting</a>
-                  <a href="#" class="py-2 px-4">Support</a>
-                  <a href="#" class="py-2 px-4">Logout</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Connect Calendar</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Become Mentor</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Wishlist</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Setting</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Support</a>
+                    <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Logout</a>
                 </div>
             </div>
-              
-          
-          
             
+                
         </aside>
         
     
+        
+        
         <!-- Main Content -->
         <div class="flex-1 flex flex-col">
-    
-            <!-- Profile Setup -->
-            <main class="p-4 flex w-[110%]">
-                <!-- Left Main Content -->
+            <div class="block md:hidden px-4 mt-4 mb-4 ml-8">
+                <div class="flex items-center space-x-4">
+                    <button id="browseButtonMobile" class="text-gray-600 hover:text-gray-800 relative">
+                        <span class="bg-gray-100 p-2 rounded">Browse <i class='bx bxs-chevron-down'></i></span>
+                        <div id="browseDropdownMobile" class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden">
+                            <ul class="space-y-2 p-2 text-gray-600">
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Design</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Product</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Engineering</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">UI/UX</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Full Stack</a></li>
+                            </ul>
+                        </div>
+                    </button>
+                    <input class="search" type="search" placeholder="Search..." onclick="removeIcon(this)" onblur="restoreIcon(this)">
+                </div>
+            </div>
+            <main class="p-4 flex">
                 <div class="main-content flex-1 pr-4">
                     <div class="ml-2 space-y-2 mb-2">
                         <h2 class="text-4xl font-bold">Welcome <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35" style="display: inline; padding-bottom: 10px;"></h2>
@@ -168,18 +168,14 @@
                         </div>
                     </div>
                 
-                    <!-- Expert Playbooks -->
-                   
-    
-                    <!-- Community Meetups -->
                     <h3 class="text-2xl font-bold mb-4">Communities I'm in</h3>
                     <div id="event-list" class="bg-white p-6 rounded-lg shadow-md mb-8 hide-scrollbar" style="min-height: 300px; max-height: 400px; overflow-y: auto;">
                         <!-- Event Items will be populated here by JS -->
                     </div>
                     <h1 class="text-2xl font-bold mb-4">My Connections</h1>
-                    <div class="w-[1000px] mx-auto mt-6 mb-6 p-6 bg-white shadow-lg rounded-lg mb-3">
+                    <div class="responsive-width mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg mb-3">
                         <p class="text-gray-600 mt-2">Community members you've met and connected with will appear here. Click the profile to view your journey with a member.</p>
-                    
+                        
                         <div class="mt-6 flex justify-between items-center">
                             <input type="text" placeholder="Search for mentors" class="w-2/3 p-2 border border-gray-300 rounded-md">
                             <div class="flex space-x-2">
@@ -187,83 +183,54 @@
                                 <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Filter</button>
                             </div>
                         </div>
-                        <!-- Commenting this will be used when there is no mentor added ig it will be done in the backend -->
-                        <!-- <div class="mt-8 p-8 border border-gray-300 rounded-lg text-center w-48">
-                            <h2 class="text-xl font-semibold">Add mentors</h2>
-                            <p class="text-gray-600 mt-2">Learn and grow with over <strong class="text-sm">29,073+ mentors today.</strong></p>
-                            <a href="../frontend/explore.html" class="mt-4 inline-block">
-                                <button class="px-4 py-1 bg-black text-white rounded-md text-xs">
-                                    Discover Mentors
-                                </button>
-                            </a>
-                            
-                        </div> -->
-                        <div class="wrapper">
-                            <i id="left" class="fa-solid  fas fa-angle-left"></i>
-                            <ul class="carousel">
+                    
+                        <div class="wrapper mt-6 flex justify-center items-center">
+                            <i id="left" class="fa-solid fas fa-angle-left text-gray-700 text-lg md:text-xl lg:text-2xl cursor-pointer"></i> <!-- Smaller size for mobile view -->
+                            <ul class="carousel flex space-x-4">
                                 <li class="card">
-                                    
                                     <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                        <div class="img">
+                                            <img src="../frontend/assets/myimg.jpg" alt="profile image" class="h-full w-full object-cover rounded-lg">
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="card">
-                                    
                                     <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                        <div class="img">
+                                            <img src="../frontend/assets/myimg.jpg" alt="profile image" class="h-full w-full object-cover rounded-lg">
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="card">
-                                    
                                     <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                        <div class="img">
+                                            <img src="../frontend/assets/myimg.jpg" alt="profile image" class="h-full w-full object-cover rounded-lg">
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="card">
-                                    
                                     <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                        <div class="img">
+                                            <img src="../frontend/assets/myimg.jpg" alt="profile image" class="h-full w-full object-cover rounded-lg">
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="card">
-                                    
                                     <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
+                                        <div class="img">
+                                            <img src="../frontend/assets/myimg.jpg" alt="profile image" class="h-full w-full object-cover rounded-lg">
+                                        </div>
                                     </div>
                                 </li>
-                                <li class="card">
-                                    
-                                    <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                    
-                                    <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                    
-                                    <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                    
-                                    <div class="h-64 w-[208px]">
-                                        <div class="img"><img src="../frontend/assets/myimg.jpg" alt=""></div>
-                                    </div>
-                                </li>
-                                
+                                <!-- More cards... -->
                             </ul>
-                            <i id="right" class="fa-solid fas fa-angle-right"></i>
+                            <i id="right" class="fa-solid fas fa-angle-right text-gray-700 text-lg md:text-xl lg:text-2xl cursor-pointer"></i> <!-- Smaller size for mobile view -->
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md mb-8 relative">
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md relative tip-container">
                         <h3 class="text-xl font-semibold mb-4">Tips for Success</h3>
                         <div class="relative">
-                            <!-- Navigation buttons -->
                             <div class="absolute top-0 right-0 flex space-x-2">
                                 <button id="prevTip" class="text-gray-600 disabled:opacity-50" disabled>
                                     <i class="fas fa-chevron-left"></i>
@@ -273,7 +240,6 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- Tips Container -->
                         <div id="tipContainer">
                             <p class="font-bold text-gray-800">Tip 1: Stay organized and plan your week in advance.</p>
                         </div>
@@ -281,7 +247,7 @@
                 </div>
     
                 <!-- Right Sidebar -->
-                <aside class="w-[20%] p-4 fixed h-screen top-[8.5%] right-0 space-y-3">
+                <aside id="rightSidebar" class="w-full md:w-[20%] p-4 md:fixed h-screen top-[8.5%] right-0 space-y-3">
                     <!-- Profile Strength Card -->
                     <div class="bg-white p-4 rounded-lg shadow-md sticky top-0">
                         <h3 class="text-xl font-semibold mb-2">Profile Strength</h3>
@@ -306,8 +272,6 @@
                                     <a href="#" class="toggle-btn active text-white inline-flex p-2 rounded-md">
                                         <i class="fas fa-calendar-day"></i>
                                     </a>
-                        
-                                    <!-- Open New Page -->
                                     <a href="../frontend/vastCalender.html" class="toggle-btn text-white inline-flex p-2 rounded-md">
                                         <i class="fas fa-th"></i>
                                     </a>
@@ -315,7 +279,6 @@
                             </div>
                         </div>
                 
-                        <!-- Weekly Calendar View -->
                         <div class="grid grid-cols-7 gap-2 text-center text-gray-600">
                             <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
                         </div>
@@ -323,7 +286,6 @@
                             <!-- Weekly dates here -->
                         </div>
                 
-                        <!-- Toggle for Monthly Calendar -->
                         <div class="flex justify-left items-center mt-1">
                             <label class="switch">
                                 <input type="checkbox" id="toggleCalendar">
@@ -348,17 +310,13 @@
                                     <a href="#" class="toggle-btn active text-white inline-flex p-2 rounded-md">
                                         <i class="fas fa-calendar-day"></i>
                                     </a>
-                        
-                                    <!-- Open New Page -->
                                     <a href="../frontend/vastCalender.html" class="toggle-btn text-white inline-flex p-2 rounded-md">
                                         <i class="fas fa-th"></i>
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                     
-                        <!-- Monthly Calendar View -->
                         <div class="grid grid-cols-7 gap-2 text-center text-gray-600">
                             <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
                         </div>
@@ -366,7 +324,6 @@
                             <!-- Monthly dates will be dynamically inserted here -->
                         </div>
                     
-                        <!-- Toggle for Weekly Calendar -->
                         <div class="flex justify-left items-center mt-1">
                             <label class="switch">
                                 <input type="checkbox" id="toggleBackToWeekly">
@@ -376,7 +333,6 @@
                         </div>
                     </div>
                     
-                    <!-- Container for sessions -->
                     <div class="bg-white p-4 rounded-lg shadow-md mt-2">
                         <h3 class="text-lg font-semibold mb-2">Sessions on <span id="selectedDate-month">August 23, 2023</span></h3>
                         <ul id="sessionContainer" class="hide-scrollbar" style="max-height: 100px; overflow-y: auto;">
@@ -384,8 +340,6 @@
                         </ul>
                     </div>
                     
-                
-                    <!-- Milestone Section -->
                     <div id="milestoneSection" class="bg-white p-4 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold mb-2">Milestones</h3>
                         <ul class="space-y-2">
@@ -404,10 +358,6 @@
                         </ul>
                     </div>
                 </aside>
-                
-                
-            
-                
             </main>
         </div>
     </div>

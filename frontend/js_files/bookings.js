@@ -102,6 +102,17 @@ displayBookings();
 // });
 
 // Event listeners for other UI components as needed...
+function profileDiv(){
+  document.getElementById('toggleImage').addEventListener('click', function() {
+      var menu = document.getElementById('menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    });
+  }
+  profileDiv();
 function setActiveTab() {
   const currentPath = window.location.pathname.split("/").pop(); // Get the current page filename
   const links = document.querySelectorAll('nav a'); // Get all links in the navigation
