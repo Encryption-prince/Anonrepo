@@ -81,11 +81,10 @@
                 <li class="logo" onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
                 <li><a href="./404page.html">About</a></li>
                 <li><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
-                <li><a href="./404page.html">Comm</a></li>
+                <li><a href="./404page.html">Community</a></li>
                 <li><a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Calender</a></li>
-                
-                <button type="button" class="get-started-btn"> <a href="http://http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Register as Mentor</a></button>
-                
+                <button type="button" class="register-btn"><a href="http://http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Register as Mentor</a></button>
+
             </ul>
             <ul>
                 <div class="logo-navbar">
@@ -96,11 +95,11 @@
                 <li class="hideOnMobile"><a href="./404page.html">Community</a></li>
                 <li class="hideOnMobile"><a href="https://calendar.google.com/">Calender</a></li>
                 <a href="mentordetailsform.html">
-                <button type="button" class="get-started-btn" id="registerMentorBtn" style="display: none;">Register as Mentor</button>
+                <button type="button" class="register-btn" id="registerMentorBtn" style="display: none;">Register as Mentor</button>
                 </a>
                 <button id="login-btn" style="display: none;" class="get-started-btn">Login</button>
                 <button id="logout-btn" style="display: none;" class="get-started-btn">Logout</button>
-                <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav>
     
@@ -432,11 +431,7 @@
                                 <div class="team-col-2">
                                     <div class="text-style-overline-small opacity-60 team-position">Team Lead (FullStack Dev)</div>
                                 </div>
-                                <div class="team-img-preview-wrapper">
-                                    <div class="team-img-wrapper">
-                                        <!-- <img src="https://cdn.prod.website-files.com/668e7675bb17190d9433c7be/6697c2adb816e2106b0bec18_Dave%20Steward.webp" class="team-img" alt="Subham Maity" /> -->
-                                    </div>
-                                </div>
+                                
                                 <div class="team-white-lines-wapper">
                                     <div class="team-white-line"></div>
                                     <div class="team-white-line"></div>
@@ -755,7 +750,7 @@
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
 
 
-    <!-- <script>
+    <script>
         function showSidebar() {
             const sidebar = document.querySelector('.sidebar');
             sidebar.style.display = 'flex'
@@ -765,7 +760,7 @@
             const sidebar = document.querySelector('.sidebar');
             sidebar.style.display = 'none'
         }
-    </script> -->
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
