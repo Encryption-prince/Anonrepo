@@ -6139,6 +6139,7 @@ footer {
 .logos-slide {
     display: inline-block;
     animation: 15s slide infinite linear;
+    width: max-content;
 }
 
 .logos-slide img {
