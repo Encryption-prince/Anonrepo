@@ -5976,12 +5976,26 @@ nav li:first-child {
         display: none;
     }
 
+    .showOnMobile {
+        display: flex;
+    }
+
     .menu-btn {
         display: block;
     }
 
+    button[type="button"] {
+        font: white;
+        padding: 10px 0;
+    }
+
     .register-btn {
         margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        padding: 0 15px;
     }
 }
 
