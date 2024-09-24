@@ -67,26 +67,36 @@ const get = async (req,res)=>{
     }
 }
 
+const admin = require('../config/firebaseAdmin'); 
+
 const isAuthenticated = async (req, res) => {
-    try {
-        const token = req.headers['x-access-token'];
-        const response = await userService.isAuthenticated(token);
-        return res.status(200).json({
-            success: true,
-            err: {},
-            data: response,
-            message: 'user is authenticated and token is valid'
-        });
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({
-            message: 'Something went wrong',
-            data: {},
-            success: false,
-            err: error
-        });
+  try {
+    const token = req.headers['x-access-token'] || req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Access token is missing',
+      });
     }
-}
+    
+    const decodedToken = await admin.auth().verifyIdToken(token);
+
+    return res.status(200).json({
+      success: true,
+      data: decodedToken,  
+      message: 'User is authenticated and token is valid',
+    });
+  } catch (error) {
+    console.error('Token verification error:', error);
+    return res.status(500).json({
+      message: 'Invalid or expired token',
+      success: false,
+      err: error.message,
+    });
+  }
+};
+
 
 const isMentor = async (req, res) => {
     try {
