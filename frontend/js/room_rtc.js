@@ -255,3 +255,108 @@ document.getElementById('leave-btn').addEventListener('click', leaveStream)
 
 
 joinRoomInit()
+let mediaRecorder;
+let audioChunks = [];
+let isRecording = false;
+
+let toggleAudioRecording = async (e) => {
+    if (!isRecording) {
+        // Start audio recording
+        if (!localTracks[0]) {
+            console.log("Microphone not initialized!");
+            return;
+        }
+
+        // Create a MediaStream from the microphone audio track
+        let audioStream = new MediaStream([localTracks[0].getMediaStreamTrack()]);
+
+        mediaRecorder = new MediaRecorder(audioStream);
+        mediaRecorder.start();
+        isRecording = true;
+        console.log("Recording started...");
+
+        audioChunks = [];
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                audioChunks.push(event.data);
+            }
+        };
+
+        mediaRecorder.onstop = async () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+
+            // Create a download link for the audio file
+            //const downloadLink = document.getElementById('download-link');
+            //downloadLink.href = audioUrl;
+            //downloadLink.download = `audio_${new Date().getTime()}.wav`;
+            //downloadLink.style.display = 'block';
+            //downloadLink.textContent = 'Download Audio';
+
+            console.log("Recording stopped and saved.");
+
+            // Create form data to send the audio to the API
+            let formData = new FormData();
+            formData.append('audio', audioBlob, 'audio.wav');
+
+            // Send the recorded audio to the API
+            try {
+                const response = await fetch('http://localhost:4000/summarize', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                // Log the summary to the console
+                if (response.ok) {
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF();
+
+                    // Add title and annotations to the PDF
+                    pdf.setFontSize(16);
+                    pdf.text("Audio Summary", 10, 20);
+                    pdf.setFontSize(12);
+
+                    // Define max width for the text to wrap
+                    const maxWidth = 180; // Width in mm (A4 paper is 210mm wide)
+
+                    // Wrap the summary text
+                    pdf.text(data.summary, 10, 40, { maxWidth: maxWidth });
+
+                    // Add some simple annotations
+                    pdf.setFontSize(10);
+                    //pdf.text("Generated on: " + new Date().toLocaleString(), 10, 80);
+
+                    // Create a downloadable PDF
+                    const pdfUrl = pdf.output("bloburl");
+
+                    // Create a download link for the PDF
+                    const downloadLink = document.getElementById('download-link');
+                    downloadLink.href = pdfUrl;
+                    downloadLink.download = `summary_${new Date().getTime()}.pdf`;
+                    downloadLink.style.display = 'block';
+                    downloadLink.textContent = 'Download Summary PDF';
+                    
+                    // Append the PDF download link to the document body
+                    //document.body.appendChild(pdfDownloadLink);
+                } else {
+                    console.error("Error:", data);
+                }
+            } catch (error) {
+                console.error("Failed to send audio to API:", error);
+            }
+        };
+
+        e.currentTarget.textContent = 'Stop Recording';
+    } else {
+        // Stop recording
+        mediaRecorder.stop();
+        isRecording = false;
+        e.currentTarget.textContent = 'Start Recording';
+    }
+};
+
+// Add event listener to the audio record button
+document.getElementById('audio-record-btn').addEventListener('click', toggleAudioRecording);
+
