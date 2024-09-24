@@ -11,6 +11,21 @@ const cors = require("cors");
 
 app.use(cors());
 
+const verifyToken = require('./middlewares/verifyToken.js');  // Import the token verification middleware
+const router = express.Router();
+
+// Example protected route
+router.get('/protected-endpoint', verifyToken, (req, res) => {
+  // If token is valid, you can access the user data (from req.user)
+  res.json({
+    message: 'You are authenticated',
+    user: req.user,  // Contains user information like uid, email, etc.
+  });
+});
+
+module.exports = router;
+
+
 const prepareAndStartServer = ()=>{
 
     app.use(bodyParser.json());
