@@ -37,3 +37,6 @@ npm i <br>
 npm i firebase <br>
 npm i firebase-admin <br>
 npm start<br>
+# how to start Frontend?
+cd AnonRepo<br>
+node index.js<br>
