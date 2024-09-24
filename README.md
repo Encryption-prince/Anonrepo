@@ -21,7 +21,6 @@ cd backend<br>
 cd MentorService<br>
 <<<<<<< HEAD
 "create a .env file in this directory, inside write PORT=3000"
-=======
 create a .env file in this directory, inside write <br>
 `PORT=3000` <br>
 npm i <br>
@@ -34,6 +33,7 @@ cd MentorService<br>
 create a .env file in this directory, inside write <br>
  `PORT=5000 
 JWT_KEY = auth`<br>
->>>>>>> f15bf70e7cbf9409746a080a95daccca1057179d
 npm i <br>
+npm i firebase <br>
+npm i firebase-admin <br>
 npm start<br>
