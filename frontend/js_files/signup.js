@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 //alert("Login successful! Welcome.");
                 localStorage.setItem("authToken", result.data);
-                window.location.href = "index.html";
+                window.location.href = "dashboard_home.html";
                 // Handle successful login, e.g., redirect to dashboard
             } else {
                 alert("Login failed: " + result.message);
