@@ -78,27 +78,31 @@
         <!-- Left-side content  -->
         <nav>
             <ul class="sidebar">
-                <li class="logo" onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
-                <li><a href="./404page.html">About</a></li>
-                <li><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
-                <li><a href="./404page.html">Community</a></li>
-                <li><a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Calender</a></li>
-                <button type="button" class="register-btn"><a href="http://http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Register as Mentor</a></button>
+                <li class="logo showOnMobile" onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
+                <li class="showOnMobile"><a href="./404page.html">Pricing</a></li>
+                <li class="showOnMobile"><a href="http://127.0.0.1:5500/AnonRepo/frontend/explore.html">Explore</a></li>
+                <li class="showOnMobile"><a href="./404page.html">Community</a></li>
+                <li class="showOnMobile"><a href="http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Calender</a></li>
+                <button type="button" class="register-btn showOnMobile"><a href="http://http://127.0.0.1:5500/AnonRepo/frontend/mentordetailsform.html">Register as Mentor</a></button>
+                <button id="login-btn" class="register-btn showOnMobile">Login</button>
+                <button id="logout-btn" class="register-btn showOnMobile">Logout</button>
 
             </ul>
             <ul>
                 <div class="logo-navbar">
                     <img src="images/finalimg.svg">
                 </div>
+              
                 <li class="hideOnMobile"><a href="./404page.html">About</a></li>
                 <li class="hideOnMobile"><a href="explore.html">Explore</a></li>
+
                 <li class="hideOnMobile"><a href="./404page.html">Community</a></li>
                 <li class="hideOnMobile"><a href="https://calendar.google.com/">Calender</a></li>
                 <a href="mentordetailsform.html">
-                <button type="button" class="register-btn" id="registerMentorBtn" style="display: none;">Register as Mentor</button>
+                <button type="button" class="register-btn hideOnMobile" id="registerMentorBtn">Register as Mentor</button>
                 </a>
-                <button id="login-btn" style="display: none;" class="get-started-btn">Login</button>
-                <button id="logout-btn" style="display: none;" class="get-started-btn">Logout</button>
+                <button id="login-btn" class="register-btn hideOnMobile">Login</button>
+                <button id="logout-btn" class="register-btn hideOnMobile">Logout</button>
                 <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav>
