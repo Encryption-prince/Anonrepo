@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-bg);
+}
+
+.featured-product {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.featured-product h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.featured-product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.recommend {
+    background-color: #0cd47a;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.premium-header,
+.essentials-header {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.premium-header,
+.essentials-header h3 {
+    margin: 0; /* Removes default margin */
+    font-size: 22px; /* Adjust font size as needed */
+}
+
+#premium-plan,
+#corporate-plan {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+.buy-now-btn {
+    background-color: #007c89;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.premium-header select {
+    width: 100px !important;
+    margin-left: 13px !important; /* Adds space between the text and dropdown */
+    padding: 5px; /* Adds some padding to the dropdown */
+    font-size: 10px; /* Adjust font size as needed */
+}
+
+.essentials-header select {
+    width: 140px !important;
+    margin-left: 13px !important; /* Adds space between the text and dropdown */
+    padding: 5px; /* Adds some padding to the dropdown */
+    font-size: 10px; /* Adjust font size as needed */
+}
+
+/* Pricing Table */
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 0 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 15px 5px;
+}
+
+.card .price {
+    font-size: 28px;
+    color: #007c89;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.note {
+    font-size: 12px; /* Adjust size if necessary */
+    color: #666; /* Optional: change color for distinction */
+    margin: 0; 
+    line-height: 0;
+}
+
+.card button {
+    background-color: #007c89;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.card button.sign-up-btn {
+    background-color: #00b361;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.card ul li {
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.card a {
+    color: #007c89;
+    text-decoration: none;
+}
+
+.card.premium {
+    border-top: 5px solid #007c89;
+}
+
+.card.standard {
+    border-top: 5px solid #ffc107;
+}
+
+.card.essentials {
+    border-top: 5px solid #17a2b8;
+}
+
+.card.free {
+    border-top: 5px solid #28a745;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card ul li {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .premium-header h3,
+    .essentials-header h3 {
+        font-size: 18px;
+    }
+
+    .premium-header select,
+    .essentials-header select {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 5px; /* Adjust padding if needed */
+    }
+    
+    #premium-plan,
+    #corporate-plan {
+        width: 80%;
+        font-size: 11px; 
+    }
+}

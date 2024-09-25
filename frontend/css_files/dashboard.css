@@ -634,6 +634,9 @@ input.search {
 #explore_page{
   padding-left: 0;
 }
+#profile_page{
+  margin-left: 0;
+}
 #browseButton span {
   padding: 8px;
   font-size: 14px;
