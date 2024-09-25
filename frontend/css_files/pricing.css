@@ -181,15 +181,23 @@ body {
     .card ul li {
         display: block;
     }
+}
 
+@media screen and (max-width: 431px) {
     .premium-header h3,
     .essentials-header h3 {
         font-size: 18px;
     }
 
+    .premium-header select,
+    .essentials-header select {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 5px; /* Adjust padding if needed */
+    }
+    
     #premium-plan,
     #corporate-plan {
         width: 80%;
-        font-size: 10px; 
+        font-size: 11px; 
     }
 }
