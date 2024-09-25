@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price</title>
+    <link rel="stylesheet" href="./css_files/pricing.css">
+</head>
+<body>
+    <div class="featured-product">
+        <h2>Featured Product:</h2>
+        <p>Create unlimited one-on-one and group services with our new Advanced Scheduling add-on for $8/month.</p>
+    </div>
+
+    <!-- Pricing Table Section -->
+    <div class="pricing-table">
+        <div class="card free">
+            <h3>Free</h3>
+            <p>Unlock free mentorship—connect, chat, and schedule sessions effortlessly, all without commitment!</p>
+            <p class="price">₹0/month</p>
+            <button class="sign-up-btn">Sign Up Free</button>
+            <ul>
+                <li>&#x2713 Basic Mentor-Mentee Matching</li>
+                <li>&#x2713 Accessible to free mentor-led sessions</li>
+                <li>&#x2713 Limited Chat Message</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+            </ul>
+        </div>
+
+        <div class="card premium">
+            <div class="recommend">
+                <p>Recommended</p>
+            </div>
+            <div class="premium-header">
+                <h3>Pricing Plan</h3>
+                <select id="premium-plan" onchange="updatePremiumFeatures()">
+                    <option value="monthly">Monthly</option>
+                    <option value="3-monthly">3-Monthly</option>
+                    <option value="ltme">Long term mentor</option>
+                </select>
+            </div>
+            
+            <p>Experience unmatched mentorship with personalized guidance, designed to elevate your growth to the next level!</p>
+            <p class="price" id="Premium_price">₹1249<br><span class="note">(*Accessible only on weekdays)</span></p>
+            <button class="buy-now-btn">Buy Now</button>
+            <ul id="premium-features">
+                <li>&#x2713 Advanced Mentor-Mentee Matching</li>
+                <li>&#x2713 5 bookings only</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>
+            </ul>
+        </div>
+
+        <div class="card standard">
+            <h3>Session based</h3>
+            <p>Pay as you grow—only for the sessions you need, with flexible scaling and no long-term commitments!</p>
+            <p class="price">₹--<br><span class="note">(*Pay your desired mentor)</span></p>
+            <button class="buy-now-btn">Explore</button>
+            <ul>
+                <li>&#x2713 Pay as you go</li>
+                <li>&#x2713 Advanced mentor-mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>
+                <li>&#x2713 Interactive Video Call</li>
+                <li>&#x2713 Video session summary</li>
+            </ul>
+        </div>
+
+        <div class="card essentials">
+            <div class="essentials-header">
+                <h3>Institutions</h3>
+                <select id="corporate-plan" onchange="updateCorporateFeatures()">
+                    <option value="Corporate_monthly">Monthly</option>
+                    <option value="Corporate_yearly">Yearly</option>
+                </select>
+            </div>
+            
+            <p>Empower your organization with tailored mentorship solutions that drive success and build future-ready teams!</p>
+            <p class="price" id="Corporate_price">₹10000<br><span class="note">(*For 100 users)</span></p>
+            <button class="buy-now-btn">Buy Now</button>
+            <ul id="corporate-features">
+                <li>&#x2713 Admin Dashboard where admins can track progress of members</li>
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        function updatePremiumFeatures() {
+            const plan = document.getElementById('premium-plan').value;
+            const price = document.getElementById('Premium_price');
+            const features = document.getElementById('premium-features');
+        
+            if (plan === 'monthly') {
+            price.innerHTML = '₹1249<br><span class="note">(*Accessible only on weekdays)</span>';
+            features.innerHTML = `
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 5 bookings only</li>
+                <li>&#x2713 Resource sharing</li>`;
+            } else if (plan === '3-monthly') {
+            price.innerHTML = '₹2999<br><span class="note">(*Accessible on weekdays)</span>';
+            features.innerHTML = `
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 18 bookings only</li>
+                <li>&#x2713 Resource sharing</li>
+                <li>&#x2713 Interactive Video Call</li>`;
+            } else if (plan === 'ltme') {
+            price.innerHTML = '₹3000-5000<br><span class="note">(*flexible pricing & depends upon mentor)</span>';
+            features.innerHTML = `
+                <li>&#x2713 One-on-One session</li>
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>
+                <li>&#x2713 Interactive Video Call</li>
+                <li>&#x2713 Video session summary</li>`;
+            }
+        }
+
+        function updateCorporateFeatures() {
+            const planCorporate = document.getElementById('corporate-plan').value;
+            const priceCorporate = document.getElementById('Corporate_price');
+            const featuresCorporate = document.getElementById('corporate-features');
+        
+            if (planCorporate === 'Corporate_monthly') {
+            priceCorporate.innerHTML = '₹10000<br><span class="note">(*For 100 users)</span>';
+            featuresCorporate.innerHTML = `
+                <li>&#x2713 Admin Dashboard where admins can track progress of members</li>
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>`;
+            } else if (planCorporate === 'Corporate_yearly') {
+            priceCorporate.innerHTML = '₹80000<br><span class="note">(*For 100 users)</span>';
+            featuresCorporate.innerHTML = `
+                <li>&#x2713 Admin Dashboard where admins can track progress of members</li>
+                <li>&#x2713 Advanced Mentor-Mentee matching</li>
+                <li>&#x2713 Priority chat over free tier</li>
+                <li>&#x2713 Real Time Chat with Mentor</li>
+                <li>&#x2713 Resource sharing</li>
+                <li>&#x2713 Interactive Video Call</li>
+                <li>&#x2713 Video session summary</li>
+                <li>&#x2713 Discount & volume based pricing. <a href="#" style="text-decoration: underline">Contact Us</a></li>`;
+            } 
+        }
+    </script>
+</body>
+</html>
