@@ -87,6 +87,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 40px 0;
+    padding-bottom: 60px;
 }
 
 .card {
@@ -186,15 +187,16 @@ body {
 @media screen and (max-width: 431px) {
     .premium-header h3,
     .essentials-header h3 {
-        font-size: 18px;
+        font-size: 21px;
     }
 
     .premium-header select,
     .essentials-header select {
-        font-size: 12px; /* Adjust font size for smaller screens */
-        padding: 5px; /* Adjust padding if needed */
+        width: 100px !important;
+        font-size: 12px;
+        padding: 5px; 
     }
-    
+
     #premium-plan,
     #corporate-plan {
         width: 80%;
