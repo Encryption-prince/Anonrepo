@@ -10,6 +10,7 @@
     <!-- <meta property="og:type" content="website" /> -->
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css_files/landingpage.css">
     <!-- <link href="https://cdn.prod.website-files.com/668d25f80f73b3cdfd43033d/css/astrumus-site.webflow.0898a3f36.min.css" rel="stylesheet" type="text/css" /> -->
     <link rel="apple-touch-icon" sizes="180x180" href="../frontend/images/apple-touch-icon.png">
@@ -17,6 +18,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../frontend/images/favicon-16x16.png">
   <link rel="manifest" href="../frontend/images/site.webmanifest">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
+
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -67,7 +69,38 @@
             background: #172523;
             color: white;
         }
-
+        .common-frame-box {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1448px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .common-sub-frame-box {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+    .card-shadow {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 0 1px #eaeaea, 0 1px 3px 0 hsla(0, 0%, 56%, .2), 0 6px 13px 0 rgba(0, 0, 0, .04), 0 53px 32px 0 rgba(0, 0, 0, .02), inset 0 -2.4px 0 0 rgba(61, 61, 61, .04);
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+    transition: opacity 2s cubic-bezier(0, .71, .2, 1.01), 
+                transform 2s cubic-bezier(0, .71, .2, 1.01);
+        }
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.get-started-button-shadow {
+    box-shadow: 0 1px 3px 0 hsla(0, 0%, 56%, .2), 0 0 0 1px #ebebeb, inset 0 -2.4px 0 0 rgba(62, 62, 62, .04);
+}
+.card-shadow.in-view {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
         @media only screen and (max-width: 1200px) {
             .team-img {
                 width: 12rem;
@@ -78,7 +111,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 bg-white py-4 z-10 w-full flex justify-between items-center px-6 border-b border-gray-200">
+    <header>
         <!-- Left-side content  -->
         <nav>
             <ul class="sidebar">
@@ -140,7 +173,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">01</span>
                             <h2 class="title">Mentorship<span class="stroke">and guidance</span></h2>
-                            <p>Saarthi connects you with industry leaders and professionals who offer personalized mentorship tailored to your career goals. Our mentors provide valuable guidance on skill development, career navigation, and goal setting, ensuring you have the tools and insights to succeed. Whether you need strategic advice or practical tips, Saarthi s mentors are dedicated to helping you grow and achieve your aspirations, making mentorship accessible and impactful.</p>
+                            <p class="work_description">Saarthi connects you with industry leaders and professionals who offer personalized mentorship tailored to your career goals. Our mentors provide valuable guidance on skill development, career navigation, and goal setting, ensuring you have the tools and insights to succeed. Whether you need strategic advice or practical tips, Saarthi s mentors are dedicated to helping you grow and achieve your aspirations, making mentorship accessible and impactful.</p>
                             <a href="#" class="work_link">view more</a>
                         </div>
                     </div>
@@ -149,7 +182,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">02</span>
                             <h2 class="title">Video chatting<span class="stroke">one-on-one session</span></h2>
-                            <p>Engage in real-time, face-to-face video conversations with your mentor directly on Saarthi s platform. Our video chat feature allows for deeper, more personal connections, fostering effective communication and understanding. Whether you're seeking detailed feedback or quick guidance, video chatting ensures smooth, uninterrupted interaction with your mentor, enabling meaningful and direct communication that enhances your learning experience. All without the hassle of external apps everything is built-in for convenience.</p>
+                            <p class="work_description">Engage in real-time, face-to-face video conversations with your mentor directly on Saarthi s platform. Our video chat feature allows for deeper, more personal connections, fostering effective communication and understanding. Whether you're seeking detailed feedback or quick guidance, video chatting ensures smooth, uninterrupted interaction with your mentor, enabling meaningful and direct communication that enhances your learning experience. All without the hassle of external apps everything is built-in for convenience.</p>
                             <a href="#" class="work_link">view more</a>
                         </div>
                     </div>
@@ -158,7 +191,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">03</span>
                             <h2 class="title">Mentor Matching<span class="stroke">Get best suited mentor</span></h2>
-                            <p>Finding the right mentor is key to success, and Saarthi s advanced matching system ensures you re paired with the best-suited mentor for your goals. Our platform analyzes your career aspirations, skills, and preferences to connect you with a mentor who aligns with your needs. This personalized matching creates a more effective and meaningful mentoring experience, ensuring you receive guidance from someone who truly understands your field and professional journey.</p>
+                            <p class="work_description">Finding the right mentor is key to success, and Saarthi s advanced matching system ensures you re paired with the best-suited mentor for your goals. Our platform analyzes your career aspirations, skills, and preferences to connect you with a mentor who aligns with your needs. This personalized matching creates a more effective and meaningful mentoring experience, ensuring you receive guidance from someone who truly understands your field and professional journey.</p>
                             <a href="#" class="work_link">view more</a>
                         </div>
                     </div>
@@ -167,7 +200,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">04</span>
                             <h2 class="title">Automated Calender<span class="stroke">Scheduling Meets Made Easy</span></h2>
-                            <p>Scheduling your mentoring sessions has never been easier! Saarthi s automated calendar feature streamlines the process, allowing you to schedule meetings with your mentor effortlessly. The system automatically coordinates available time slots based on your and your mentor s availability, ensuring that setting up a session is quick and hassle-free. You ll receive reminders for upcoming meetings, making sure that you stay on track and manage your mentorship efficiently.
+                            <p class="work_description">Scheduling your mentoring sessions has never been easier! Saarthi s automated calendar feature streamlines the process, allowing you to schedule meetings with your mentor effortlessly. The system automatically coordinates available time slots based on your and your mentor s availability, ensuring that setting up a session is quick and hassle-free. You ll receive reminders for upcoming meetings, making sure that you stay on track and manage your mentorship efficiently.
 
                             </p>
                             <a href="#" class="work_link">view more</a>
@@ -178,7 +211,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">05</span>
                             <h2 class="title">Session Summary<span class="stroke">Short Summary of your Meet</span></h2>
-                            <p>After each mentoring session, Saarthi provides you with a concise session summary, highlighting key takeaways, action items, and important feedback. This helps you keep track of your progress and ensures that you can easily review the most valuable insights from each meeting. The session summary serves as a handy reference, allowing you to stay focused on your goals and continue building on what you ve learned, even after the session ends.
+                            <p class="work_description">After each mentoring session, Saarthi provides you with a concise session summary, highlighting key takeaways, action items, and important feedback. This helps you keep track of your progress and ensures that you can easily review the most valuable insights from each meeting. The session summary serves as a handy reference, allowing you to stay focused on your goals and continue building on what you ve learned, even after the session ends.
 
                             </p>
                             <a href="#" class="work_link">view more</a>
@@ -189,7 +222,7 @@
                         <div class="work_left-bl">
                             <span class="work_num">06</span>
                             <h2 class="title">Community<span class="stroke">to help grow</span></h2>
-                            <p>Saarthi s community is a vibrant network of mentors and mentees, offering a space for shared learning and support. Beyond your one-on-one sessions, you can connect with others who are also on their personal and professional development journeys. Participate in discussions, share experiences, and exchange valuable knowledge with peers and mentors alike. Saarthi s community fosters collaboration and growth, providing an additional layer of support to help you reach your full potential.
+                            <p class="work_description">Saarthi s community is a vibrant network of mentors and mentees, offering a space for shared learning and support. Beyond your one-on-one sessions, you can connect with others who are also on their personal and professional development journeys. Participate in discussions, share experiences, and exchange valuable knowledge with peers and mentors alike. Saarthi s community fosters collaboration and growth, providing an additional layer of support to help you reach your full potential.
 
                             </p>
                             <a href="#" class="work_link">view more</a>
@@ -224,34 +257,2356 @@
             </div>
         </section>
     </div>
-    <div class="outer-logos">
-        <div class="logos">
-            <h1>Trusted by organizations</h1>
-            <div class="logos-slide">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
+    <div class="parent">
+        
+        <div class="scroll-container">
+            <div class="scroll" style="--time:20s">
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
             </div>
-            <div class="logos-slide">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
-                <img src="./images/google" alt="">
-                <img src="./images/youtube.jpg" alt="">
-                <img src="./images/twitter.png" alt="">
+            <div class="scroll" style="--time:30s">
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
             </div>
+            <div class="scroll" style="--time:25s">
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+            </div>
+            <div class="scroll" style="--time:40s">
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+                <div>
+                    <span><img src="../frontend/assets/img/icons/brands/asana.png" alt="HTML Logo">HTML</span>
+                    <span><img src="../frontend/assets/img/icons/brands/behance.png" alt="HTML Logo">CSS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/dribbble.png" alt="HTML Logo">JavaScript</span>
+                    <span><img src="../frontend/assets/img/icons/brands/facebook.png" alt="HTML Logo">ReactJS</span>
+                    <span><img src="../frontend/assets/img/icons/brands/github.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/google.png" alt="HTML Logo">Photoshop</span>
+                    <span><img src="../frontend/assets/img/icons/brands/instagram.png" alt="HTML Logo">Premiere Pro</span>
+                    <span><img src="../frontend/assets/img/icons/brands/mailchimp.png" alt="HTML Logo">Figma</span>
+                    <span><img src="../frontend/assets/img/icons/brands/slack.png" alt="HTML Logo">Angular</span>
+                    <span><img src="../frontend/assets/img/icons/brands/twitter.png" alt="HTML Logo">Node JS</span>
+                </div>
+            </div>
+        
         </div>
     </div>
-    
+
+
+    <div
+      class="relative mx-2 max-w-[1448px] rounded-[32px] border border-[#EFE4D2] bg-gradient-to-b from-[#FCF5E9] to-[#fff] md:mx-auto"
+    >
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[184px] top-[125px] hidden h-16 w-16 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[64px] top-[56px] hidden h-6 w-6 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[226px] top-[24px] hidden h-6 w-6 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[47px] top-[280px] hidden h-6 w-6 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[350px] top-[16px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[46px] top-[393px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[282px] top-[53px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[54px] top-[114px] hidden h-6 w-6 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[54px] top-[114px] hidden h-6 w-6 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[182px] top-[285px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[26px] top-[365px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs></svg>
+      <svg
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-[195px] top-[542px] hidden h-10 w-10 animate-pulse md:block"
+      >
+        <g opacity="0.6">
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__a)"
+          ></path>
+          <path
+            d="m32 64 7.712-18.642 20 2.642-12.288-16 12.289-16-20.001 2.643L32 0l-7.712 18.643-20-2.643 12.288 16L4.287 48l20-2.642L32 64Z"
+            fill="url(#gradient-star_svg__b)"
+          ></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="gradient-star_svg__a"
+            x1="32"
+            y1="64"
+            x2="32"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#A7B5FF"></stop>
+            <stop offset="1" stop-color="#F3ACFF"></stop>
+          </linearGradient>
+          <linearGradient
+            id="gradient-star_svg__b"
+            x1="11.908"
+            y1="57.92"
+            x2="51.767"
+            y2="13.742"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#FFD9A0"></stop>
+            <stop offset="1" stop-color="#FEECE5"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="common-frame-box undefined">
+        <div class="common-sub-frame-box undefined">
+          <div
+            class="md:border-l md:border-r md:px-14"
+            style="border-color: rgb(239, 228, 210)"
+          >
+            <div class="border-[#EFE4D2] pt-6 md:border-x md:px-0 md:pt-[80px]">
+              <div
+                class="flex flex-col gap-2 border-b border-[#EFE4D2] pb-[20px] md:border-none md:pb-[64px]"
+              >
+                <p
+                  class="text-center text-[20px] font-semibold leading-[24px] -tracking-[0.8px] text-[#272727] md:text-[36px] md:font-medium md:leading-[50px] md:-tracking-[1.44px]"
+                >
+                  Get Mentored By The Star Mentors
+                </p>
+                <p
+                  class="text-center text-[12px] leading-4 text-[#5C5C5C] md:text-[16px] md:leading-6 md:-tracking-[0.176px]"
+                >
+                  Connect with our star mentors, distinguished leaders in their
+                  fields, to receive personalized mentorship.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="common-frame-box undefined">
+        <div class="common-sub-frame-box undefined">
+          <div
+            class="md:border-l md:border-r md:px-14"
+            style="border-color: rgb(239, 228, 210)"
+          >
+            <div
+              class="flex items-center border-[#EFE4D2] pb-6 pt-4 md:border-x md:pb-[56px]"
+            >
+              <div
+                class="no-scrollbar mx-auto grid grid-flow-col grid-rows-2 items-center justify-items-center gap-4 overflow-auto px-[2px] pt-[2px]"
+              >
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Anarghya Kini"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252FAnarghya%2520Kinirec4B9R7jrAPQKGzx%3Falt%3Dmedia%26token%3D16d5e78b-3214-4766-94f7-6197bd1c588a&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252FAnarghya%2520Kinirec4B9R7jrAPQKGzx%3Falt%3Dmedia%26token%3D16d5e78b-3214-4766-94f7-6197bd1c588a&amp;w=640&amp;q=75 2x
+                          "
+                          src="img1.avif"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Anarghya Kini
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          Quality Assurance Engineer II
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          7 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt="Amazon  Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FAmazon%2520%3Falt%3Dmedia%26token%3Da0d7027c-3235-456c-98d5-f9ed595909e9&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FAmazon%2520%3Falt%3Dmedia%26token%3Da0d7027c-3235-456c-98d5-f9ed595909e9&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FAmazon%2520%3Falt%3Dmedia%26token%3Da0d7027c-3235-456c-98d5-f9ed595909e9&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            Amazon
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Neetesh Mittal"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FNeetesh%2520Mittal%2520-%2520recwPi7DJHApanSBR%3Falt%3Dmedia%26token%3D2cba622d-fa90-4220-ba7b-6935eea6910f&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FNeetesh%2520Mittal%2520-%2520recwPi7DJHApanSBR%3Falt%3Dmedia%26token%3D2cba622d-fa90-4220-ba7b-6935eea6910f&amp;w=640&amp;q=75 2x
+                          "
+                          src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FNeetesh%2520Mittal%2520-%2520recwPi7DJHApanSBR%3Falt%3Dmedia%26token%3D2cba622d-fa90-4220-ba7b-6935eea6910f&amp;w=640&amp;q=75"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Neetesh Mittal
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          Tech lead
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          12 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt="Meta Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FMeta%3Falt%3Dmedia%26token%3Dc91a76cb-d7bc-441d-84f8-81cacaddfeb5&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FMeta%3Falt%3Dmedia%26token%3Dc91a76cb-d7bc-441d-84f8-81cacaddfeb5&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FMeta%3Falt%3Dmedia%26token%3Dc91a76cb-d7bc-441d-84f8-81cacaddfeb5&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            Meta
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Shishir Chandra"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252Fshishir%2520chandrarecSEsRhX3LroVGuM%3Falt%3Dmedia%26token%3D26570590-f4d9-45e0-a629-39f08abe2e42&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252Fshishir%2520chandrarecSEsRhX3LroVGuM%3Falt%3Dmedia%26token%3D26570590-f4d9-45e0-a629-39f08abe2e42&amp;w=640&amp;q=75 2x
+                          "
+                          src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252Fshishir%2520chandrarecSEsRhX3LroVGuM%3Falt%3Dmedia%26token%3D26570590-f4d9-45e0-a629-39f08abe2e42&amp;w=640&amp;q=75"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Shishir Chandra
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          Director Of Technology - Distributed Platform
+                          Engineering
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          15 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt="Target Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FTarget%3Falt%3Dmedia%26token%3D272e87c3-d761-461c-a86a-458fabad58cc&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FTarget%3Falt%3Dmedia%26token%3D272e87c3-d761-461c-a86a-458fabad58cc&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252FTarget%3Falt%3Dmedia%26token%3D272e87c3-d761-461c-a86a-458fabad58cc&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            Target
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Saumya Dey"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252FSaumya%2520Dey0.9255952478321716%3Falt%3Dmedia%26token%3Dcaf7ecbb-b3b1-4213-94a9-ad905f043f66&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252FSaumya%2520Dey0.9255952478321716%3Falt%3Dmedia%26token%3Dcaf7ecbb-b3b1-4213-94a9-ad905f043f66&amp;w=640&amp;q=75 2x
+                          "
+                          src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fmentor-profile%252FSaumya%2520Dey0.9255952478321716%3Falt%3Dmedia%26token%3Dcaf7ecbb-b3b1-4213-94a9-ad905f043f66&amp;w=640&amp;q=75"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Saumya Dey
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          Automation -Delivery Head, Executive Project Manager
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          21 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt="          IBM         Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520IBM%2520%2520%2520%2520%2520%2520%2520%2520%3Falt%3Dmedia%26token%3D57cbdc7f-29fc-4852-ac81-6109729e380a&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520IBM%2520%2520%2520%2520%2520%2520%2520%2520%3Falt%3Dmedia%26token%3D57cbdc7f-29fc-4852-ac81-6109729e380a&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520IBM%2520%2520%2520%2520%2520%2520%2520%2520%3Falt%3Dmedia%26token%3D57cbdc7f-29fc-4852-ac81-6109729e380a&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            IBM
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Subhahu Jain"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FSubhahu%2520Jain%2520-%2520rec6Maw10jokCDg7X%3Falt%3Dmedia%26token%3D11402add-799c-437a-9962-f6d09712fd8b&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FSubhahu%2520Jain%2520-%2520rec6Maw10jokCDg7X%3Falt%3Dmedia%26token%3D11402add-799c-437a-9962-f6d09712fd8b&amp;w=640&amp;q=75 2x
+                          "
+                          src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FSubhahu%2520Jain%2520-%2520rec6Maw10jokCDg7X%3Falt%3Dmedia%26token%3D11402add-799c-437a-9962-f6d09712fd8b&amp;w=640&amp;q=75"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Subhahu Jain
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          SDE-2
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          4 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt=" Salesforce Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            Salesforce
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-shadow relative mb-1 flex h-[206px] w-[136px] flex-col gap-2 rounded-[12px] border bg-white p-2 md:h-fit md:w-[290px] md:gap-4 md:p-5"
+                  
+                >
+                  <div>
+                    <div class="flex justify-between gap-2">
+                      <div
+                        class="h-[120px] w-[120px] rounded-xl object-cover md:h-[80px] md:w-[80px]"
+                      >
+                        <img
+                          alt="Chetana Bollini"
+                          loading="lazy"
+                          width="278"
+                          height="250"
+                          decoding="async"
+                          data-nimg="1"
+                          class="h-[120px] w-[120px] rounded-[6px] object-cover md:h-[80px] md:w-[80px] md:rounded-full"
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FChetana%2520Bollini%2520-%2520receMfDTaDKasr9s5%3Falt%3Dmedia%26token%3D83402d56-e8ed-4373-8c3b-36e88d19c419&amp;w=384&amp;q=75 1x,
+                            /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FChetana%2520Bollini%2520-%2520receMfDTaDKasr9s5%3Falt%3Dmedia%26token%3D83402d56-e8ed-4373-8c3b-36e88d19c419&amp;w=640&amp;q=75 2x
+                          "
+                          src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fmentor-dashboard%252Fprofile-picture%252FChetana%2520Bollini%2520-%2520receMfDTaDKasr9s5%3Falt%3Dmedia%26token%3D83402d56-e8ed-4373-8c3b-36e88d19c419&amp;w=640&amp;q=75"
+                          style="color: transparent"
+                        />
+                      </div>
+                      <div
+                        class="absolute right-5 top-5 hidden gap-1 rounded-md bg-white px-1 py-0.5 md:flex md:px-2 md:py-1"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="scale-90 text-yellow-400 md:h-[21px] md:w-[21px]"
+                        >
+                          <path
+                            d="m10.633 1.63 2.103 4.797a1.1 1.1 0 0 0 .91.654l5.122.46c.58.084.811.795.391 1.204l-3.86 3.243a1.099 1.099 0 0 0-.368 1.073l1.122 5.252a.706.706 0 0 1-1.025.743l-4.472-2.619a1.099 1.099 0 0 0-1.112 0l-4.472 2.618a.707.707 0 0 1-1.025-.744l1.122-5.252a1.102 1.102 0 0 0-.37-1.073L.84 8.746a.707.707 0 0 1 .39-1.204l5.124-.46a1.101 1.101 0 0 0 .91-.654l2.102-4.797a.707.707 0 0 1 1.268-.001Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            d="m10.48 6.714-.357-3.534c-.014-.197-.055-.535.26-.535.25 0 .387.52.387.52l1.069 2.838c.403 1.08.237 1.45-.152 1.669-.447.25-1.106.055-1.208-.958Z"
+                            fill="#FFFF8D"
+                          ></path>
+                          <path
+                            d="m14.887 11.673 3.065-2.392c.152-.126.425-.328.206-.558-.173-.18-.642.08-.642.08l-2.683 1.049c-.8.276-1.33.685-1.378 1.201-.06.688.557 1.217 1.432.62Z"
+                            fill="#F4B400"
+                          ></path>
+                        </svg>
+                        <p
+                          class="text-[15px] font-semibold -tracking-[0.084] text-[#272727] md:pt-[2px]"
+                        >
+                          5.0
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-1 md:gap-2">
+                      <p
+                        class="line-clamp-1 text-[13px] font-semibold leading-5 text-[#272727] md:text-[17px] md:leading-[26px]"
+                      >
+                        Chetana Bollini
+                      </p>
+                      <div class="flex flex-col gap-0.5">
+                        <p
+                          class="line-clamp-1 text-[10px] leading-[18px] text-[#5C5C5C] md:text-[14px] md:leading-[18px]"
+                        >
+                          Senior Member of Technical Staff
+                        </p>
+                        <p
+                          class="line-clamp-1 hidden text-sm leading-[21px] text-[#5C5C5C] md:block"
+                        >
+                          6 Years of Experience
+                        </p>
+                        <div class="flex items-center gap-1 md:gap-1.5 md:pt-4">
+                          <img
+                            alt=" Salesforce Logo"
+                            loading="lazy"
+                            width="64"
+                            height="64"
+                            decoding="async"
+                            data-nimg="1"
+                            class="h-[10px] w-[10px] max-w-[20px] rounded-full md:h-5 md:w-5 w-fit"
+                            srcset="
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=64&amp;q=75  1x,
+                              /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=128&amp;q=75 2x
+                            "
+                            src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fpreplaced-upload-prod%2Fo%2Fimage%252Fcomapny-logos%252F%2520Salesforce%3Falt%3Dmedia%26token%3D497ed82a-8453-4b20-8972-11b8a4e73497&amp;w=128&amp;q=75"
+                            style="color: transparent"
+                          />
+                          <p
+                            class="line-clamp-1 text-[10px] leading-[18px] text-[#272727] md:text-sm md:leading-[21px]"
+                          >
+                            Salesforce
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden items-end justify-between md:flex md:pt-2">
+                    <button
+                      type="button"
+                      class="black-card-shadow w-full rounded-lg bg-[#272727] px-3 py-2 text-[13px] font-medium text-white md:h-10"
+                    >
+                      Book a FREE Trial
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden border-[#EFE4D2] pb-[80px] sm:flex md:border-x">
+              <a
+                class="get-started-button-shadow mx-auto flex h-[40px] w-full items-center justify-center gap-1 rounded-[8px] border-[#EBEBEB] px-[12px] py-[8px] md:w-fit"
+                href="../frontend/explore.html"
+                ><p
+                  class="text-[14px] font-medium leading-[20px] -tracking-[0.084] text-[#272727]"
+                >
+                  Explore All Mentors
+                </p>
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m6 12 4-4-4-4"
+                    stroke="#161616"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="black-shadow-custom px-auto mx-4 mb-4 flex h-[40px] gap-4 rounded-[8px] bg-[#272727] py-2 text-center font-medium text-white sm:hidden"
+        href="../frontend/explore.html"
+        ><p class="mx-auto leading-5">View All Mentors -&gt;</p></a
+      >
+    </div>
+    <div class="common-frame-box hidden md:block">
+      <div class="common-sub-frame-box undefined">
+        <div
+          class="md:border-l md:border-r flex flex-col border-white py-10 md:border-x md:pb-[180px] md:pt-[100px]"
+          style="border-color: rgb(235, 235, 235)"
+        >
+          <div
+            class="flex w-full flex-col items-center gap-2 pb-[32px] md:gap-1 md:pb-[50px]"
+          >
+            <h2
+              class="text-center text-[20px] font-bold leading-[32px] text-[#161616] md:text-[36px] md:font-medium md:leading-[50px] md:-tracking-[1.44px]"
+            >
+              Every Domain Every Industry Covered
+            </h2>
+            <p
+              class="text-center text-[16px] leading-[24px] -tracking-[0.176px] text-[#5C5C5C] md:mt-0"
+            >
+              Our mentors are equipped to guide you in any field you're
+              passionate about
+            </p>
+          </div>
+          <div
+            class="grid w-[calc(100%+1px)] grid-cols-2 space-x-[-1px] space-y-[-1px] md:justify-center lg:grid-cols-4"
+          >
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Frontend%20Developer"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(243, 235, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(105, 65, 198)"
+                  >
+                    <path
+                      d="M8 21h8m-4-4v4m-5.2-4h10.4c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.311-1.311C22 14.72 22 13.88 22 12.2V7.8c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311C19.72 3 18.88 3 17.2 3H6.8c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C2 5.28 2 6.12 2 7.8v4.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311C4.28 17 5.12 17 6.8 17Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Frontend Developer
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 27+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Backend%20Developer"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(243, 235, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(105, 65, 198)"
+                  >
+                    <path
+                      d="m22 10.5-.474-3.795c-.186-1.489-.28-2.233-.63-2.794a3 3 0 0 0-1.283-1.133c-.6-.278-1.35-.278-2.85-.278H7.237c-1.5 0-2.25 0-2.85.278a3 3 0 0 0-1.283 1.133c-.35.56-.444 1.305-.63 2.794L2 10.5m3.5 4h13m-13 0a3.5 3.5 0 1 1 0-7h13a3.5 3.5 0 1 1 0 7m-13 0a3.5 3.5 0 1 0 0 7h13a3.5 3.5 0 1 0 0-7M6 11h.01M6 18h.01M12 11h6m-6 7h6"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Backend Developer
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 120+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Fullstack%20Developer"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(243, 235, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(105, 65, 198)"
+                  >
+                    <path
+                      d="m13 7-1.116-2.231c-.32-.642-.481-.963-.72-1.198a2 2 0 0 0-.748-.462C10.1 3 9.74 3 9.022 3H5.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C2 4.52 2 5.08 2 6.2V7m0 0h15.2c1.68 0 2.52 0 3.162.327a3 3 0 0 1 1.311 1.311C22 9.28 22 10.12 22 11.8v4.4c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C19.72 21 18.88 21 17.2 21H6.8c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C2 18.72 2 17.88 2 16.2V7Zm12 9.5 2.5-2.5-2.5-2.5m-4 0L7.5 14l2.5 2.5"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Fullstack Developer
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 86+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=DevOps%20/%20SRE%20/%20Cloud%20Engineer"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(243, 235, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(105, 65, 198)"
+                  >
+                    <path
+                      d="M10 7H3m18 0h-7m0 .252c3.45.888 6 4.02 6 7.748M4 15c0-3.728 2.55-6.86 6-7.748M3.6 19h.8c.56 0 .84 0 1.054-.109a1 1 0 0 0 .437-.437C6 18.24 6 17.96 6 17.4v-.8c0-.56 0-.84-.109-1.054a1 1 0 0 0-.437-.437C5.24 15 4.96 15 4.4 15h-.8c-.56 0-.84 0-1.054.109a1 1 0 0 0-.437.437C2 15.76 2 16.04 2 16.6v.8c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437C2.76 19 3.04 19 3.6 19Zm8-10h.8c.56 0 .84 0 1.054-.109a1 1 0 0 0 .437-.437C14 8.24 14 7.96 14 7.4v-.8c0-.56 0-.84-.109-1.054a1 1 0 0 0-.437-.437C13.24 5 12.96 5 12.4 5h-.8c-.56 0-.84 0-1.054.109a1 1 0 0 0-.437.437C10 5.76 10 6.04 10 6.6v.8c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437C10.76 9 11.04 9 11.6 9Zm8 10h.8c.56 0 .84 0 1.054-.109a1 1 0 0 0 .437-.437C22 18.24 22 17.96 22 17.4v-.8c0-.56 0-.84-.109-1.054a1 1 0 0 0-.437-.437C21.24 15 20.96 15 20.4 15h-.8c-.56 0-.84 0-1.054.109a1 1 0 0 0-.437.437C18 15.76 18 16.04 18 16.6v.8c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437C18.76 19 19.04 19 19.6 19ZM22 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM4 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      DevOps / SRE
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 22+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Data%20Analyst"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 250, 223);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(5, 152, 85)"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Data Analyst
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 17+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Data%20Scientist%20/%20AI/ML"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 250, 223);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(5, 152, 85)"
+                  >
+                    <path
+                      d="M12 12h.01m3.525 3.536c-4.686 4.686-10.068 6.902-12.02 4.95-1.953-1.953.263-7.335 4.949-12.021 4.686-4.687 10.068-6.903 12.02-4.95 1.953 1.952-.263 7.334-4.949 12.02Zm0-7.072c4.686 4.687 6.902 10.069 4.95 12.021-1.953 1.953-7.335-.263-12.021-4.95-4.686-4.686-6.902-10.068-4.95-12.02 1.953-1.953 7.335.263 12.021 4.95ZM12.499 12a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Data Scientist
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 48+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Data%20Engineer%20/%20Big%20Data"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 250, 223);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(5, 152, 85)"
+                  >
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                    <path
+                      d="M18.727 14.727a1.5 1.5 0 0 0 .3 1.655l.055.054a1.816 1.816 0 0 1 0 2.573 1.818 1.818 0 0 1-2.573 0l-.055-.055a1.5 1.5 0 0 0-1.654-.3 1.5 1.5 0 0 0-.91 1.373v.155a1.818 1.818 0 1 1-3.636 0V20.1a1.5 1.5 0 0 0-.981-1.373 1.5 1.5 0 0 0-1.655.3l-.054.055a1.818 1.818 0 0 1-3.106-1.287 1.818 1.818 0 0 1 .533-1.286l.054-.055a1.5 1.5 0 0 0 .3-1.654 1.5 1.5 0 0 0-1.372-.91h-.155a1.818 1.818 0 1 1 0-3.636H3.9a1.5 1.5 0 0 0 1.373-.981 1.5 1.5 0 0 0-.3-1.655l-.055-.054A1.818 1.818 0 1 1 7.491 4.99l.054.054a1.5 1.5 0 0 0 1.655.3h.073a1.5 1.5 0 0 0 .909-1.372v-.155a1.818 1.818 0 0 1 3.636 0V3.9a1.499 1.499 0 0 0 .91 1.373 1.5 1.5 0 0 0 1.654-.3l.054-.055a1.817 1.817 0 0 1 2.573 0 1.819 1.819 0 0 1 0 2.573l-.055.054a1.5 1.5 0 0 0-.3 1.655v.073a1.5 1.5 0 0 0 1.373.909h.155a1.818 1.818 0 0 1 0 3.636H20.1a1.499 1.499 0 0 0-1.373.91Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Data Engineer
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 21+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Data%20Scientist%20/%20AI/ML"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 250, 223);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(5, 152, 85)"
+                  >
+                    <path
+                      d="M8 3h-.2c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C3 5.28 3 6.12 3 7.8V8m5 13h-.2c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C3 18.72 3 17.88 3 16.2V16m18-8v-.2c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311C18.72 3 17.88 3 16.2 3H16m5 13v.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C18.72 21 17.88 21 16.2 21H16M3 12h.01m4.49 0h.01m8.99 0h.01M12 12h.01M21 12h.01"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      AI / ML
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 48+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Marketing"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(255, 234, 213);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(236, 74, 11)"
+                  >
+                    <path
+                      d="M12 16v5m6 0-3.951-3.293c-.73-.607-1.094-.91-1.5-1.027a2 2 0 0 0-1.098 0c-.406.116-.77.42-1.5 1.027L6 21m2-10v1m4-3v3m4-5v5m6-9H2m1 0h18v8.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C18.72 16 17.88 16 16.2 16H7.8c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C3 13.72 3 12.88 3 11.2V3Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Marketing
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 13+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Sales"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(255, 234, 213);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(236, 74, 11)"
+                  >
+                    <path
+                      d="M21 21H4.6c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C3 20.24 3 19.96 3 19.4V3m17 5-3.919 4.183c-.148.158-.223.237-.312.278a.5.5 0 0 1-.253.044c-.098-.01-.194-.06-.387-.16l-3.258-1.69c-.193-.1-.289-.15-.387-.16a.5.5 0 0 0-.253.044c-.09.04-.164.12-.312.278L7 15"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Sales
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 10+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Business%20Analyst%20/%20Consultant"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(255, 234, 213);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(236, 74, 11)"
+                  >
+                    <path
+                      d="M17.2 14c.277 0 .416 0 .528.062a.53.53 0 0 1 .22.243c.05.118.037.243.012.494A8 8 0 1 1 9.201 6.04c.251-.025.376-.038.494.012a.53.53 0 0 1 .243.22c.062.113.062.251.062.528v6.4c0 .28 0 .42.055.527a.5.5 0 0 0 .218.219c.107.054.247.054.527.054h6.4ZM14 2.8c0-.277 0-.415.062-.528a.53.53 0 0 1 .243-.22c.117-.05.243-.037.494-.012a8 8 0 0 1 7.161 7.161c.025.251.038.377-.012.494a.53.53 0 0 1-.22.244c-.113.061-.251.061-.528.061h-6.4c-.28 0-.42 0-.527-.054a.5.5 0 0 1-.218-.219C14 9.62 14 9.48 14 9.2V2.8Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Business Analyst
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 27+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Finance"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(255, 234, 213);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(236, 74, 11)"
+                  >
+                    <path
+                      d="M6 3h12M6 8h12m-3.5 13L6 13h3c6.667 0 6.667-10 0-10"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Finance
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 6+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Product%20Manager"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 233, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(0, 122, 255)"
+                  >
+                    <path
+                      d="M20.5 7.278 12 12m0 0L3.5 7.278M12 12v9.5m9-5.441V7.942c0-.343 0-.514-.05-.667a1 1 0 0 0-.215-.364c-.109-.119-.258-.202-.558-.368l-7.4-4.111c-.284-.158-.425-.237-.575-.267a1 1 0 0 0-.403 0c-.15.03-.292.11-.576.267l-7.4 4.11c-.3.167-.45.25-.558.369a1 1 0 0 0-.215.364C3 7.428 3 7.599 3 7.942v8.117c0 .342 0 .514.05.666a1 1 0 0 0 .215.364c.109.119.258.202.558.368l7.4 4.111c.284.158.425.237.576.268.133.027.27.027.402 0 .15-.031.292-.11.576-.268l7.4-4.11c.3-.167.45-.25.558-.369a.999.999 0 0 0 .215-.364c.05-.152.05-.324.05-.666Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Product Manager
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 32+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=UI/UX%20Designer"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 233, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(0, 122, 255)"
+                  >
+                    <path
+                      d="M2 12c0 5.523 4.477 10 10 10a3 3 0 0 0 3-3v-.5c0-.464 0-.697.026-.892a3 3 0 0 1 2.582-2.582c.195-.026.428-.026.892-.026h.5a3 3 0 0 0 3-3c0-5.523-4.477-10-10-10S2 6.477 2 12Z"
+                    ></path>
+                    <path
+                      d="M7 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM16 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM10 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      UI/UX Designer
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 4+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Project%20/%20Program%20Manager"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 233, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(0, 122, 255)"
+                  >
+                    <path
+                      d="M16 21v-1.2c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311C13.72 15 12.88 15 11.2 15H6.8c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C2 17.28 2 18.12 2 19.8V21M16 6l2 2 4-4m-9.5 3.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Project Manager
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 11+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+            <div class="relative border first:-ml-[1px] first:-mt-[1px]">
+              <div
+                class="absolute -left-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -right-[5px] -top-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -left-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <div
+                class="absolute -bottom-[5px] -right-[5px] z-[1] hidden h-[9px] w-[9px] border bg-white md:block"
+              ></div>
+              <a
+                class="flex w-full items-center gap-4 px-8 py-6"
+                href="/explore-mentors?domain=Project%20/%20Program%20Manager"
+                ><div
+                  class="rounded-lg p-3"
+                  style="
+                    border: 1px solid rgb(209, 233, 255);
+                    border-radius: 100px;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="!stroke-2"
+                    style="stroke: rgb(0, 122, 255)"
+                  >
+                    <path
+                      d="M16 21v-1.2c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311C13.72 15 12.88 15 11.2 15H6.8c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C2 17.28 2 18.12 2 19.8V21M16 6l2 2 4-4m-9.5 3.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                  <div class="flex flex-col gap-1">
+                    <p
+                      class="text-[12px] font-medium leading-4 -tracking-[0.08px] md:text-[14px] md:leading-5"
+                    >
+                      Program Manager
+                    </p>
+                    <p
+                      class="text-[12px] leading-[16px] text-[#667085] md:text-[12px]"
+                    >
+                      Browse 11+ Mentors
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    class="block md:hidden"
+                  >
+                    <path
+                      d="m8.165 3.419 6.25 6.25a.469.469 0 0 1 0 .662l-6.25 6.25a.469.469 0 0 1-.662-.662L13.42 10 7.503 4.081a.469.469 0 0 1 .662-.662Z"
+                      fill="#000"
+                    ></path>
+                  </svg></div
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="section light-grey overflow-hidden">
         <!-- <div class="padding-global"> -->
             <div class="w-layout-blockcontainer container-large w-container">
@@ -958,6 +3313,25 @@
             scrub: 1
         });
     });
+    document.addEventListener("DOMContentLoaded", function () {
+    const cardElements = document.querySelectorAll('.card-shadow');
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    // Add a delay before adding the 'in-view' class
+    setTimeout(() => {
+    entry.target.classList.add('in-view');
+    }, 200); // 400ms delay
+    } else {
+    // Remove the 'in-view' class when out of view to reset the animation
+    entry.target.classList.remove('in-view');
+    }
+    });
+    }, { threshold: 0.5 });
+
+    cardElements.forEach(card => observer.observe(card));
+    }); 
     </script>
 <script>
     const token = localStorage.getItem('authToken');
