@@ -5880,7 +5880,7 @@ nav {
     font-size: 18px;
     display: flex;
     align-items: center;
-    /* padding: 18px; */
+    padding: 18px;
     background-color: white;
     border-bottom: 1px solid #ddd;
 }
@@ -6073,7 +6073,85 @@ footer {
     font-weight: 400;
     margin: 0px 5px;
 }
+.parent {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 50vh;           /* Set parent height to fill the viewport */
+}
 
+.scroll-container {
+    width: 100%;
+    max-width: 1100px; /* Ensure it doesn't exceed your desired width */
+}
+.scroll {
+    position: relative;
+    display: flex;
+    width:1100px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+.scroll span img {
+    max-width: 30px;
+    margin-right: 8px;
+    border-radius: 50%;
+    vertical-align: middle; /* Aligns the image vertically with the text */
+}
+.scroll div {
+    white-space: nowrap;
+    animation: scroll var(--time) linear infinite;
+    animation-delay: calc(var(--time)*-1);
+}
+
+.scroll div:nth-child(2) {
+    animation: scroll2 var(--time) linear infinite;
+    animation-delay: calc(var(--time)/-2);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    margin: 10px;
+    letter-spacing: 0.2em;
+    background: #c0bdbd;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.scroll div span:hover {
+    background: #3fd2f9;
+    cursor: pointer;
+}
+
+.imgBox div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgBox img {
+    max-width: 100px;
+    scale: 0.8;
+}
 @media (max-width: 768px) {
     .footerNav ul {
         flex-direction: column;
@@ -6634,15 +6712,15 @@ footer {
     margin-top: 30px;
 }
 
-.work_left-bl p {
-    max-height: 130px; /* Adjust this value as needed */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 6; /* Number of lines before ellipsis */
-    -webkit-box-orient: vertical;
-    white-space: normal;
-}
+.work_description {
+     display: -webkit-box;
+     -webkit-line-clamp: 5; /* Number of lines to show */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     max-height: 8.5em; /* Adjust based on font size and line-height */
+    }
+    
 
 .work_link {
     display: block;
@@ -6693,7 +6771,7 @@ footer {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    border-radius: 80px;
+    border-radius: 25px;
     overflow: hidden;
 }
 
