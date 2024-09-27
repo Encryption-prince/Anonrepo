@@ -257,28 +257,39 @@ document.getElementById('leave-btn').addEventListener('click', leaveStream)
 joinRoomInit()
 let mediaRecorder;
 let audioChunks = [];
+let videoChunks = [];
 let isRecording = false;
 
 let toggleAudioRecording = async (e) => {
+    const recordButton = e.currentTarget;
     if (!isRecording) {
+        recordButton.textContent = 'Stop Recording';
         // Start audio recording
         if (!localTracks[0]) {
+
             console.log("Microphone not initialized!");
+            recordButton.textContent = 'Start Recording';
             return;
         }
 
+        let videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
         // Create a MediaStream from the microphone audio track
         let audioStream = new MediaStream([localTracks[0].getMediaStreamTrack()]);
 
-        mediaRecorder = new MediaRecorder(audioStream);
+        let combinedStream = new MediaStream([...audioStream.getTracks(), ...videoStream.getTracks()]);
+
+        mediaRecorder = new MediaRecorder(combinedStream);
+        //mediaRecorder = new MediaRecorder(audioStream);
         mediaRecorder.start();
         isRecording = true;
         console.log("Recording started...");
 
         audioChunks = [];
+        videoChunks = [];
         mediaRecorder.ondataavailable = (event) => {
             if (event.data.size > 0) {
                 audioChunks.push(event.data);
+                videoChunks.push(event.data); 
             }
         };
 
@@ -292,7 +303,15 @@ let toggleAudioRecording = async (e) => {
             //downloadLink.download = `audio_${new Date().getTime()}.wav`;
             //downloadLink.style.display = 'block';
             //downloadLink.textContent = 'Download Audio';
+            const videoBlob = new Blob(videoChunks, { type: 'video/webm' });
+            const videoUrl = URL.createObjectURL(videoBlob);
 
+            // Create a download link for the video file
+            const videoDownloadLink = document.getElementById('video-download-link');
+            videoDownloadLink.href = videoUrl;
+            videoDownloadLink.download = `video_${new Date().getTime()}.webm`;
+            videoDownloadLink.style.display = 'block';
+            videoDownloadLink.textContent = 'Download Video';
             console.log("Recording stopped and saved.");
 
             // Create form data to send the audio to the API
@@ -301,7 +320,7 @@ let toggleAudioRecording = async (e) => {
 
             // Send the recorded audio to the API
             try {
-                const response = await fetch('http://localhost:4000/summarize', {
+                const response = await fetch('https://phool.onrender.com/summarize', {
                     method: 'POST',
                     body: formData
                 });
@@ -348,12 +367,12 @@ let toggleAudioRecording = async (e) => {
             }
         };
 
-        e.currentTarget.textContent = 'Stop Recording';
+        
     } else {
         // Stop recording
         mediaRecorder.stop();
         isRecording = false;
-        e.currentTarget.textContent = 'Start Recording';
+        recordButton.textContent = 'Start Recording';
     }
 };
 

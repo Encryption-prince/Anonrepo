@@ -3352,8 +3352,8 @@
       // Check if the response indicates success and user is authenticated
       if (data.success ) {
           console.log('User is authenticated and token is valid');
-          //console.log(data);
-          localStorage.setItem('userId',data.data);
+          console.log(data);
+          localStorage.setItem('userId',data.data.user_id);
           const userid=localStorage.getItem('userId');
           console.log(userid);
           checkMentorStatus(userid);

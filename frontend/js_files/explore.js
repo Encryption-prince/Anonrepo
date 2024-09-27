@@ -43,16 +43,15 @@ async function mentorwaLogg() {
     class="object-cover w-full h-full sm:w-[300px] sm:h-[300px] object-top md:w-[100%] md:h-[100%]"
 />
           <div class="mentor-name">${mentor.name}</div>
-          <div class="mentor-title">${mentor.bio || "No Title Available"}</div>
           <div class="mentor-sessions">Experience: ${mentor.experience_years} years</div>
           <div class="mentor-info flex flex-row bg-zinc-100 rounded mt-2">
               <div class="reach exp">
-                  <div class="label">Experience</div>
-                  <div class="value">${mentor.experience_years || ""}</div>
+                  <div class="label">Working at</div>
+                  <div class="value">${mentor.office || ""}</div>
               </div>
               <div class="reach attendance">
-                  <div class="label">Timeslot</div>
-                  <div class="value">${mentor.timeslot || "N/A"}</div>
+                  <div class="label">Rating</div>
+                  <div class="value">${mentor.rating || "N/A"}</div>
               </div>
           </div>
            </a>
