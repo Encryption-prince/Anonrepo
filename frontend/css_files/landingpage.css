@@ -6338,7 +6338,28 @@ footer {
     object-fit: cover;
     border-radius: 15px;
 }
-
+.mentor-strip {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffdd57; /* A vibrant color to make it pop */
+    color: #272727;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .card-shadow {
+    position: relative;
+    overflow: hidden;
+  }
+  
 .card-body {
     width: 100%;
     height: 100%;
