@@ -49,9 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
       
       localStorage.setItem("authToken", idToken);  // Store token for future API requests
 
+      // Get the UID
+      const uid = user.uid; // Get the UID of the logged-in user
+      console.log("User UID:", uid); // Log the UID
+      //localStorage.setItem("userId", uid);
+
       // Check authentication against backend
       await checkAuthentication(idToken); // Passing the token
-
       window.location.href = "index.html"; // Redirect to your main page
     } catch (error) {
       console.error("Error during login with Google: ", error);
@@ -60,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Function to check authentication against the backend
-  async function checkAuthentication(token) {
+  async function checkAuthentication(uid) {
     const response = await fetch('http://localhost:5000/api/v1/isAuthenticated', {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${uid}`
       }
     });
     
@@ -84,14 +88,33 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
+      console.log(user);
       alert("Signup successful! Please log in.");
 
+      // Get the UID
+      const uid = user.uid; // Get the UID of the logged-in user
+      console.log("User UID:", uid); // Log the UID
+      //localStorage.setItem("userId", uid);
       const idToken = await user.getIdToken(true); // Get Firebase token
       localStorage.setItem("authToken", idToken);  // Store token for future API requests
       
       // Check authentication against backend
       await checkAuthentication(idToken);
+
+      // Function to check authentication against the backend
+    async function checkAuthentication(uid) {
+    const response = await fetch('http://localhost:5000/api/v1/isAuthenticated', {
+      headers: {
+        'Authorization': `Bearer ${uid}`
+      }
+    });
+    
+    if (response.ok) {
+      console.log("User is authenticated");
+    } else {
+      console.log("User is not authenticated");
+    }
+  }
 
       signupForm.reset();
     } catch (error) {
