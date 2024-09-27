@@ -239,20 +239,20 @@
                 date: 'Aug 24',
                 day: 'Saturday',
                 time: '11:00 AM',
-                title: 'Canvs x ADPList: Fireside chat w/ Dream11 CDO - Priyanka Kodikal',
-                description: 'By Aalhad Joshi, Debprotim Roy & ADPList',
+                title: 'Canvs x : Fireside chat w/ Dream11 CDO - Priyanka Kodikal',
+                description: 'By Aalhad Joshi, Debprotim Roy & ',
                 location: 'Of10 - Coworking Space in Powai',
-                badges: ['ADPList HQ Presents', 'Local Meetup', 'Waitlist'],
+                badges: [' HQ Presents', 'Local Meetup', 'Waitlist'],
                 imageUrl: 'https://via.placeholder.com/100x100'
             },
             {
                 date: 'Aug 25',
                 day: 'Sunday',
                 time: '12:00 PM',
-                title: 'Canvs x ADPList: Networking Event',
-                description: 'By Nikhil Sinha, Rajesh Sharma & ADPList',
+                title: 'Canvs x : Networking Event',
+                description: 'By Nikhil Sinha, Rajesh Sharma & ',
                 location: 'Of10 - Coworking Space in Powai',
-                badges: ['ADPList HQ Presents', 'Local Meetup'],
+                badges: [' HQ Presents', 'Local Meetup'],
                 imageUrl: 'https://via.placeholder.com/100x100'
             },
             {
@@ -260,7 +260,7 @@
                 day: 'Monday',
                 time: '10:00 AM',
                 title: 'Startup Pitching Event',
-                description: 'By Shweta Mehta, Anand Sharma & ADPList',
+                description: 'By Shweta Mehta, Anand Sharma & ',
                 location: 'WeWork - Bandra',
                 badges: ['Investor Meetup', 'Pitch Event'],
                 imageUrl: 'https://via.placeholder.com/100x100'
@@ -270,7 +270,7 @@
                 day: 'Monday',
                 time: '10:00 AM',
                 title: 'Startup Pitching Event',
-                description: 'By Shweta Mehta, Anand Sharma & ADPList',
+                description: 'By Shweta Mehta, Anand Sharma & ',
                 location: 'WeWork - Bandra',
                 badges: ['Investor Meetup', 'Pitch Event'],
                 imageUrl: 'https://via.placeholder.com/100x100'
