@@ -301,7 +301,7 @@ let toggleAudioRecording = async (e) => {
 
             // Send the recorded audio to the API
             try {
-                const response = await fetch('http://localhost:4000/summarize', {
+                const response = await fetch('https://phool.onrender.com/summarize', {
                     method: 'POST',
                     body: formData
                 });
