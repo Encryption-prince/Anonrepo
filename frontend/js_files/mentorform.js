@@ -62,7 +62,7 @@ document.querySelector('.form').addEventListener('submit', async function(e) {
 
         if (response.ok) {
             const result = await response.json();
-            alert('Image uploaded successfully!');
+            //alert('Image uploaded successfully!');
             console.log(result); // Handle success response here
         } else {
             alert('Error uploading image.');
@@ -121,8 +121,8 @@ document.querySelector('.form').addEventListener('submit', async function(e) {
 
         const result = await response.json();
         if (result.success) {
-            alert('Mentor created successfully!');
-
+            //alert('Mentor created successfully!');
+            window.location.href = "waiting.html"; 
         } else {
             alert('Error creating mentor: ' + result.message);
         }
