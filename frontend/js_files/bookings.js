@@ -113,6 +113,24 @@ function profileDiv(){
     });
   }
   profileDiv();
+  document.addEventListener('DOMContentLoaded', function() {
+    const moreButton = document.getElementById('more-button');
+    const moreMenu = document.getElementById('more-menu');
+
+    // Toggle the visibility of the more menu when the button is clicked
+    moreButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        moreMenu.classList.toggle('hidden');
+    });
+
+    // Hide the more menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!moreButton.contains(event.target) && !moreMenu.contains(event.target)) {
+            moreMenu.classList.add('hidden');
+        }
+    });
+});
+
 function setActiveTab() {
   const currentPath = window.location.pathname.split("/").pop(); // Get the current page filename
   const links = document.querySelectorAll('nav a'); // Get all links in the navigation

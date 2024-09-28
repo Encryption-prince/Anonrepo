@@ -557,6 +557,13 @@ input:checked + .slider:before {
 #header_search{
   width: 200px;
 }
+/* CSS for styling */
+#more-menu {
+  width: 200px;
+  top: 240px; /* Adjust as needed */
+  left: 90px; /* Adjust as needed */
+}
+
 @media (max-width: 640px) {
   aside {
       position: fixed;
@@ -566,6 +573,10 @@ input:checked + .slider:before {
       flex-direction: row;
       justify-content: space-around;
       background-color: white;
+  }
+  #aside{
+    padding-left: 0;
+    padding-right: 0;
   }
   aside ul {
       flex-direction: row;
@@ -601,6 +612,10 @@ input:checked + .slider:before {
   }
 }
 @media (max-width: 450px) {
+  #aside{
+    padding-left: 0;
+    padding-right: 0;
+  }
   .responsive-width {
       width: 350px;
   }
@@ -643,6 +658,15 @@ input.search {
 }
 #browseDropdown{
   right: 10%;
+}
+#domain{
+  margin-bottom: 4rem;
+}
+.more-button-hidden {
+  display: none;
+}
+#toggleImage {
+  margin-right: 1rem;
 }
 }
 @media (max-width: 200px) {
