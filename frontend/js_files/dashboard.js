@@ -194,24 +194,25 @@
             profileDiv();
         });
         
-    function moreTog(){
-        document.getElementById('more-button').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-        
-            var optionsDiv = document.getElementById('more-options');
-            optionsDiv.classList.toggle('hidden'); // Toggle the visibility
-        
-            // Close the div if clicked outside
-            document.addEventListener('click', function(event) {
-                if (!optionsDiv.contains(event.target) && !document.getElementById('more-button').contains(event.target)) {
-                    optionsDiv.classList.add('hidden');
-                }
-            });
-        });
-        
-        
-    }
-    moreTog();
+    // JavaScript for handling the dropdown behavior
+document.addEventListener('DOMContentLoaded', function() {
+    const moreButton = document.getElementById('more-button');
+    const moreMenu = document.getElementById('more-menu');
+
+    // Toggle the visibility of the more menu when the button is clicked
+    moreButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        moreMenu.classList.toggle('hidden');
+    });
+
+    // Hide the more menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!moreButton.contains(event.target) && !moreMenu.contains(event.target)) {
+            moreMenu.classList.add('hidden');
+        }
+    });
+});
+
     function CalToggle(){
         const toggleButtons = document.querySelectorAll('.toggle-btn');
     

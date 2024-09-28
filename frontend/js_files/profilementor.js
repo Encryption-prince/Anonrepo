@@ -42,3 +42,31 @@
   themeSwiter.init()
 
 })()
+document.addEventListener('DOMContentLoaded', function() {
+  const moreButton = document.getElementById('more-button');
+  const moreMenu = document.getElementById('more-menu');
+
+  // Toggle the visibility of the more menu when the button is clicked
+  moreButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      moreMenu.classList.toggle('hidden');
+  });
+
+  // Hide the more menu when clicking outside of it
+  document.addEventListener('click', function(event) {
+      if (!moreButton.contains(event.target) && !moreMenu.contains(event.target)) {
+          moreMenu.classList.add('hidden');
+      }
+  });
+});
+function profileDiv() {
+      document.getElementById('toggleImage').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          menu.classList.toggle('hidden'); // This line toggles the 'hidden' class
+      });
+  }
+  
+  // Ensure the DOM is fully loaded before running the script
+  document.addEventListener('DOMContentLoaded', function() {
+      profileDiv();
+  });

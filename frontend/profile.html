@@ -84,64 +84,85 @@
 <div class="flex flex-col md:flex-row">
     <div class="h-full">
         <!-- Sidebar -->
-      <aside class="bg-white shadow-md p-4 fixed w-full mt-[73px] z-50 md:w-24 h-auto bottom-0 md:top-0 md:flex flex-col justify-between md:border-t-0 border-t-2 pt-2 pb-2">
-          <!-- bg-white shadow-md p-4 fixed w-full md:w-24 h-auto bottom-0 md:top-0 md:h-screen flex flex-row md:flex-col justify-between border-t md:border-t-0 z-50 -->
-          <nav class="flex md:flex-col flex-row justify-around md:justify-start md:flex-1">
-              <ul class="flex md:block flex-row justify-evenly w-full">
-                  <li class="text-center md:mb-4">
-                      <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                        <i class="fas fa-home" style="font-size: 1.5rem"></i>
-                        <span class="font-size-10">Home</span>
-                      </a>
-                  </li>
-                  <li class="text-center md:mb-4">
-                      <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                        <i class="fas fa-compass" style="font-size: 1.5rem"></i>
-                        <span class="font-size-10">Explore</span>
-                      </a>
-                  </li>
-                  <li class="text-center md:mb-4">
-                      <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                        <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
-                        <span class="font-size-10">Bookings</span>
-                      </a>
-                  </li>
-                  <li class="text-center md:mb-4">
-                      <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                        <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
-                        <span class="font-size-10">Messages</span>
-                      </a>
-                  </li>
-                  <li class="text-center">
-                      <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
-                        <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
-                        <span class="font-size-10">More</span>
-                      </a>
-                  </li>
-              </ul>
-          </nav>
+      <!-- index.html -->
+<aside id="aside" class="bg-white shadow-md p-4 fixed w-full mt-[73px] z-50 md:w-24 h-auto bottom-0 md:top-0 md:flex flex-col justify-between md:border-t-0 border-t-2 pt-2 pb-2">
+    <nav class="flex md:flex-col flex-row justify-around md:justify-start md:flex-1 items-center">
+      <ul class="flex flex-row md:block justify-evenly w-full">
+        <li class="text-center md:mb-4">
+          <a href="./dashboard_home.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+            <i class="fas fa-home" style="font-size: 1.5rem"></i>
+            <span class="font-size-10">Home</span>
+          </a>
+        </li>
+        <li class="text-center md:mb-4">
+          <a href="./explore.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+            <i class="fas fa-compass" style="font-size: 1.5rem"></i>
+            <span class="font-size-10">Explore</span>
+          </a>
+        </li>
+        <li class="text-center md:mb-4">
+          <a href="./bookings.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+            <i class="fas fa-calendar-check" style="font-size: 1.5rem"></i>
+            <span class="font-size-10">Bookings</span>
+          </a>
+        </li>
+        <li class="text-center md:mb-4">
+          <a href="./chat.html" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+            <i class="bx bx-message-square-dots" style="font-size: 1.5rem"></i>
+            <span class="font-size-10">Messages</span>
+          </a>
+        </li>
+        <li class="text-center more-button-hidden md:block">
+          <a href="#" id="more-button" class="flex flex-col items-center text-gray-600 hover:text-indigo-600 hover:bg-gray-100 rounded-lg p-2">
+            <i class="fas fa-ellipsis-h" style="font-size: 1.5rem"></i>
+            <span class="font-size-10">More</span>
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Mobile Toggle Image -->
+      <div class="flex md:hidden mr-3 mt-2 items-center flex-col">
+        <img src="https://via.placeholder.com/40" alt="Toggle Image" id="toggleImage" class="cursor-pointer rounded-full h-10 w-10">
+        <span class="text-gray-600 text-sm mt-1 pr-4">Profile</span>
+      </div>
       
-          <!-- Image and hidden div only for desktop -->
-          <div class="hidden md:flex flex-col items-center mb-20">
-            <img src="https://via.placeholder.com/100" alt="Toggle Image" id="toggleImage" class="mt-4 cursor-pointer rounded-full h-16 w-16">
-            <div id="menu" class="hidden flex-col bg-white shadow-lg p-4 rounded-lg absolute inset-x-0 top-20 left-[250%] transform -translate-x-1/2 w-80 h-[500px]">
-        
-                <div class="flex gap-3 mb-4 items-center">
-                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full h-16 w-16">
-                    <div>
-                        <h3 class="font-bold text-lg">Sahil Shaw</h3>
-                        <a href="../frontend/profilementor.html" class="text-sm text-indigo-600 hover:underline">view profile</a>
-                    </div>
-                </div>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Connect Calendar</a>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Become Mentor</a>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Wishlist</a>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Setting</a>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Support</a>
-                <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Logout</a>
-            </div>
+      <!-- More Dropdown Menu -->
+      <div id="more-menu" class="hidden absolute bg-white shadow-lg rounded-lg p-2">
+        <div class="border-b pb-2 mb-2">
+          <a href="/achievements" class="flex items-center space-x-2 text-gray-700 text-lg w-full hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-trophy text-indigo-600"></i>
+            <span>Achievements</span>
+          </a>
         </div>
-      </aside>
+        <div>
+          <a href="/community" class="flex items-center space-x-2 text-gray-700 text-lg w-full hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-users text-indigo-600"></i>
+            <span>Community</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Desktop Profile Menu -->
+    <div class="hidden md:flex flex-col items-center mb-20">
+      <img src="https://via.placeholder.com/100" alt="Toggle Image" id="toggleImageDesktop" class="mt-4 cursor-pointer rounded-full h-16 w-16">
+      <div id="menu" class="hidden flex flex-col bg-white shadow-lg p-4 rounded-lg absolute inset-x-0 top-20 left-[250%] transform -translate-x-1/2 w-80 h-[500px]">
+        <div class="flex gap-3 mb-4 items-center">
+          <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full h-16 w-16">
+          <div>
+            <h3 class="font-bold text-lg">Sahil Shaw</h3>
+            <a href="../frontend/profilementor.html" class="text-sm text-indigo-600 hover:underline">view profile</a>
+          </div>
+        </div>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Connect Calendar</a>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Become Mentor</a>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Wishlist</a>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Setting</a>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Support</a>
+        <a href="#" class="py-2 px-4 hover:bg-gray-100 rounded">Logout</a>
+      </div>
+    </div>
+  </aside>
         
     
         <!-- Main Content -->
@@ -228,7 +249,7 @@
                   </div>
               </div>
           </div>
-          <div class="p-6 md:ml-24 flex flex-1 flex-col">
+          <div id="domain" class="p-6 md:ml-24 flex flex-1 flex-col">
               <div class="bg-white shadow-lg rounded-xl max-w-8xl w-full p-8">
                   <h2 class="text-xl font-semibold mb-6">Technical Skills</h2>
                   <div class="flex flex-wrap gap-3">
@@ -282,6 +303,36 @@
         
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const moreButton = document.getElementById('more-button');
+  const moreMenu = document.getElementById('more-menu');
+
+  // Toggle the visibility of the more menu when the button is clicked
+  moreButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      moreMenu.classList.toggle('hidden');
+  });
+
+  // Hide the more menu when clicking outside of it
+  document.addEventListener('click', function(event) {
+      if (!moreButton.contains(event.target) && !moreMenu.contains(event.target)) {
+          moreMenu.classList.add('hidden');
+      }
+  });
+});
+function profileDiv() {
+            document.getElementById('toggleImage').addEventListener('click', function() {
+                var menu = document.getElementById('menu');
+                menu.classList.toggle('hidden'); // This line toggles the 'hidden' class
+            });
+        }
+        
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            profileDiv();
+        });
+</script>
     <script src="../frontend/js_files/dashboard.js"></script>
 </body>
 </html>
