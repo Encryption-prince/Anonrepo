@@ -6080,9 +6080,17 @@ footer {
     height: 50vh;           /* Set parent height to fill the viewport */
 }
 
+.scroll-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
 .scroll-container {
     width: 100%;
-    max-width: 1100px; /* Ensure it doesn't exceed your desired width */
+    max-width: 1100px; 
+    margin-bottom: 40px;
 }
 .scroll {
     position: relative;
