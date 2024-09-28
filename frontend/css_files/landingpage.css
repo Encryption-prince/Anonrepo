@@ -6077,7 +6077,7 @@ footer {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
-    height: 50vh;           /* Set parent height to fill the viewport */
+    height: 40vh;           /* Set parent height to fill the viewport */
 }
 
 .scroll-container h2 {
@@ -6140,6 +6140,7 @@ footer {
     letter-spacing: 0.2em;
     background: #c0bdbd;
     color: #fff;
+    min-height: 40px;
     padding: 5px 10px;
     border-radius: 5px;
     transition: 0.5s;
@@ -6362,7 +6363,9 @@ footer {
     width: 300px;
     text-align: center;
   }
-  
+  #Trust{
+    font-size: 40px;
+  }
   .card-shadow {
     position: relative;
     overflow: hidden;
